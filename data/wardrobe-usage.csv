@@ -1,0 +1,88 @@
+id,name,category,subcategory,rating,soft_autumn_fit,is_staple,seasons,in_spring,in_summer,in_fall,in_winter,uses_spring,uses_summer,uses_fall,uses_winter,uses_total,themes,colors
+IMG_0161,Beige utility jacket with drawstring,outerwear,utility jacket,5,excellent,yes,"spring, fall, winter",yes,,yes,yes,3,0,6,4,13,"practical, polished, cozy","beige, tan, khaki"
+IMG_0168,Cognac faux-leather moto jacket,outerwear,moto jacket,5,excellent,yes,"spring, fall, winter",yes,,yes,yes,3,0,4,4,11,"polished, practical, feminine","cognac, camel brown"
+IMG_0147,Camel waffle-knit cardigan,outerwear,cardigan,5,excellent,yes,"spring, fall, winter",yes,,yes,yes,3,0,3,3,9,"cozy, practical, polished","camel, taupe"
+IMG_0101,Olive straight-leg pants,bottom,chinos,5,excellent,yes,"spring, fall, winter",yes,,yes,yes,3,0,3,3,9,"practical, polished, cozy","olive, moss green"
+IMG_0132,Tan ditsy floral maxi skirt,bottom,maxi skirt,5,excellent,yes,"summer, winter",,yes,,yes,0,2,0,2,4,"feminine, practical","tan, dusty blue, burgundy, olive"
+IMG_0100,Mustard crewneck sweatshirt,top,sweatshirt,5,excellent,,fall,,,yes,,0,0,3,0,3,"cozy, practical","mustard, ochre"
+IMG_0087,Dusty rose utility midi dress,dress,button midi dress,5,excellent,,spring,yes,,,,2,0,0,0,2,"feminine, practical, polished","dusty rose, mauve"
+IMG_0152,Marled oatmeal V-neck sweater,top,sweater,5,excellent,,fall,,,yes,,0,0,2,0,2,"cozy, feminine, practical","oatmeal, taupe, cream"
+IMG_0151,Olive ribbed V-neck sweater,top,sweater,5,excellent,,fall,,,yes,,0,0,2,0,2,"cozy, feminine, practical","olive, moss green"
+IMG_0116,Olive short-sleeve midi dress,dress,midi dress,5,excellent,,spring,yes,,,,2,0,0,0,2,"practical, feminine, polished","olive, forest green"
+IMG_0166,Olive smocked Swiss-dot maxi dress,dress,maxi dress,5,excellent,,spring,yes,,,,2,0,0,0,2,"feminine, practical, cozy",olive green
+IMG_0110,Rust quilted crewneck pullover,top,sweatshirt,5,excellent,,fall,,,yes,,0,0,2,0,2,"cozy, practical","rust, terracotta"
+IMG_0118,Olive tiered drawstring dress,dress,tiered midi dress,5,excellent,,spring,yes,,,,1,0,0,0,1,"feminine, practical, playful","olive, sage"
+IMG_0170,Tan strappy sport sandals,shoes,sport sandals,4,excellent,yes,"spring, summer",yes,yes,,,4,20,0,0,24,practical,"tan, khaki, dark brown, charcoal"
+IMG_0049,Mid-wash wide-leg jeans,bottom,wide-leg jeans,4,fair,yes,"spring, summer, fall, winter",yes,yes,yes,yes,3,2,3,3,11,"practical, cozy, polished","medium blue, mid-wash denim"
+IMG_0088,Medium-wash denim overalls,jumpsuit,overalls,4,good,yes,"spring, winter",yes,,,yes,3,0,0,3,6,"practical, playful, cozy",medium blue
+IMG_0125,Terracotta tiered long-sleeve dress,dress,tiered midi dress,4,excellent,yes,"fall, winter",,,yes,yes,0,0,3,3,6,"cozy, practical, feminine",terracotta
+IMG_0099,Ivory textured knit sweater,top,sweater,4,excellent,,fall,,,yes,,0,0,3,0,3,"cozy, feminine, polished","ivory, cream"
+IMG_0155,Medium-wash denim trucker jacket,outerwear,denim jacket,4,good,,spring,yes,,,,3,0,0,0,3,"practical, polished, cozy","medium blue, indigo"
+IMG_0130,Olive scoop-neck tank,top,tank,4,excellent,,summer,,yes,,,0,3,0,0,3,practical,olive
+IMG_0163,White DENIZEN five-pocket shorts,bottom,shorts,4,good,,summer,,yes,,,0,3,0,0,3,practical,"white, off-white, cream"
+IMG_0167,Dusty rose Joy Strength floral tee,top,graphic tee,4,excellent,,summer,,yes,,,0,2,0,0,2,"playful, feminine, practical","dusty rose, terracotta pink, cream, yellow, green"
+IMG_0112,Navy peach floral wrap maxi,dress,maxi dress,4,good,,summer,,yes,,,0,2,0,0,2,"feminine, practical, polished","navy, peach, cream, coral, sage"
+IMG_0090,Navy wildflower wrap dress,dress,wrap dress,4,good,,summer,,yes,,,0,2,0,0,2,"feminine, polished","navy, magenta, pink, yellow, green"
+IMG_0142,Oatmeal Awaken graphic sweatshirt,top,sweatshirt,4,excellent,,fall,,,yes,,0,0,2,0,2,"cozy, practical, playful","oatmeal, black"
+IMG_0150,Oatmeal These Are The Days hoodie,top,hoodie,4,excellent,,fall,,,yes,,0,0,2,0,2,"cozy, practical, playful","oatmeal, cream, beige"
+IMG_0144,Oatmeal heather scoop tank,top,tank,4,excellent,,summer,,yes,,,0,2,0,0,2,"practical, polished","oatmeal, taupe"
+IMG_0086,Olive jersey t-shirt dress,dress,t-shirt dress,4,excellent,,summer,,yes,,,0,2,0,0,2,"practical, cozy","olive, khaki"
+IMG_0158,Olive shorts with tan waistband,bottom,shorts,4,excellent,,summer,,yes,,,0,2,0,0,2,"practical, cozy","olive green, tan, khaki"
+IMG_0097,Olive waffle-knit colorblock top,top,waffle-knit tee,4,excellent,,spring,yes,,,,2,0,0,0,2,"cozy, practical","olive, forest green"
+IMG_0124,Sage off-shoulder ruffle dress,dress,off-shoulder knit dress,4,excellent,,spring,yes,,,,2,0,0,0,2,"feminine, polished",sage
+IMG_0153,Terracotta button-detail sweatshirt,top,sweatshirt,4,excellent,,spring,yes,,,,2,0,0,0,2,"cozy, practical, feminine","terracotta, dusty rose"
+IMG_0149,Dusty rose muscle tank,top,tank top,4,excellent,,spring,yes,,,,1,0,0,0,1,"practical, cozy","dusty rose, salmon pink"
+IMG_0089,Navy faux-wrap maxi dress,dress,maxi dress,4,good,,summer,,yes,,,0,1,0,0,1,"feminine, practical, polished",navy
+IMG_0145,Sandy beige scoop tank,top,tank,4,excellent,,spring,yes,,,,1,0,0,0,1,"practical, feminine",sandy beige
+IMG_0169,Cognac knee-high riding boots,shoes,tall boots,3,excellent,yes,"spring, fall, winter",yes,,yes,yes,2,0,8,8,18,"practical, polished","medium brown, cognac, tan"
+IMG_0085,Navy-and-white stripe midi dress,dress,long-sleeve midi dress,3,fair,yes,"fall, winter",,,yes,yes,0,0,3,2,5,"cozy, practical, feminine","navy, white"
+IMG_0162,Black cream houndstooth pea coat,outerwear,pea coat,3,fair,,winter,,,,yes,0,0,0,3,3,"polished, feminine","black, cream, off-white"
+IMG_0157,Burgundy crew-neck sweater,top,sweater,3,fair,,winter,,,,yes,0,0,0,3,3,"cozy, practical","burgundy, maroon"
+IMG_0126,Burgundy velvet wrap dress,dress,wrap dress,3,fair,,winter,,,,yes,0,0,0,3,3,"feminine, polished",burgundy
+IMG_0165,Oatmeal charcoal stripe pocket dress,dress,midi dress,3,excellent,yes,"spring, winter",yes,,,yes,1,0,0,2,3,"practical, feminine","oatmeal, beige, charcoal"
+IMG_0159,Red navy plaid cinched tunic,top,plaid tunic,3,fair,,fall,,,yes,,0,0,3,0,3,"practical, cozy, feminine","navy, red, white"
+IMG_0120,Blue-grey pinstripe wide pants,bottom,wide-leg pants,3,fair,,spring,yes,,,,2,0,0,0,2,"practical, polished, feminine","dusty blue-grey, cream, white"
+IMG_0119,Dusty blue smocked tiered dress,dress,tiered midi dress,3,fair,,summer,,yes,,,0,2,0,0,2,"feminine, practical, playful","dusty blue, chambray"
+IMG_0133,Dusty rose Mama Bear tee,top,graphic tee,3,excellent,,summer,,yes,,,0,2,0,0,2,"playful, practical, cozy","dusty rose, white"
+IMG_0084,Light-wash MAMA denim jacket,outerwear,denim jacket,3,fair,,spring,yes,,,,2,0,0,0,2,"practical, playful, cozy","light blue, white"
+IMG_0128,Black bodice medallion maxi,dress,sleeveless maxi dress,3,fair,,summer,,yes,,,0,1,0,0,1,"feminine, practical","black, dusty rose, cream, tan"
+IMG_0109,Charcoal button-front waist dress,dress,midi dress,3,fair,,summer,,yes,,,0,1,0,0,1,"feminine, practical, polished","charcoal, black"
+IMG_0122,Charcoal puff-sleeve smocked dress,dress,midi dress,3,poor,,summer,,yes,,,0,1,0,0,1,"feminine, polished",charcoal
+IMG_0131,Dusty sage heather tank,top,tank,3,good,,spring,yes,,,,1,0,0,0,1,practical,"sage, heather grey-green"
+IMG_0135,Heather navy V-neck tee,top,tee,3,fair,,spring,yes,,,,1,0,0,0,1,practical,heather navy
+IMG_0146,Ivory scoop-neck tank,top,tank,3,good,,spring,yes,,,,1,0,0,0,1,"practical, feminine","ivory, cream"
+IMG_0094,Navy V-neck short-sleeve top,top,tee,3,fair,,spring,yes,,,,1,0,0,0,1,"practical, cozy",navy
+IMG_0095,Navy bell-sleeve V-neck top,top,blouse,3,fair,,spring,yes,,,,1,0,0,0,1,"feminine, practical, polished",navy
+IMG_0092,Navy ditsy floral cinched blouse,top,blouse,3,good,,spring,yes,,,,1,0,0,0,1,"feminine, polished","navy, pink, orange, yellow"
+IMG_0103,Beige leopard-print tank,top,tank,3,good,,spring,yes,,,,0,0,0,0,0,"playful, feminine, practical","beige, cream, dark brown"
+IMG_0111,Black quilted crewneck pullover,top,sweatshirt,2,poor,,winter,,,,yes,0,0,0,3,3,"cozy, practical",black
+IMG_0098,Heather gray Mama Bear sweatshirt,top,sweatshirt,2,poor,,winter,,,,yes,0,0,0,3,3,"cozy, playful, practical","heather gray, charcoal"
+IMG_0172,Black speckled marled sweater,top,sweater,2,poor,,winter,,,,yes,0,0,0,2,2,"cozy, practical","black, light gray, white"
+IMG_0096,Navy-and-white stripe long-sleeve tee,top,tee,2,poor,,winter,,,,yes,0,0,0,2,2,"practical, playful","white, navy"
+IMG_0154,Black raglan crew sweatshirt,top,sweatshirt,2,poor,,(not in capsule),,,,,0,0,0,0,0,"practical, cozy",black
+IMG_0105,Black sleeveless button blouse,top,blouse,2,poor,,(not in capsule),,,,,0,0,0,0,0,"polished, practical",black
+IMG_0129,Black tie-waist tank maxi,dress,sleeveless maxi dress,2,poor,,(not in capsule),,,,,0,0,0,0,0,practical,black
+IMG_0160,Charcoal gray striped scoop tank,top,tank top,2,fair,,(not in capsule),,,,,0,0,0,0,0,practical,"charcoal, heather gray"
+IMG_0141,Charcoal heather tank,top,tank,2,poor,,(not in capsule),,,,,0,0,0,0,0,practical,charcoal
+IMG_0138,Grey All of Life for Jesus tee,top,graphic tee,2,fair,,(not in capsule),,,,,0,0,0,0,0,"practical, playful","heather grey, charcoal"
+IMG_0104,Heather blue muscle tank,top,tank,2,fair,,(not in capsule),,,,,0,0,0,0,0,"practical, playful","heather blue, navy"
+IMG_0136,Heather grey MAMA raglan,top,long-sleeve tee,2,poor,,(not in capsule),,,,,0,0,0,0,0,"cozy, practical, playful","heather grey, white"
+IMG_0140,Heather grey muscle tank,top,tank,2,fair,,(not in capsule),,,,,0,0,0,0,0,practical,heather grey
+IMG_0106,Light heather gray tank,top,tank,2,fair,,(not in capsule),,,,,0,0,0,0,0,practical,heather gray
+IMG_0107,Navy lace-panel sleeveless top,top,lace top,2,fair,,(not in capsule),,,,,0,0,0,0,0,"feminine, polished","navy, charcoal"
+IMG_0121,Navy peach floral knit dress,dress,short-sleeve knit dress,2,good,,(not in capsule),,,,,0,0,0,0,0,"feminine, practical","navy, cream, peach, sage"
+IMG_0123,Terracotta ditsy tank dress,dress,sleeveless tank dress,2,excellent,,(not in capsule),,,,,0,0,0,0,0,"feminine, practical","terracotta, white"
+IMG_0174,White canvas slip-on sneakers,shoes,slip-on sneakers,2,fair,,(not in capsule),,,,,0,0,0,0,0,practical,white
+IMG_0102,Black Arizona graphic tee,top,tee,1,poor,,(not in capsule),,,,,0,0,0,0,0,"practical, playful","black, white"
+IMG_0137,Black crewneck sweatshirt,top,sweatshirt,1,poor,,(not in capsule),,,,,0,0,0,0,0,"cozy, practical",black
+IMG_0108,Black long-sleeve satin tunic,top,tunic,1,poor,,(not in capsule),,,,,0,0,0,0,0,polished,black
+IMG_0117,Black spaghetti-strap jumpsuit,jumpsuit,wide-leg jumpsuit,1,poor,,(not in capsule),,,,,0,0,0,0,0,practical,black
+IMG_0139,Black tiered high-low tank,top,tank,1,poor,,(not in capsule),,,,,0,0,0,0,0,practical,black
+IMG_0127,Heather grey jersey sheath dress,dress,long-sleeve knit dress,1,poor,,(not in capsule),,,,,0,0,0,0,0,practical,heather grey
+IMG_0091,Metallic silver crinkle V-top,top,blouse,1,poor,,(not in capsule),,,,,0,0,0,0,0,polished,"silver, gray"
+IMG_0134,Tomato-red Kampout 2023 tee,top,graphic tee,1,poor,,(not in capsule),,,,,0,0,0,0,0,playful,"tomato red, white, light blue-grey"
+IMG_0148,GAP tan cream check flannel shirt,top,button-down shirt,0,excellent,,(not in capsule),,,,,0,0,0,0,0,"cozy, practical","tan, cream, beige"
+IMG_0115,Navy peach floral wrap maxi (duplicate photo),dress,maxi dress — duplicate,0,good,,(duplicate photo),,,,,0,0,0,0,0,,"navy, peach, cream, coral, sage"
+IMG_0156,Tomato red jersey maxi skirt,bottom,maxi skirt,0,fair,,(removed),,,,,0,0,0,0,0,,"tomato red, vermillion"
+IMG_0114,Unidentifiable (motion blur),other,unusable photo,0,poor,,(not in capsule),,,,,0,0,0,0,0,,"tan, beige, brown"
+IMG_0164,White DENIZEN shorts (duplicate photo),bottom,shorts — duplicate,0,good,,(duplicate photo),,,,,0,0,0,0,0,,"white, off-white, cream"

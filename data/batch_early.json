@@ -1,0 +1,248 @@
+[
+  {
+    "id": "IMG_0049",
+    "name": "Olive ribbed tank + mid-wash wide jeans",
+    "category": "set",
+    "subcategory": "tank and jeans",
+    "colors": [
+      "olive",
+      "medium blue"
+    ],
+    "pattern": "solid",
+    "description": "Fitted sleeveless olive ribbed tank with high-rise mid-wash wide/straight jeans documented together in a mirror selfie.",
+    "rating": 4,
+    "rating_reason": "Olive tank is Soft Autumn excellent; wide jeans streamline pear hips. Strong everyday homestead combo.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0084",
+    "name": "Light-wash MAMA denim jacket",
+    "category": "outerwear",
+    "subcategory": "denim jacket",
+    "colors": [
+      "light blue",
+      "white"
+    ],
+    "pattern": "print",
+    "description": "Oversized light-wash denim jacket with chest flap pockets and faded white MAMA lettering on the back.",
+    "rating": 3,
+    "rating_reason": "Practical mom layer; light wash + graphic only fair Soft Autumn.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "practical",
+      "playful",
+      "cozy"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0085",
+    "name": "Navy-and-white stripe midi dress",
+    "category": "dress",
+    "subcategory": "long-sleeve midi dress",
+    "colors": [
+      "navy",
+      "white"
+    ],
+    "pattern": "stripe",
+    "description": "Long-sleeve jersey midi with fine navy/white horizontal stripes, crew neck, chest pocket, gathered waist.",
+    "rating": 3,
+    "rating_reason": "Waist + skirt pear-friendly; high-contrast cool stripes Soft Autumn fair.",
+    "seasons": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "cozy",
+      "practical",
+      "feminine"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0086",
+    "name": "Olive jersey t-shirt dress",
+    "category": "dress",
+    "subcategory": "t-shirt dress",
+    "colors": [
+      "olive",
+      "khaki"
+    ],
+    "pattern": "solid",
+    "description": "Short-sleeve crew-neck olive jersey dress with relaxed straight cut.",
+    "rating": 4,
+    "rating_reason": "Muted olive Soft Autumn staple; belt for pear waist.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0087",
+    "name": "Dusty rose utility midi dress",
+    "category": "dress",
+    "subcategory": "button midi dress",
+    "colors": [
+      "dusty rose",
+      "mauve"
+    ],
+    "pattern": "solid",
+    "description": "Sleeveless dusty-rose button-front midi with V-neck, pockets, and gathered waist.",
+    "rating": 5,
+    "rating_reason": "Soft Autumn dusty rose + waist + pockets = hero.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "feminine",
+      "practical",
+      "polished"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0088",
+    "name": "Medium-wash denim overalls",
+    "category": "jumpsuit",
+    "subcategory": "overalls",
+    "colors": [
+      "medium blue"
+    ],
+    "pattern": "solid",
+    "description": "Classic bib overalls in medium blue denim with adjustable straps and straight legs.",
+    "rating": 4,
+    "rating_reason": "Homestead workwear hero; layer Soft Autumn knits under.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "practical",
+      "playful",
+      "cozy"
+    ],
+    "soft_autumn_fit": "good"
+  },
+  {
+    "id": "IMG_0089",
+    "name": "Navy faux-wrap maxi dress",
+    "category": "dress",
+    "subcategory": "maxi dress",
+    "colors": [
+      "navy"
+    ],
+    "pattern": "solid",
+    "description": "Deep navy knit maxi with faux-wrap V bodice, short sleeves, gathered waist.",
+    "rating": 4,
+    "rating_reason": "Wrap silhouette excellent for pear; navy workable with warm accessories.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "feminine",
+      "practical",
+      "polished"
+    ],
+    "soft_autumn_fit": "good"
+  },
+  {
+    "id": "IMG_0090",
+    "name": "Navy wildflower wrap dress",
+    "category": "dress",
+    "subcategory": "wrap dress",
+    "colors": [
+      "navy",
+      "magenta",
+      "pink",
+      "yellow",
+      "green"
+    ],
+    "pattern": "floral",
+    "description": "Long-sleeve navy wrap with small wildflower print and self-tie waist.",
+    "rating": 4,
+    "rating_reason": "Wrap + waist pear gold; muted florals work Soft Autumn.",
+    "seasons": [
+      "spring",
+      "fall",
+      "summer"
+    ],
+    "themes": [
+      "feminine",
+      "polished"
+    ],
+    "soft_autumn_fit": "good"
+  },
+  {
+    "id": "IMG_0091",
+    "name": "Metallic silver crinkle V-top",
+    "category": "top",
+    "subcategory": "blouse",
+    "colors": [
+      "silver",
+      "gray"
+    ],
+    "pattern": "solid",
+    "description": "Short-sleeve deep V metallic silver/gray crinkle texture top.",
+    "rating": 1,
+    "rating_reason": "Cool metallic clashes Soft Autumn; occasion-only.",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "polished"
+    ],
+    "soft_autumn_fit": "poor"
+  },
+  {
+    "id": "IMG_0092",
+    "name": "Navy ditsy floral cinched blouse",
+    "category": "top",
+    "subcategory": "blouse",
+    "colors": [
+      "navy",
+      "pink",
+      "orange",
+      "yellow"
+    ],
+    "pattern": "floral",
+    "description": "Sheer short-sleeve navy V-neck with ditsy florals and cinched waist.",
+    "rating": 3,
+    "rating_reason": "Feminine waist-defining; sheer less homestead-practical.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "feminine",
+      "polished"
+    ],
+    "soft_autumn_fit": "good"
+  }
+]

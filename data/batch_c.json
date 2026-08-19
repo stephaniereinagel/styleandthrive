@@ -1,0 +1,612 @@
+[
+  {
+    "id": "IMG_0148",
+    "name": "GAP tan cream check flannel shirt",
+    "category": "top",
+    "subcategory": "button-down shirt",
+    "colors": [
+      "tan",
+      "cream",
+      "beige"
+    ],
+    "pattern": "check",
+    "description": "Long-sleeve GAP button-down in a large muted tan-and-cream check with a chest pocket; fabric looks brushed cotton or light flannel. Heavy wear with a large front hole, collar yellowing, and staining.",
+    "rating": 0,
+    "rating_reason": "Colors are Soft Autumn gold, but the hole and stains make it unsuitable for a curated capsule—chore rag at best.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "cozy",
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0149",
+    "name": "Dusty rose muscle tank",
+    "category": "top",
+    "subcategory": "tank top",
+    "colors": [
+      "dusty rose",
+      "salmon pink"
+    ],
+    "pattern": "solid",
+    "description": "Sleeveless cotton jersey muscle tee in muted dusty rose with a ribbed crew neck and small left-chest patch pocket. Relaxed straight fit with wide armholes.",
+    "rating": 4,
+    "rating_reason": "Muted warm pink is Soft Autumn friendly; wide shoulders help balance hips. Easy summer homestead layer when tucked.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0150",
+    "name": "Oatmeal These Are The Days hoodie",
+    "category": "top",
+    "subcategory": "hoodie",
+    "colors": [
+      "oatmeal",
+      "cream",
+      "beige"
+    ],
+    "pattern": "graphic",
+    "description": "Light oatmeal fleece hoodie with white drawstrings, kangaroo pocket, ribbed cuffs/hem, and a white retro script graphic reading These Are The Days on the chest.",
+    "rating": 4,
+    "rating_reason": "Warm neutral Soft Autumn staple and cozy for homestead days; boxy cut needs a tuck or layer for waist definition.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "cozy",
+      "practical",
+      "playful"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0151",
+    "name": "Olive ribbed V-neck sweater",
+    "category": "top",
+    "subcategory": "sweater",
+    "colors": [
+      "olive",
+      "moss green"
+    ],
+    "pattern": "solid",
+    "description": "Long-sleeve V-neck knit in muted olive with vertical ribbing through body and sleeves. Relaxed straight hem silhouette.",
+    "rating": 5,
+    "rating_reason": "Signature Soft Autumn green plus a V-neck that lifts the eye; cozy layering hero for pear balance.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "cozy",
+      "feminine",
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0152",
+    "name": "Marled oatmeal V-neck sweater",
+    "category": "top",
+    "subcategory": "sweater",
+    "colors": [
+      "oatmeal",
+      "taupe",
+      "cream"
+    ],
+    "pattern": "solid",
+    "description": "Relaxed long-sleeve V-neck in marled oatmeal/taupe knit with ribbed cuffs and hem. Medium-gauge textured, slightly rustic look.",
+    "rating": 5,
+    "rating_reason": "Perfect Soft Autumn neutral with a flattering V; soft staple for layering over tees or under jackets.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "cozy",
+      "feminine",
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0153",
+    "name": "Terracotta button-detail sweatshirt",
+    "category": "top",
+    "subcategory": "sweatshirt",
+    "colors": [
+      "terracotta",
+      "dusty rose"
+    ],
+    "pattern": "solid",
+    "description": "Muted terracotta crew sweatshirt with diagonal shoulder-to-chest button plackets (three dark buttons each side), ribbed cuffs and hem. Slightly boxy relaxed fit.",
+    "rating": 4,
+    "rating_reason": "Earthy Soft Autumn color and shoulder interest help balance hips; boxy cut still needs styling at the waist.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "cozy",
+      "practical",
+      "feminine"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0154",
+    "name": "Black raglan crew sweatshirt",
+    "category": "top",
+    "subcategory": "sweatshirt",
+    "colors": [
+      "black"
+    ],
+    "pattern": "solid",
+    "description": "Solid black long-sleeve crew sweatshirt with raglan sleeves, ribbed crew neck, and thick ribbed hem. Classic boxy casual cut.",
+    "rating": 2,
+    "rating_reason": "Practical for dirt and laundry but stark black clashes with Soft Autumn and adds no waist definition for pear.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "poor"
+  },
+  {
+    "id": "IMG_0155",
+    "name": "Medium-wash denim trucker jacket",
+    "category": "outerwear",
+    "subcategory": "denim jacket",
+    "colors": [
+      "medium blue",
+      "indigo"
+    ],
+    "pattern": "solid",
+    "description": "Classic trucker denim jacket in muted medium wash with collar, silver buttons, dual chest flap pockets, waist welt pockets, gold contrast stitching, and light jersey lining.",
+    "rating": 4,
+    "rating_reason": "Muted wash works Soft Autumn; structured shoulders balance hips and denim is homestead durable.",
+    "seasons": [
+      "spring",
+      "fall",
+      "summer"
+    ],
+    "themes": [
+      "practical",
+      "polished",
+      "cozy"
+    ],
+    "soft_autumn_fit": "good"
+  },
+  {
+    "id": "IMG_0156",
+    "name": "Tomato red jersey maxi skirt",
+    "category": "bottom",
+    "subcategory": "maxi skirt",
+    "colors": [
+      "tomato red",
+      "vermillion"
+    ],
+    "pattern": "solid",
+    "description": "Solid warm red-orange knit maxi/midi skirt with a wide flat waistband and full gathered flare. Lightweight stretch jersey with soft drape.",
+    "rating": 3,
+    "rating_reason": "Volume over hips is pear-friendly and warm-toned, but saturation is brighter than classic Soft Autumn muteds.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "feminine",
+      "playful",
+      "practical"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0157",
+    "name": "Burgundy crew-neck sweater",
+    "category": "top",
+    "subcategory": "sweater",
+    "colors": [
+      "burgundy",
+      "maroon"
+    ],
+    "pattern": "solid",
+    "description": "Deep burgundy/maroon long-sleeve crew sweater with fine knit texture and a horizontal seam across the upper chest. Simple ribbed crew neck.",
+    "rating": 3,
+    "rating_reason": "Cozy practical staple, but deep cool burgundy is only a fair Soft Autumn match and the crew is neutrally pear.",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "cozy",
+      "practical"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0158",
+    "name": "Olive shorts with tan waistband",
+    "category": "bottom",
+    "subcategory": "shorts",
+    "colors": [
+      "olive green",
+      "tan",
+      "khaki"
+    ],
+    "pattern": "solid",
+    "description": "Muted olive woven shorts with a wide contrasting tan fold-over comfort/maternity-style elastic waistband, front slash pockets, and finished hems.",
+    "rating": 4,
+    "rating_reason": "Core Soft Autumn olive/tan and post-baby comfort waist; practical summer homestead bottoms.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0159",
+    "name": "Red navy plaid cinched tunic",
+    "category": "top",
+    "subcategory": "plaid tunic",
+    "colors": [
+      "navy",
+      "red",
+      "white"
+    ],
+    "pattern": "plaid",
+    "description": "Long-sleeve button-down plaid tunic/short dress with collar, dual flap chest pockets, and an elastic cinched waist with slight peplum flare. Lightweight woven flannel-like fabric.",
+    "rating": 3,
+    "rating_reason": "Cinched waist is excellent for pear and homestead-practical, but high-contrast bright red/navy is only fair Soft Autumn.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "practical",
+      "cozy",
+      "feminine"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0160",
+    "name": "Charcoal gray striped scoop tank",
+    "category": "top",
+    "subcategory": "tank top",
+    "colors": [
+      "charcoal",
+      "heather gray"
+    ],
+    "pattern": "stripe",
+    "description": "Sleeveless scoop-neck tank in fine horizontal charcoal and heather-gray stripes with self-fabric binding at neck and armholes. Soft lightweight knit with some pilling.",
+    "rating": 2,
+    "rating_reason": "Cool gray stripes sit outside Soft Autumn warmth; wearable basic only if needed.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0161",
+    "name": "Beige utility jacket with drawstring",
+    "category": "outerwear",
+    "subcategory": "utility jacket",
+    "colors": [
+      "beige",
+      "tan",
+      "khaki"
+    ],
+    "pattern": "solid",
+    "description": "Warm beige utility jacket with stand collar, metal snap front, large lower flap pockets, and an internal waist drawstring for cinching. Durable cotton-blend look.",
+    "rating": 5,
+    "rating_reason": "Soft Autumn neutral with adjustable waist—ideal pear definition plus homestead-ready outer layer.",
+    "seasons": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "practical",
+      "polished",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0162",
+    "name": "Black cream houndstooth pea coat",
+    "category": "outerwear",
+    "subcategory": "pea coat",
+    "colors": [
+      "black",
+      "cream",
+      "off-white"
+    ],
+    "pattern": "houndstooth",
+    "description": "Mid-length double-breasted pea/overcoat in large black-and-cream houndstooth with wide notched lapels, large black buttons, structured shoulders, and black lining.",
+    "rating": 3,
+    "rating_reason": "Shoulders and lapels balance pear beautifully and look polished, but high contrast is harsh for Soft Autumn and cream shows dirt.",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "polished",
+      "feminine"
+    ],
+    "soft_autumn_fit": "fair"
+  },
+  {
+    "id": "IMG_0163",
+    "name": "Beige five-pocket twill shorts",
+    "category": "bottom",
+    "subcategory": "shorts",
+    "colors": [
+      "beige",
+      "tan"
+    ],
+    "pattern": "solid",
+    "description": "Light tan cotton twill shorts with belt loops, button fly, and classic five-pocket styling. Mid-rise with a finished mid-thigh hem.",
+    "rating": 4,
+    "rating_reason": "Muted warm tan is Soft Autumn excellent and sturdy for summer chores; standard cut is neutrally pear.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0164",
+    "name": "DENIZEN tan khaki shorts",
+    "category": "bottom",
+    "subcategory": "chino shorts",
+    "colors": [
+      "tan",
+      "khaki",
+      "sandy beige"
+    ],
+    "pattern": "solid",
+    "description": "Sandy beige DENIZEN chino shorts in cotton twill with belt loops, top button, and finished mid-thigh hems. Classic casual khaki silhouette.",
+    "rating": 4,
+    "rating_reason": "Same Soft Autumn neutral strength and homestead practicality as other khaki shorts; keep one strong pair if duplicates overlap.",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0165",
+    "name": "Oatmeal charcoal stripe pocket dress",
+    "category": "dress",
+    "subcategory": "midi dress",
+    "colors": [
+      "oatmeal",
+      "beige",
+      "charcoal"
+    ],
+    "pattern": "stripe",
+    "description": "Short-sleeve shallow V-neck midi dress in muted oatmeal and charcoal horizontal stripes with large front patch pockets. Relaxed straight linen/cotton-blend look.",
+    "rating": 3,
+    "rating_reason": "Soft Autumn stripes and practical pockets win, but boxy cut plus hip-level pockets can widen pear without a belt.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "practical",
+      "feminine"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0166",
+    "name": "Olive smocked Swiss-dot maxi dress",
+    "category": "dress",
+    "subcategory": "maxi dress",
+    "colors": [
+      "olive green"
+    ],
+    "pattern": "solid",
+    "description": "Muted olive maxi with smocked bodice, square neck, short flutter ruffle sleeves, and a tiered skirt with lace/crochet insets. Subtle Swiss-dot texture throughout.",
+    "rating": 5,
+    "rating_reason": "Hero Soft Autumn green; smocked waist and flowing tiers are textbook pear flattery with feminine homestead ease.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "feminine",
+      "practical",
+      "cozy"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0167",
+    "name": "Dusty rose Joy Strength floral tee",
+    "category": "top",
+    "subcategory": "graphic tee",
+    "colors": [
+      "dusty rose",
+      "terracotta pink",
+      "cream",
+      "yellow",
+      "green"
+    ],
+    "pattern": "floral",
+    "description": "Short-sleeve crew tee in muted dusty rose with a centered floral cluster graphic and vertical white text reading JOY and STRENGTH. Soft jersey casual fit.",
+    "rating": 4,
+    "rating_reason": "Warm Soft Autumn base and soft florals feel joyful and wearable; tuck for pear waist definition.",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "playful",
+      "feminine",
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0168",
+    "name": "Cognac faux-leather moto jacket",
+    "category": "outerwear",
+    "subcategory": "moto jacket",
+    "colors": [
+      "cognac",
+      "camel brown"
+    ],
+    "pattern": "solid",
+    "description": "Waist-length cognac faux-leather moto with stand collar, front zip, quilted shoulder/upper-arm panels, multiple silver zip pockets, and snap cuffs.",
+    "rating": 5,
+    "rating_reason": "Signature Soft Autumn cognac; cropped waist and shoulder quilting strongly balance pear while staying wipeable and polished.",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "polished",
+      "practical",
+      "feminine"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0169",
+    "name": "Cognac knee-high riding boots",
+    "category": "shoes",
+    "subcategory": "tall boots",
+    "colors": [
+      "medium brown",
+      "cognac",
+      "tan"
+    ],
+    "pattern": "solid",
+    "description": "Tall knee-high riding-style boots in warm muted brown leather-look material with rounded toe, flat/low heel, and full inner zipper. Visible scuffing and wear at ankle and heel.",
+    "rating": 3,
+    "rating_reason": "Soft Autumn color and tall shafts help balance hips for homestead wear, but heavy wear may need replacing soon. (Shoes, not clothing.)",
+    "seasons": [
+      "fall",
+      "winter",
+      "spring"
+    ],
+    "themes": [
+      "practical",
+      "polished"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0170",
+    "name": "Tan strappy sport sandals",
+    "category": "shoes",
+    "subcategory": "sport sandals",
+    "colors": [
+      "tan",
+      "khaki",
+      "dark brown",
+      "charcoal"
+    ],
+    "pattern": "solid",
+    "description": "Outdoor strappy sandals with muted tan woven straps, toe loop, adjustable black buckle at the ankle, and a thick dark contoured footbed. (Shoes; olive maxi hem also visible but not the focus.)",
+    "rating": 4,
+    "rating_reason": "Earthy Soft Autumn straps and serious homestead practicality for NW Arkansas summers. (Shoes, not clothing.)",
+    "seasons": [
+      "spring",
+      "summer"
+    ],
+    "themes": [
+      "practical"
+    ],
+    "soft_autumn_fit": "excellent"
+  },
+  {
+    "id": "IMG_0172",
+    "name": "Black speckled marled sweater",
+    "category": "top",
+    "subcategory": "sweater",
+    "colors": [
+      "black",
+      "light gray",
+      "white"
+    ],
+    "pattern": "solid",
+    "description": "Deep black crew-neck knit sweater with white/light-gray flecks throughout a marled speckled texture. Relaxed boxy silhouette with ribbed neck, cuffs, and hem.",
+    "rating": 2,
+    "rating_reason": "Cozy and dirt-hiding, but base black is Soft Autumn poor; boxy fit skips pear waist definition.",
+    "seasons": [
+      "fall",
+      "winter"
+    ],
+    "themes": [
+      "cozy",
+      "practical"
+    ],
+    "soft_autumn_fit": "poor"
+  },
+  {
+    "id": "IMG_0174",
+    "name": "White canvas slip-on sneakers",
+    "category": "shoes",
+    "subcategory": "slip-on sneakers",
+    "colors": [
+      "white"
+    ],
+    "pattern": "solid",
+    "description": "Low-profile white canvas laceless slip-ons with side elastic goring and flat white rubber soles. Visible scuffing and dirt from wear.",
+    "rating": 2,
+    "rating_reason": "Handy slip-ons for busy mom life, but stark white clashes Soft Autumn and shows homestead dirt fast. (Shoes, not clothing.)",
+    "seasons": [
+      "spring",
+      "summer",
+      "fall"
+    ],
+    "themes": [
+      "practical"
+    ],
+    "soft_autumn_fit": "fair"
+  }
+]

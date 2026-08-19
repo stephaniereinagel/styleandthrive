@@ -1,0 +1,2456 @@
+{
+  "profile": {
+    "name": "Stephanie Reinagel",
+    "color_season": "Soft Autumn",
+    "body_type": "pear",
+    "lifestyle": "Homestead mom of 5, NW Arkansas \u2014 farm stand, outdoors, church, busy weekdays solo parenting",
+    "rating_guide": {
+      "0": "Get rid of it",
+      "1": "Wear only if necessary",
+      "2": "Meh filler",
+      "3": "Solid usable",
+      "4": "Strong staple",
+      "5": "Best overall hero"
+    }
+  },
+  "items": [
+    {
+      "id": "IMG_0049",
+      "name": "Mid-wash wide-leg jeans",
+      "category": "bottom",
+      "subcategory": "wide-leg jeans",
+      "colors": [
+        "medium blue",
+        "mid-wash denim"
+      ],
+      "pattern": "solid",
+      "description": "High-rise mid-wash wide/straight jeans. Photographed in a mirror selfie with an olive ribbed tank (tank is a separate layering piece, not this entry).",
+      "rating": 4,
+      "rating_reason": "Strong pear staple \u2014 wide legs streamline hips. Cool mid-wash is only fair Soft Autumn, but fills a critical winter bottom gap alongside olive pants. Versatile homestead denim.",
+      "seasons": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "cozy",
+        "polished"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0049.jpg",
+      "image_full": "images/source/IMG_0049.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0084",
+      "name": "Light-wash MAMA denim jacket",
+      "category": "outerwear",
+      "subcategory": "denim jacket",
+      "colors": [
+        "light blue",
+        "white"
+      ],
+      "pattern": "print",
+      "description": "Oversized light-wash denim jacket with chest flap pockets and faded white MAMA lettering on the back.",
+      "rating": 3,
+      "rating_reason": "Practical mom layer; light wash + graphic only fair Soft Autumn.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "playful",
+        "cozy"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0084.jpg",
+      "image_full": "images/source/IMG_0084.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0085",
+      "name": "Navy-and-white stripe midi dress",
+      "category": "dress",
+      "subcategory": "long-sleeve midi dress",
+      "colors": [
+        "navy",
+        "white"
+      ],
+      "pattern": "stripe",
+      "description": "Long-sleeve jersey midi with fine navy/white horizontal stripes, crew neck, chest pocket, gathered waist.",
+      "rating": 3,
+      "rating_reason": "Waist + skirt pear-friendly; high-contrast cool stripes Soft Autumn fair.",
+      "seasons": [
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0085.jpg",
+      "image_full": "images/source/IMG_0085.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0086",
+      "name": "Olive jersey t-shirt dress",
+      "category": "dress",
+      "subcategory": "t-shirt dress",
+      "colors": [
+        "olive",
+        "khaki"
+      ],
+      "pattern": "solid",
+      "description": "Short-sleeve crew-neck olive jersey dress with relaxed straight cut.",
+      "rating": 4,
+      "rating_reason": "Muted olive Soft Autumn staple; belt for pear waist.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0086.jpg",
+      "image_full": "images/source/IMG_0086.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0087",
+      "name": "Dusty rose utility midi dress",
+      "category": "dress",
+      "subcategory": "button midi dress",
+      "colors": [
+        "dusty rose",
+        "mauve"
+      ],
+      "pattern": "solid",
+      "description": "Sleeveless dusty-rose button-front midi with V-neck, pockets, and gathered waist.",
+      "rating": 5,
+      "rating_reason": "Soft Autumn dusty rose + waist + pockets = hero.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0087.jpg",
+      "image_full": "images/source/IMG_0087.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0088",
+      "name": "Medium-wash denim overalls",
+      "category": "jumpsuit",
+      "subcategory": "overalls",
+      "colors": [
+        "medium blue"
+      ],
+      "pattern": "solid",
+      "description": "Classic bib overalls in medium blue denim with adjustable straps and straight legs.",
+      "rating": 4,
+      "rating_reason": "Homestead workwear hero; layer Soft Autumn knits under.",
+      "seasons": [
+        "spring",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "playful",
+        "cozy"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0088.jpg",
+      "image_full": "images/source/IMG_0088.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0089",
+      "name": "Navy faux-wrap maxi dress",
+      "category": "dress",
+      "subcategory": "maxi dress",
+      "colors": [
+        "navy"
+      ],
+      "pattern": "solid",
+      "description": "Deep navy knit maxi with faux-wrap V bodice, short sleeves, gathered waist.",
+      "rating": 4,
+      "rating_reason": "Wrap silhouette excellent for pear; navy workable with warm accessories.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0089.jpg",
+      "image_full": "images/source/IMG_0089.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0090",
+      "name": "Navy wildflower wrap dress",
+      "category": "dress",
+      "subcategory": "wrap dress",
+      "colors": [
+        "navy",
+        "magenta",
+        "pink",
+        "yellow",
+        "green"
+      ],
+      "pattern": "floral",
+      "description": "Long-sleeve navy wrap with small wildflower print and self-tie waist.",
+      "rating": 4,
+      "rating_reason": "Wrap + waist pear gold; muted florals work Soft Autumn.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0090.jpg",
+      "image_full": "images/source/IMG_0090.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0091",
+      "name": "Metallic silver crinkle V-top",
+      "category": "top",
+      "subcategory": "blouse",
+      "colors": [
+        "silver",
+        "gray"
+      ],
+      "pattern": "solid",
+      "description": "Short-sleeve deep V metallic silver/gray crinkle texture top.",
+      "rating": 1,
+      "rating_reason": "Cool metallic clashes Soft Autumn; occasion-only.",
+      "seasons": [],
+      "themes": [
+        "polished"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0091.jpg",
+      "image_full": "images/source/IMG_0091.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0092",
+      "name": "Navy ditsy floral cinched blouse",
+      "category": "top",
+      "subcategory": "blouse",
+      "colors": [
+        "navy",
+        "pink",
+        "orange",
+        "yellow"
+      ],
+      "pattern": "floral",
+      "description": "Sheer short-sleeve navy V-neck with ditsy florals and cinched waist.",
+      "rating": 3,
+      "rating_reason": "Feminine waist-defining; sheer less homestead-practical.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0092.jpg",
+      "image_full": "images/source/IMG_0092.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0094",
+      "name": "Navy V-neck short-sleeve top",
+      "category": "top",
+      "subcategory": "tee",
+      "colors": [
+        "navy"
+      ],
+      "pattern": "solid",
+      "description": "Relaxed short-sleeve jersey top with a deep V-neck and straight body. Soft knit with casual wrinkling from wear.",
+      "rating": 3,
+      "rating_reason": "Practical everyday staple and V draws the eye up for pear; cool saturated navy is only fair for Soft Autumn, and the cut lacks waist definition.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0094.jpg",
+      "image_full": "images/source/IMG_0094.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0095",
+      "name": "Navy bell-sleeve V-neck top",
+      "category": "top",
+      "subcategory": "blouse",
+      "colors": [
+        "navy"
+      ],
+      "pattern": "solid",
+      "description": "Deep navy knit top with a moderate V-neck and three-quarter sleeves ending in flared bell/ruffle cuffs. Straight relaxed hem.",
+      "rating": 3,
+      "rating_reason": "Feminine sleeve detail and V-neck help balance pear proportions; navy is workable but cool for Soft Autumn and silhouette is still boxy at the waist.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0095.jpg",
+      "image_full": "images/source/IMG_0095.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0096",
+      "name": "Navy-and-white stripe long-sleeve tee",
+      "category": "top",
+      "subcategory": "tee",
+      "colors": [
+        "white",
+        "navy"
+      ],
+      "pattern": "stripe",
+      "description": "Classic crew-neck long-sleeve tee with thin horizontal navy stripes on a bright white ground. Soft jersey, straight relaxed fit.",
+      "rating": 2,
+      "rating_reason": "Horizontal stripes can add upper-body width (helpful for pear) and it's wash-and-wear, but high-contrast cool navy/white clashes with Soft Autumn.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0096.jpg",
+      "image_full": "images/source/IMG_0096.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0097",
+      "name": "Olive waffle-knit colorblock top",
+      "category": "top",
+      "subcategory": "waffle-knit tee",
+      "colors": [
+        "olive",
+        "forest green"
+      ],
+      "pattern": "solid",
+      "description": "Long-sleeve waffle-knit top in muted olive with darker forest-green crew neck and solid lower sleeves. Relaxed, slightly boxy hem.",
+      "rating": 4,
+      "rating_reason": "Excellent Soft Autumn earthy greens and homestead-practical texture that hides dirt; tuck or half-tuck for pear waist definition.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0097.jpg",
+      "image_full": "images/source/IMG_0097.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0098",
+      "name": "Heather gray Mama Bear sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "heather gray",
+        "charcoal"
+      ],
+      "pattern": "print",
+      "description": "Light heather-gray crewneck sweatshirt with a large distressed charcoal bear graphic and 'MAMA BEAR' text. Drop-shoulder relaxed fit with ribbed cuffs and hem.",
+      "rating": 2,
+      "rating_reason": "Fun sentimental cozy piece for homestead days, but cool gray plus dark graphic reads off Soft Autumn and the boxy cut skips the waist.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "playful",
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0098.jpg",
+      "image_full": "images/source/IMG_0098.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0099",
+      "name": "Ivory textured knit sweater",
+      "category": "top",
+      "subcategory": "sweater",
+      "colors": [
+        "ivory",
+        "cream"
+      ],
+      "pattern": "solid",
+      "description": "Warm off-white crewneck sweater with waffle/honeycomb body, pointelle openwork at the shoulders, and ribbed neck, cuffs, and hem. Relaxed straight cut.",
+      "rating": 4,
+      "rating_reason": "Soft cream is a Soft Autumn hero neutral with cozy texture; layer or belt/tuck for pear. Slightly precious for muddy chores but strong for cooler days.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0099.jpg",
+      "image_full": "images/source/IMG_0099.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0100",
+      "name": "Mustard crewneck sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "mustard",
+        "ochre"
+      ],
+      "pattern": "solid",
+      "description": "Solid muted ochre/mustard crewneck sweatshirt with ribbed cuffs and hem. Medium-weight fleece/jersey in a relaxed boxy fit.",
+      "rating": 5,
+      "rating_reason": "Textbook Soft Autumn warm muted yellow and a washable homestead staple; pair with darker bottoms and a belt/tuck to define the pear waist.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0100.jpg",
+      "image_full": "images/source/IMG_0100.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0101",
+      "name": "Olive straight-leg pants",
+      "category": "bottom",
+      "subcategory": "chinos",
+      "colors": [
+        "olive",
+        "moss green"
+      ],
+      "pattern": "solid",
+      "description": "Muted moss/olive woven pants with a button waistband and relaxed straight legs. Matte twill-like fabric suited to everyday wear.",
+      "rating": 5,
+      "rating_reason": "Soft Autumn hallmark color, dirt-hiding, and straight legs streamline pear hips\u2014core capsule bottom.",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "polished",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0101.jpg",
+      "image_full": "images/source/IMG_0101.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0102",
+      "name": "Black Arizona graphic tee",
+      "category": "top",
+      "subcategory": "tee",
+      "colors": [
+        "black",
+        "white"
+      ],
+      "pattern": "print",
+      "description": "Jet-black short-sleeve crew tee with a high-contrast white Arizona outline graphic and 'Home IS WHERE THE SAGUARO IS' text. Soft jersey, slightly fitted cut.",
+      "rating": 1,
+      "rating_reason": "Harsh black/white contrast fights Soft Autumn; keep only for sentimental/casual use if needed, not a capsule builder.",
+      "seasons": [],
+      "themes": [
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0102.jpg",
+      "image_full": "images/source/IMG_0102.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0103",
+      "name": "Beige leopard-print tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "beige",
+        "cream",
+        "dark brown"
+      ],
+      "pattern": "animal print",
+      "description": "Sleeveless scoop-neck tank with wide straps and an all-over small-scale leopard/cheetah print on a muted beige base. Lightweight, loose drape.",
+      "rating": 3,
+      "rating_reason": "Warm earthy animal print can work Soft Autumn as a layering accent; straight tank won't define pear waist\u2014best under open layers.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "playful",
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0103.jpg",
+      "image_full": "images/source/IMG_0103.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0104",
+      "name": "Heather blue muscle tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "heather blue",
+        "navy"
+      ],
+      "pattern": "print",
+      "description": "Muted heathered medium-blue sleeveless muscle tank with wide armholes, ribbed crew neck, and a faint dark chest graphic. Soft jersey, boxy cut.",
+      "rating": 2,
+      "rating_reason": "Practical chore/layer piece, but cool blue and boxy no-waist shape are weak for Soft Autumn and pear.",
+      "seasons": [],
+      "themes": [
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0104.jpg",
+      "image_full": "images/source/IMG_0104.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0105",
+      "name": "Black sleeveless button blouse",
+      "category": "top",
+      "subcategory": "blouse",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black sleeveless woven button-front top with a V-neck, pale buttons, and light gathering under the bust for a soft empire flare.",
+      "rating": 2,
+      "rating_reason": "V and under-bust gather help pear a bit and black hides stains, but true black is harsh on Soft Autumn and wrinkles show.",
+      "seasons": [],
+      "themes": [
+        "polished",
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0105.jpg",
+      "image_full": "images/source/IMG_0105.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0106",
+      "name": "Light heather gray tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "heather gray"
+      ],
+      "pattern": "solid",
+      "description": "Basic light heather-gray scoop-neck tank with wide straps and a straight, non-shaped body. Thin jersey knit.",
+      "rating": 2,
+      "rating_reason": "Useful layering basic for homestead heat, but cool gray and no waist shape make it filler rather than flattering Soft Autumn/pear.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0106.jpg",
+      "image_full": "images/source/IMG_0106.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0107",
+      "name": "Navy lace-panel sleeveless top",
+      "category": "top",
+      "subcategory": "lace top",
+      "colors": [
+        "navy",
+        "charcoal"
+      ],
+      "pattern": "solid",
+      "description": "Deep muted navy/charcoal sleeveless top with vertical floral lace panels and an embroidered lace V-yoke at a high round neck. Flowy, slightly A-line drape.",
+      "rating": 2,
+      "rating_reason": "Feminine upward detail helps pear balance, but sheer lace is less homestead-practical and dark cool tone is only fair Soft Autumn; little waist definition.",
+      "seasons": [],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0107.jpg",
+      "image_full": "images/source/IMG_0107.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0108",
+      "name": "Black long-sleeve satin tunic",
+      "category": "top",
+      "subcategory": "tunic",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid jet-black long-sleeve tunic (or short mini-dress length) with a wide shallow V-neck and drapey fabric with a slight sheen. Straight relaxed silhouette.",
+      "rating": 1,
+      "rating_reason": "Harsh black and shiny fabric fight Soft Autumn; straight cut skips pear waist and satin is less chore-friendly.",
+      "seasons": [],
+      "themes": [
+        "polished"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0108.jpg",
+      "image_full": "images/source/IMG_0108.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0109",
+      "name": "Charcoal button-front waist dress",
+      "category": "dress",
+      "subcategory": "midi dress",
+      "colors": [
+        "charcoal",
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Sleeveless dark charcoal/black button-front dress with deep V-neck, textured crinkle fabric, and a defined waist seam with drawstring/elastic. Slightly flared skirt.",
+      "rating": 3,
+      "rating_reason": "Strong pear silhouette (waist + A-line) and nursing-friendly buttons, but cool near-black is only fair Soft Autumn\u2014better if it reads soft charcoal in person.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0109.jpg",
+      "image_full": "images/source/IMG_0109.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0110",
+      "name": "Rust quilted crewneck pullover",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "rust",
+        "terracotta"
+      ],
+      "pattern": "solid",
+      "description": "Muted warm rust/terracotta crewneck pullover with an all-over quilted chevron/V texture. Thick cozy knit, relaxed boxy fit.",
+      "rating": 5,
+      "rating_reason": "Hero Soft Autumn earthy rust, cozy and practical for NW Arkansas cool weather; belt or tuck to define pear waist.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0110.jpg",
+      "image_full": "images/source/IMG_0110.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0111",
+      "name": "Black quilted crewneck pullover",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black long-sleeve quilted pullover with a fine diamond-grid texture, ribbed crew neck and cuffs, and a slightly relaxed fit.",
+      "rating": 2,
+      "rating_reason": "Same cozy practical construction as the rust twin, but solid black is harsh Soft Autumn\u2014filler warmth piece only.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0111.jpg",
+      "image_full": "images/source/IMG_0111.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0112",
+      "name": "Navy peach floral wrap maxi",
+      "category": "dress",
+      "subcategory": "maxi dress",
+      "colors": [
+        "navy",
+        "peach",
+        "cream",
+        "coral",
+        "sage"
+      ],
+      "pattern": "floral",
+      "description": "Navy jersey wrap maxi with large peach/cream/coral florals and sage leaves, surplice V-neck, short sleeves, elastic waist. Same dress photographed twice (also as IMG_0115).",
+      "rating": 4,
+      "rating_reason": "Wrap + waist + A-line maxi is excellent for pear and nursing; muted warm florals on navy work Soft Autumn. Duplicate photo retired.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0112.jpg",
+      "image_full": "images/source/IMG_0112.jpg",
+      "in_capsule": true,
+      "is_staple": false,
+      "notes": "Duplicate of IMG_0115 (same garment, second photo)."
+    },
+    {
+      "id": "IMG_0114",
+      "name": "Unidentifiable (motion blur)",
+      "category": "other",
+      "subcategory": "unusable photo",
+      "colors": [
+        "tan",
+        "beige",
+        "brown"
+      ],
+      "pattern": "unknown",
+      "description": "Extremely motion-blurred accidental shot with only diagonal streaks of tan/beige/brown; no garment can be identified.",
+      "rating": 0,
+      "rating_reason": "Photo is unusable for wardrobe cataloguing\u2014retake needed if this was meant to document a piece.",
+      "themes": [],
+      "soft_autumn_fit": "poor",
+      "seasons": [],
+      "image": "images/thumbs/IMG_0114.jpg",
+      "image_full": "images/source/IMG_0114.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0115",
+      "name": "Navy peach floral wrap maxi (duplicate photo)",
+      "category": "dress",
+      "subcategory": "maxi dress \u2014 duplicate",
+      "colors": [
+        "navy",
+        "peach",
+        "cream",
+        "coral",
+        "sage"
+      ],
+      "pattern": "floral",
+      "description": "Same dress as IMG_0112 \u2014 second photo only. Do not count as a separate piece.",
+      "rating": 0,
+      "rating_reason": "Duplicate entry of IMG_0112 (navy peach floral wrap maxi).",
+      "seasons": [],
+      "themes": [],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0115.jpg",
+      "image_full": "images/source/IMG_0115.jpg",
+      "in_capsule": false,
+      "is_staple": false,
+      "notes": "Duplicate of IMG_0112. Use IMG_0112 in capsules/menus.",
+      "duplicate_of": "IMG_0112"
+    },
+    {
+      "id": "IMG_0116",
+      "name": "Olive short-sleeve midi dress",
+      "category": "dress",
+      "subcategory": "midi dress",
+      "colors": [
+        "olive",
+        "forest green"
+      ],
+      "pattern": "solid",
+      "description": "Muted dark olive knit midi with short sleeves, waist seam with light gathering, and a subtle A-line skirt to mid-calf. Soft jersey, practical everyday cut.",
+      "rating": 5,
+      "rating_reason": "Excellent Soft Autumn olive, waist definition + skimming A-line for pear, washable one-and-done for busy mom days\u2014capsule hero.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0116.jpg",
+      "image_full": "images/source/IMG_0116.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0117",
+      "name": "Black spaghetti-strap jumpsuit",
+      "category": "jumpsuit",
+      "subcategory": "wide-leg jumpsuit",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black sleeveless jumpsuit with thin spaghetti straps, V-neck, and a very relaxed oversized wide-leg silhouette. Lightweight woven fabric with soft wrinkles.",
+      "rating": 1,
+      "rating_reason": "Harsh black plus shapeless cut works against Soft Autumn and pear waist goals; only keep if belted and layered often.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0117.jpg",
+      "image_full": "images/source/IMG_0117.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0118",
+      "name": "Olive tiered drawstring dress",
+      "category": "dress",
+      "subcategory": "tiered midi dress",
+      "colors": [
+        "olive",
+        "sage"
+      ],
+      "pattern": "solid",
+      "description": "Muted olive/sage short-sleeve tiered dress with V-neck, lettuce-edge ruffles, and an adjustable drawstring waist with ties. Soft flowy knit, midi/maxi length.",
+      "rating": 5,
+      "rating_reason": "Soft Autumn olive, adjustable waist for postpartum/pear, feminine tiers that skim hips\u2014practical washable hero.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0118.jpg",
+      "image_full": "images/source/IMG_0118.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0119",
+      "name": "Dusty blue smocked tiered dress",
+      "category": "dress",
+      "subcategory": "tiered midi dress",
+      "colors": [
+        "dusty blue",
+        "chambray"
+      ],
+      "pattern": "solid",
+      "description": "Muted dusty blue woven cotton-like dress with deep V, short flutter sleeves, wide smocked elastic waist, and ruffled tiered skirt. Casual feminine silhouette.",
+      "rating": 3,
+      "rating_reason": "Excellent pear waist + tiered skirt shape and homestead-practical cotton, but dusty cool blue is only fair Soft Autumn versus warmer neutrals.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0119.jpg",
+      "image_full": "images/source/IMG_0119.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0120",
+      "name": "Blue-grey pinstripe wide pants",
+      "category": "bottom",
+      "subcategory": "wide-leg pants",
+      "colors": [
+        "dusty blue-grey",
+        "cream",
+        "white"
+      ],
+      "pattern": "stripe",
+      "description": "Muted dusty blue-grey trousers with thin vertical white pinstripes, thick cream elastic waistband, and a relaxed wide/straight leg in lightweight woven fabric.",
+      "rating": 3,
+      "rating_reason": "Vertical stripes and wide legs help elongate/balance pear; elastic waist is postpartum-friendly, but cool blue-grey is middling Soft Autumn.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "polished",
+        "feminine"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0120.jpg",
+      "image_full": "images/source/IMG_0120.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0121",
+      "name": "Navy peach floral knit dress",
+      "category": "dress",
+      "subcategory": "short-sleeve knit dress",
+      "colors": [
+        "navy",
+        "cream",
+        "peach",
+        "sage"
+      ],
+      "pattern": "floral",
+      "description": "Short-sleeve scoop-neck knit dress with a muted navy ground and dense cream, peach, and sage florals. Stretch jersey, likely a fitted/bodycon silhouette.",
+      "rating": 2,
+      "rating_reason": "Muted florals read Soft Autumn, but navy is cool and the clingy knit will map hips without a waist. Fine as a throw-on if it does not cling; otherwise skip.",
+      "seasons": [],
+      "themes": [
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0121.jpg",
+      "image_full": "images/source/IMG_0121.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0122",
+      "name": "Charcoal puff-sleeve smocked dress",
+      "category": "dress",
+      "subcategory": "midi dress",
+      "colors": [
+        "charcoal"
+      ],
+      "pattern": "solid",
+      "description": "Dark charcoal midi with a deep V/surplice bodice, voluminous elastic-cuff puff sleeves, a wide smocked waist, and a gathered skirt. Matte cotton or linen-blend look.",
+      "rating": 3,
+      "rating_reason": "Near-perfect pear architecture (shoulder volume, V-neck, defined waist), but charcoal/black is too cool and heavy for Soft Autumn. Keep if the fabric is warm-grey; otherwise wear with warm jewelry and a rust cardigan.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0122.jpg",
+      "image_full": "images/source/IMG_0122.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0123",
+      "name": "Terracotta ditsy tank dress",
+      "category": "dress",
+      "subcategory": "sleeveless tank dress",
+      "colors": [
+        "terracotta",
+        "white"
+      ],
+      "pattern": "print",
+      "description": "Sleeveless jersey tank dress in muted rust with a tiny white ditsy print, deep scoop neck, and wide straps. Visible hole near the lower front.",
+      "rating": 2,
+      "rating_reason": "Color is a Soft Autumn hero and wide straps help balance hips, but jersey can cling and the hole makes it chore-only unless repaired. Not capsule-worthy as-is.",
+      "seasons": [],
+      "themes": [
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0123.jpg",
+      "image_full": "images/source/IMG_0123.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0124",
+      "name": "Sage off-shoulder ruffle dress",
+      "category": "dress",
+      "subcategory": "off-shoulder knit dress",
+      "colors": [
+        "sage"
+      ],
+      "pattern": "solid",
+      "description": "Muted sage jersey midi with an elastic off-shoulder neckline and a large ruffle/flounce that reads as flutter sleeves, then a simple straight skirt.",
+      "rating": 4,
+      "rating_reason": "Sage is textbook Soft Autumn and the ruffle adds upper-body volume for a pear. Knit is easy mom fabric; off-shoulder is less barn-practical but great for church, photos, and summer evenings.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0124.jpg",
+      "image_full": "images/source/IMG_0124.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0125",
+      "name": "Terracotta tiered long-sleeve dress",
+      "category": "dress",
+      "subcategory": "tiered midi dress",
+      "colors": [
+        "terracotta"
+      ],
+      "pattern": "solid",
+      "description": "Solid burnt-orange/terracotta long-sleeve knit dress with a modest crew neck, smocked cuffs, and a loose tiered skirt from mid-torso down.",
+      "rating": 4,
+      "rating_reason": "Hero Soft Autumn color and homestead-practical (coverage, movement, one-and-done). No waist cinch so it is not the most pear-defining; a belt or cardigan would lift it to staple-plus.",
+      "seasons": [
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0125.jpg",
+      "image_full": "images/source/IMG_0125.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0126",
+      "name": "Burgundy velvet wrap dress",
+      "category": "dress",
+      "subcategory": "wrap dress",
+      "colors": [
+        "burgundy"
+      ],
+      "pattern": "solid",
+      "description": "Deep burgundy velvet wrap with a V-neck, short puffed sleeves, self-tie waist, and midi/maxi length. Slight sheen.",
+      "rating": 3,
+      "rating_reason": "Wrap + V-neck is excellent for a pear, but this burgundy is cool and saturated versus muted Soft Autumn, and velvet is church/date not chickens. Keep as an occasion piece, not a daily staple.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "feminine",
+        "polished"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0126.jpg",
+      "image_full": "images/source/IMG_0126.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0127",
+      "name": "Heather grey jersey sheath dress",
+      "category": "dress",
+      "subcategory": "long-sleeve knit dress",
+      "colors": [
+        "heather grey"
+      ],
+      "pattern": "solid",
+      "description": "Cool heathered-grey long-sleeve jersey dress with a simple crew neck and a straight, body-skimming sheath cut.",
+      "rating": 1,
+      "rating_reason": "Cool grey fights Soft Autumn and a clingy sheath highlights hips with no waist. Comfortable, but it will not earn its hanger in this capsule.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0127.jpg",
+      "image_full": "images/source/IMG_0127.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0128",
+      "name": "Black bodice medallion maxi",
+      "category": "dress",
+      "subcategory": "sleeveless maxi dress",
+      "colors": [
+        "black",
+        "dusty rose",
+        "cream",
+        "tan"
+      ],
+      "pattern": "print",
+      "description": "Sleeveless maxi with a solid black tank bodice, waist tie, and a full skirt in a muted dusty-rose, cream, and tan medallion/boho floral on a dark ground.",
+      "rating": 3,
+      "rating_reason": "Skirt palette is Soft Autumn and the tie defines the waist over hips. Black bodice is harsh; still a useful one-and-done if layered with a camel cardigan at the face.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0128.jpg",
+      "image_full": "images/source/IMG_0128.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0129",
+      "name": "Black tie-waist tank maxi",
+      "category": "dress",
+      "subcategory": "sleeveless maxi dress",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black jersey tank maxi with wide straps, modest scoop neck, and a self-tie waist that gathers the fabric. Full length.",
+      "rating": 2,
+      "rating_reason": "Tie waist is pear-friendly and jersey is easy, but true black is too stark for Soft Autumn and will show dust, flour, and animal hair on a homestead.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0129.jpg",
+      "image_full": "images/source/IMG_0129.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0130",
+      "name": "Olive scoop-neck tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "olive"
+      ],
+      "pattern": "solid",
+      "description": "Sleeveless tank in muted moss/olive with wide straps and a deep scoop neck. Soft solid jersey.",
+      "rating": 4,
+      "rating_reason": "Olive is a Soft Autumn staple and a wide-strap scoop draws the eye up. Tucked into a high-waist skirt or jeans it is a daily homestead layer.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0130.jpg",
+      "image_full": "images/source/IMG_0130.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0131",
+      "name": "Dusty sage heather tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "sage",
+        "heather grey-green"
+      ],
+      "pattern": "solid",
+      "description": "Light dusty sage/mint heather tank with wide straps, simple round neck, and a straight relaxed hem.",
+      "rating": 3,
+      "rating_reason": "Muted green mostly works though it leans a touch cool. Basic pear layer\u2014needs a tuck or open cardigan. Keep as a summer undershirt.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0131.jpg",
+      "image_full": "images/source/IMG_0131.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0132",
+      "name": "Tan ditsy floral maxi skirt",
+      "category": "bottom",
+      "subcategory": "maxi skirt",
+      "colors": [
+        "tan",
+        "dusty blue",
+        "burgundy",
+        "olive"
+      ],
+      "pattern": "floral",
+      "description": "Lightweight midi/maxi skirt with a ruffled elastic waist and a small-scale ditsy floral on muted tan, flecked with dusty blue, burgundy, and olive.",
+      "rating": 5,
+      "rating_reason": "Palette is Soft Autumn textbook, elastic waist plus flowy A-line is ideal pear, print hides stains, and it moves with kids and farm days. Hero capsule piece.",
+      "seasons": [
+        "summer",
+        "winter"
+      ],
+      "themes": [
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0132.jpg",
+      "image_full": "images/source/IMG_0132.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0133",
+      "name": "Dusty rose Mama Bear tee",
+      "category": "top",
+      "subcategory": "graphic tee",
+      "colors": [
+        "dusty rose",
+        "white"
+      ],
+      "pattern": "print",
+      "description": "Heathered muted rose crewneck tee with a white 'Mama Bear' script, bear silhouette, and heart graphic. Soft jersey, relaxed fit.",
+      "rating": 3,
+      "rating_reason": "Dusty rose is a strong Soft Autumn mom color; straight tee needs a front tuck or knot for a pear waist. Playful and washable\u2014keep one, not a pile of graphics.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "playful",
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0133.jpg",
+      "image_full": "images/source/IMG_0133.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0134",
+      "name": "Tomato-red Kampout 2023 tee",
+      "category": "top",
+      "subcategory": "graphic tee",
+      "colors": [
+        "tomato red",
+        "white",
+        "light blue-grey"
+      ],
+      "pattern": "print",
+      "description": "Bright warm tomato-red crewneck tee with a rectangular 'Best Time Ever / KAMPOUT 2023 / GRACE POINT CHURCH' graphic in white and pale blue-grey.",
+      "rating": 1,
+      "rating_reason": "Saturated true red is too bright for muted Soft Autumn and the boxy graphic tee does nothing for a pear waist. Keep as a memory/PJs piece, not in the capsule.",
+      "seasons": [],
+      "themes": [
+        "playful"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0134.jpg",
+      "image_full": "images/source/IMG_0134.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0135",
+      "name": "Heather navy V-neck tee",
+      "category": "top",
+      "subcategory": "tee",
+      "colors": [
+        "heather navy"
+      ],
+      "pattern": "solid",
+      "description": "Muted dusty heather navy V-neck short-sleeve tee with marled flecks and a simple relaxed cut.",
+      "rating": 3,
+      "rating_reason": "Heathered navy is more wearable than jet black for Soft Autumn, and a V-neck helps a pear. Not a color hero, but a solid layering tee if tucked.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0135.jpg",
+      "image_full": "images/source/IMG_0135.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0136",
+      "name": "Heather grey MAMA raglan",
+      "category": "top",
+      "subcategory": "long-sleeve tee",
+      "colors": [
+        "heather grey",
+        "white"
+      ],
+      "pattern": "print",
+      "description": "Cool medium heather-grey long-sleeve raglan with a ribbed crew neck and vertical white 'MAMA' print.",
+      "rating": 2,
+      "rating_reason": "Cool grey and a straight raglan are meh for Soft Autumn and pear. Sentimental and cozy for chores; not a wardrobe building block.",
+      "seasons": [],
+      "themes": [
+        "cozy",
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0136.jpg",
+      "image_full": "images/source/IMG_0136.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0137",
+      "name": "Black crewneck sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black crewneck sweatshirt with ribbed cuffs and hem, boxy relaxed fit. Visible lint and pilling.",
+      "rating": 1,
+      "rating_reason": "Black plus pilling plus homestead lint is a losing combo, and Soft Autumn looks better in oatmeal or cocoa. Boxy volume can balance hips, but this specific piece is a replace-not-keep.",
+      "seasons": [],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0137.jpg",
+      "image_full": "images/source/IMG_0137.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0138",
+      "name": "Grey All of Life for Jesus tee",
+      "category": "top",
+      "subcategory": "graphic tee",
+      "colors": [
+        "heather grey",
+        "charcoal"
+      ],
+      "pattern": "print",
+      "description": "Muted heather medium-grey crewneck tee with a dark 'ALL of LIFE for JESUS' serif/block graphic.",
+      "rating": 2,
+      "rating_reason": "Faith message fits the home, but cool grey is only a fair Soft Autumn neutral and the straight tee needs a tuck. Keep if worn often; do not build the capsule around it.",
+      "seasons": [],
+      "themes": [
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0138.jpg",
+      "image_full": "images/source/IMG_0138.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0139",
+      "name": "Black tiered high-low tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black sleeveless round-neck tank with a double-layered, slightly high-low tiered hem.",
+      "rating": 1,
+      "rating_reason": "Black is harsh on Soft Autumn, and a flared/tiered hem adds volume right at the hips\u2014the opposite of pear strategy. Easy pass.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0139.jpg",
+      "image_full": "images/source/IMG_0139.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0140",
+      "name": "Heather grey muscle tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "heather grey"
+      ],
+      "pattern": "solid",
+      "description": "Basic athletic heather-grey tank with a high round neck, wide straps, moderately deep armholes, and a straight hip-length hang.",
+      "rating": 2,
+      "rating_reason": "Useful for workouts or under a flannel, but cool grey and a shapeless muscle cut are not capsule-priority for Soft Autumn or pear.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0140.jpg",
+      "image_full": "images/source/IMG_0140.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0141",
+      "name": "Charcoal heather tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "charcoal"
+      ],
+      "pattern": "solid",
+      "description": "Dark charcoal heather sleeveless tank with a scoop neck and a straight, untailored casual fit.",
+      "rating": 2,
+      "rating_reason": "Too close to black for Soft Autumn and no waist. Keep only as a cheap layer under a warm cardigan; oatmeal tanks in this batch replace it.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0141.jpg",
+      "image_full": "images/source/IMG_0141.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0142",
+      "name": "Oatmeal Awaken graphic sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "oatmeal",
+        "black"
+      ],
+      "pattern": "print",
+      "description": "Muted heathered oatmeal crewneck sweatshirt with ribbed trim and a large circular black 'Awaken / coffee, matcha and chai' botanical graphic.",
+      "rating": 4,
+      "rating_reason": "Oatmeal is a Soft Autumn hero and a relaxed top balances hips. Black print is a bit stark but the base color and cozy homestead vibe make it a strong staple.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0142.jpg",
+      "image_full": "images/source/IMG_0142.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0144",
+      "name": "Oatmeal heather scoop tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "oatmeal",
+        "taupe"
+      ],
+      "pattern": "solid",
+      "description": "Muted heathered oatmeal/taupe tank with a ribbed modest scoop neck, wide straps, and a relaxed straight cut.",
+      "rating": 4,
+      "rating_reason": "Warm oatmeal beats white or black as a Soft Autumn base. Tuck into jeans or a floral maxi for pear waist definition; year-round layer.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0144.jpg",
+      "image_full": "images/source/IMG_0144.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0145",
+      "name": "Sandy beige scoop tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "sandy beige"
+      ],
+      "pattern": "solid",
+      "description": "Light sandy beige sleeveless tank with a deeper scoop neck and medium-thin straps. Lightweight drapey jersey; a waffle cardigan is behind, not the focus.",
+      "rating": 4,
+      "rating_reason": "Earthy beige is excellent Soft Autumn and a deeper scoop lifts the eye. Same job as the oatmeal tank\u2014keep the better-condition one if they duplicate.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0145.jpg",
+      "image_full": "images/source/IMG_0145.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0146",
+      "name": "Ivory scoop-neck tank",
+      "category": "top",
+      "subcategory": "tank",
+      "colors": [
+        "ivory",
+        "cream"
+      ],
+      "pattern": "solid",
+      "description": "Light cream/ivory deep-scoop tank with thin straps and a slightly textured lightweight knit. Photographed in front of a camel waffle cardigan.",
+      "rating": 3,
+      "rating_reason": "Ivory is warmer than stark white so Soft Autumn can wear it, but thin straps and a pale scoop are less homestead-practical (sun, straps slipping). Good under the waffle cardigan.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0146.jpg",
+      "image_full": "images/source/IMG_0146.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0147",
+      "name": "Camel waffle-knit cardigan",
+      "category": "outerwear",
+      "subcategory": "cardigan",
+      "colors": [
+        "camel",
+        "taupe"
+      ],
+      "pattern": "solid",
+      "description": "Open-front long-sleeve cardigan in muted warm tan with a chunky waffle/honeycomb knit, wide ribbed trim, and two large patch pockets. Relaxed fit.",
+      "rating": 5,
+      "rating_reason": "Camel is a Soft Autumn cornerstone, open front makes a vertical line and defines the waist over hips, pockets are mom-functional, and NW Arkansas shoulders need this most of the year. Hero layer.",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0147.jpg",
+      "image_full": "images/source/IMG_0147.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0148",
+      "name": "GAP tan cream check flannel shirt",
+      "category": "top",
+      "subcategory": "button-down shirt",
+      "colors": [
+        "tan",
+        "cream",
+        "beige"
+      ],
+      "pattern": "check",
+      "description": "Long-sleeve GAP button-down in a large muted tan-and-cream check with a chest pocket; fabric looks brushed cotton or light flannel. Heavy wear with a large front hole, collar yellowing, and staining.",
+      "rating": 0,
+      "rating_reason": "Colors are Soft Autumn gold, but the hole and stains make it unsuitable for a curated capsule\u2014chore rag at best.",
+      "seasons": [],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0148.jpg",
+      "image_full": "images/source/IMG_0148.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0149",
+      "name": "Dusty rose muscle tank",
+      "category": "top",
+      "subcategory": "tank top",
+      "colors": [
+        "dusty rose",
+        "salmon pink"
+      ],
+      "pattern": "solid",
+      "description": "Sleeveless cotton jersey muscle tee in muted dusty rose with a ribbed crew neck and small left-chest patch pocket. Relaxed straight fit with wide armholes.",
+      "rating": 4,
+      "rating_reason": "Muted warm pink is Soft Autumn friendly; wide shoulders help balance hips. Easy summer homestead layer when tucked.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0149.jpg",
+      "image_full": "images/source/IMG_0149.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0150",
+      "name": "Oatmeal These Are The Days hoodie",
+      "category": "top",
+      "subcategory": "hoodie",
+      "colors": [
+        "oatmeal",
+        "cream",
+        "beige"
+      ],
+      "pattern": "graphic",
+      "description": "Light oatmeal fleece hoodie with white drawstrings, kangaroo pocket, ribbed cuffs/hem, and a white retro script graphic reading These Are The Days on the chest.",
+      "rating": 4,
+      "rating_reason": "Warm neutral Soft Autumn staple and cozy for homestead days; boxy cut needs a tuck or layer for waist definition.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "playful"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0150.jpg",
+      "image_full": "images/source/IMG_0150.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0151",
+      "name": "Olive ribbed V-neck sweater",
+      "category": "top",
+      "subcategory": "sweater",
+      "colors": [
+        "olive",
+        "moss green"
+      ],
+      "pattern": "solid",
+      "description": "Long-sleeve V-neck knit in muted olive with vertical ribbing through body and sleeves. Relaxed straight hem silhouette.",
+      "rating": 5,
+      "rating_reason": "Signature Soft Autumn green plus a V-neck that lifts the eye; cozy layering hero for pear balance.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0151.jpg",
+      "image_full": "images/source/IMG_0151.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0152",
+      "name": "Marled oatmeal V-neck sweater",
+      "category": "top",
+      "subcategory": "sweater",
+      "colors": [
+        "oatmeal",
+        "taupe",
+        "cream"
+      ],
+      "pattern": "solid",
+      "description": "Relaxed long-sleeve V-neck in marled oatmeal/taupe knit with ribbed cuffs and hem. Medium-gauge textured, slightly rustic look.",
+      "rating": 5,
+      "rating_reason": "Perfect Soft Autumn neutral with a flattering V; soft staple for layering over tees or under jackets.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "cozy",
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0152.jpg",
+      "image_full": "images/source/IMG_0152.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0153",
+      "name": "Terracotta button-detail sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "terracotta",
+        "dusty rose"
+      ],
+      "pattern": "solid",
+      "description": "Muted terracotta crew sweatshirt with diagonal shoulder-to-chest button plackets (three dark buttons each side), ribbed cuffs and hem. Slightly boxy relaxed fit.",
+      "rating": 4,
+      "rating_reason": "Earthy Soft Autumn color and shoulder interest help balance hips; boxy cut still needs styling at the waist.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "cozy",
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0153.jpg",
+      "image_full": "images/source/IMG_0153.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0154",
+      "name": "Black raglan crew sweatshirt",
+      "category": "top",
+      "subcategory": "sweatshirt",
+      "colors": [
+        "black"
+      ],
+      "pattern": "solid",
+      "description": "Solid black long-sleeve crew sweatshirt with raglan sleeves, ribbed crew neck, and thick ribbed hem. Classic boxy casual cut.",
+      "rating": 2,
+      "rating_reason": "Practical for dirt and laundry but stark black clashes with Soft Autumn and adds no waist definition for pear.",
+      "seasons": [],
+      "themes": [
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0154.jpg",
+      "image_full": "images/source/IMG_0154.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0155",
+      "name": "Medium-wash denim trucker jacket",
+      "category": "outerwear",
+      "subcategory": "denim jacket",
+      "colors": [
+        "medium blue",
+        "indigo"
+      ],
+      "pattern": "solid",
+      "description": "Classic trucker denim jacket in muted medium wash with collar, silver buttons, dual chest flap pockets, waist welt pockets, gold contrast stitching, and light jersey lining.",
+      "rating": 4,
+      "rating_reason": "Muted wash works Soft Autumn; structured shoulders balance hips and denim is homestead durable.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "practical",
+        "polished",
+        "cozy"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0155.jpg",
+      "image_full": "images/source/IMG_0155.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0156",
+      "name": "Tomato red jersey maxi skirt",
+      "category": "bottom",
+      "subcategory": "maxi skirt",
+      "colors": [
+        "tomato red",
+        "vermillion"
+      ],
+      "pattern": "solid",
+      "description": "Solid warm red-orange knit maxi/midi skirt with a wide flat waistband and full gathered flare. Lightweight stretch jersey with soft drape.",
+      "rating": 0,
+      "rating_reason": "Remove \u2014 color clashes with Soft Autumn capsule in real life; needs zipper repair. Not worth keeping in rotation.",
+      "seasons": [],
+      "themes": [],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0156.jpg",
+      "image_full": "images/source/IMG_0156.jpg",
+      "in_capsule": false,
+      "is_staple": false,
+      "notes": "Removed Aug 2026: coloring doesn't fit wardrobe; zipper needs repair."
+    },
+    {
+      "id": "IMG_0157",
+      "name": "Burgundy crew-neck sweater",
+      "category": "top",
+      "subcategory": "sweater",
+      "colors": [
+        "burgundy",
+        "maroon"
+      ],
+      "pattern": "solid",
+      "description": "Deep burgundy/maroon long-sleeve crew sweater with fine knit texture and a horizontal seam across the upper chest. Simple ribbed crew neck.",
+      "rating": 3,
+      "rating_reason": "Cozy practical staple, but deep cool burgundy is only a fair Soft Autumn match and the crew is neutrally pear.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0157.jpg",
+      "image_full": "images/source/IMG_0157.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0158",
+      "name": "Olive shorts with tan waistband",
+      "category": "bottom",
+      "subcategory": "shorts",
+      "colors": [
+        "olive green",
+        "tan",
+        "khaki"
+      ],
+      "pattern": "solid",
+      "description": "Muted olive woven shorts with a wide contrasting tan fold-over comfort/maternity-style elastic waistband, front slash pockets, and finished hems.",
+      "rating": 4,
+      "rating_reason": "Core Soft Autumn olive/tan and post-baby comfort waist; practical summer homestead bottoms.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0158.jpg",
+      "image_full": "images/source/IMG_0158.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0159",
+      "name": "Red navy plaid cinched tunic",
+      "category": "top",
+      "subcategory": "plaid tunic",
+      "colors": [
+        "navy",
+        "red",
+        "white"
+      ],
+      "pattern": "plaid",
+      "description": "Long-sleeve button-down plaid tunic/short dress with collar, dual flap chest pockets, and an elastic cinched waist with slight peplum flare. Lightweight woven flannel-like fabric.",
+      "rating": 3,
+      "rating_reason": "Cinched waist is excellent for pear and homestead-practical, but high-contrast bright red/navy is only fair Soft Autumn.",
+      "seasons": [
+        "fall"
+      ],
+      "themes": [
+        "practical",
+        "cozy",
+        "feminine"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0159.jpg",
+      "image_full": "images/source/IMG_0159.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0160",
+      "name": "Charcoal gray striped scoop tank",
+      "category": "top",
+      "subcategory": "tank top",
+      "colors": [
+        "charcoal",
+        "heather gray"
+      ],
+      "pattern": "stripe",
+      "description": "Sleeveless scoop-neck tank in fine horizontal charcoal and heather-gray stripes with self-fabric binding at neck and armholes. Soft lightweight knit with some pilling.",
+      "rating": 2,
+      "rating_reason": "Cool gray stripes sit outside Soft Autumn warmth; wearable basic only if needed.",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0160.jpg",
+      "image_full": "images/source/IMG_0160.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0161",
+      "name": "Beige utility jacket with drawstring",
+      "category": "outerwear",
+      "subcategory": "utility jacket",
+      "colors": [
+        "beige",
+        "tan",
+        "khaki"
+      ],
+      "pattern": "solid",
+      "description": "Warm beige utility jacket with stand collar, metal snap front, large lower flap pockets, and an internal waist drawstring for cinching. Durable cotton-blend look.",
+      "rating": 5,
+      "rating_reason": "Soft Autumn neutral with adjustable waist\u2014ideal pear definition plus homestead-ready outer layer.",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "polished",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0161.jpg",
+      "image_full": "images/source/IMG_0161.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0162",
+      "name": "Black cream houndstooth pea coat",
+      "category": "outerwear",
+      "subcategory": "pea coat",
+      "colors": [
+        "black",
+        "cream",
+        "off-white"
+      ],
+      "pattern": "houndstooth",
+      "description": "Mid-length double-breasted pea/overcoat in large black-and-cream houndstooth with wide notched lapels, large black buttons, structured shoulders, and black lining.",
+      "rating": 3,
+      "rating_reason": "Shoulders and lapels balance pear beautifully and look polished, but high contrast is harsh for Soft Autumn and cream shows dirt.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "polished",
+        "feminine"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0162.jpg",
+      "image_full": "images/source/IMG_0162.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0163",
+      "name": "White DENIZEN five-pocket shorts",
+      "category": "bottom",
+      "subcategory": "shorts",
+      "colors": [
+        "white",
+        "off-white",
+        "cream"
+      ],
+      "pattern": "solid",
+      "description": "DENIZEN from Levi's five-pocket cotton twill shorts in white/off-white. Same pair was photographed twice (also as IMG_0164).",
+      "rating": 4,
+      "rating_reason": "Practical summer homestead short; light neutral works Soft Autumn as a soft white. One pair only \u2014 duplicate photo retired.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0163.jpg",
+      "image_full": "images/source/IMG_0163.jpg",
+      "in_capsule": true,
+      "is_staple": false,
+      "notes": "Duplicate of IMG_0164 (same garment, second photo)."
+    },
+    {
+      "id": "IMG_0164",
+      "name": "White DENIZEN shorts (duplicate photo)",
+      "category": "bottom",
+      "subcategory": "shorts \u2014 duplicate",
+      "colors": [
+        "white",
+        "off-white",
+        "cream"
+      ],
+      "pattern": "solid",
+      "description": "Same pair as IMG_0163 \u2014 second photo only. Do not count as a separate piece.",
+      "rating": 0,
+      "rating_reason": "Duplicate entry of IMG_0163 (white DENIZEN five-pocket shorts).",
+      "seasons": [],
+      "themes": [],
+      "soft_autumn_fit": "good",
+      "image": "images/thumbs/IMG_0164.jpg",
+      "image_full": "images/source/IMG_0164.jpg",
+      "in_capsule": false,
+      "is_staple": false,
+      "notes": "Duplicate of IMG_0163. Use IMG_0163 in capsules/menus.",
+      "duplicate_of": "IMG_0163"
+    },
+    {
+      "id": "IMG_0165",
+      "name": "Oatmeal charcoal stripe pocket dress",
+      "category": "dress",
+      "subcategory": "midi dress",
+      "colors": [
+        "oatmeal",
+        "beige",
+        "charcoal"
+      ],
+      "pattern": "stripe",
+      "description": "Short-sleeve shallow V-neck midi dress in muted oatmeal and charcoal horizontal stripes with large front patch pockets. Relaxed straight linen/cotton-blend look.",
+      "rating": 3,
+      "rating_reason": "Soft Autumn stripes and practical pockets win, but boxy cut plus hip-level pockets can widen pear without a belt.",
+      "seasons": [
+        "spring",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0165.jpg",
+      "image_full": "images/source/IMG_0165.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0166",
+      "name": "Olive smocked Swiss-dot maxi dress",
+      "category": "dress",
+      "subcategory": "maxi dress",
+      "colors": [
+        "olive green"
+      ],
+      "pattern": "solid",
+      "description": "Muted olive maxi with smocked bodice, square neck, short flutter ruffle sleeves, and a tiered skirt with lace/crochet insets. Subtle Swiss-dot texture throughout.",
+      "rating": 5,
+      "rating_reason": "Hero Soft Autumn green; smocked waist and flowing tiers are textbook pear flattery with feminine homestead ease.",
+      "seasons": [
+        "spring"
+      ],
+      "themes": [
+        "feminine",
+        "practical",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0166.jpg",
+      "image_full": "images/source/IMG_0166.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0167",
+      "name": "Dusty rose Joy Strength floral tee",
+      "category": "top",
+      "subcategory": "graphic tee",
+      "colors": [
+        "dusty rose",
+        "terracotta pink",
+        "cream",
+        "yellow",
+        "green"
+      ],
+      "pattern": "floral",
+      "description": "Short-sleeve crew tee in muted dusty rose with a centered floral cluster graphic and vertical white text reading JOY and STRENGTH. Soft jersey casual fit.",
+      "rating": 4,
+      "rating_reason": "Warm Soft Autumn base and soft florals feel joyful and wearable; tuck for pear waist definition.",
+      "seasons": [
+        "summer"
+      ],
+      "themes": [
+        "playful",
+        "feminine",
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0167.jpg",
+      "image_full": "images/source/IMG_0167.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0168",
+      "name": "Cognac faux-leather moto jacket",
+      "category": "outerwear",
+      "subcategory": "moto jacket",
+      "colors": [
+        "cognac",
+        "camel brown"
+      ],
+      "pattern": "solid",
+      "description": "Waist-length cognac faux-leather moto with stand collar, front zip, quilted shoulder/upper-arm panels, multiple silver zip pockets, and snap cuffs.",
+      "rating": 5,
+      "rating_reason": "Signature Soft Autumn cognac; cropped waist and shoulder quilting strongly balance pear while staying wipeable and polished.",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "polished",
+        "practical",
+        "feminine"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0168.jpg",
+      "image_full": "images/source/IMG_0168.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0169",
+      "name": "Cognac knee-high riding boots",
+      "category": "shoes",
+      "subcategory": "tall boots",
+      "colors": [
+        "medium brown",
+        "cognac",
+        "tan"
+      ],
+      "pattern": "solid",
+      "description": "Tall knee-high riding-style boots in warm muted brown leather-look material with rounded toe, flat/low heel, and full inner zipper. Visible scuffing and wear at ankle and heel.",
+      "rating": 3,
+      "rating_reason": "Soft Autumn color and tall shafts help balance hips for homestead wear, but heavy wear may need replacing soon. (Shoes, not clothing.)",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "polished"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0169.jpg",
+      "image_full": "images/source/IMG_0169.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0170",
+      "name": "Tan strappy sport sandals",
+      "category": "shoes",
+      "subcategory": "sport sandals",
+      "colors": [
+        "tan",
+        "khaki",
+        "dark brown",
+        "charcoal"
+      ],
+      "pattern": "solid",
+      "description": "Outdoor strappy sandals with muted tan woven straps, toe loop, adjustable black buckle at the ankle, and a thick dark contoured footbed. (Shoes; olive maxi hem also visible but not the focus.)",
+      "rating": 4,
+      "rating_reason": "Earthy Soft Autumn straps and serious homestead practicality for NW Arkansas summers. (Shoes, not clothing.)",
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/IMG_0170.jpg",
+      "image_full": "images/source/IMG_0170.jpg",
+      "in_capsule": true,
+      "is_staple": true
+    },
+    {
+      "id": "IMG_0172",
+      "name": "Black speckled marled sweater",
+      "category": "top",
+      "subcategory": "sweater",
+      "colors": [
+        "black",
+        "light gray",
+        "white"
+      ],
+      "pattern": "solid",
+      "description": "Deep black crew-neck knit sweater with white/light-gray flecks throughout a marled speckled texture. Relaxed boxy silhouette with ribbed neck, cuffs, and hem.",
+      "rating": 2,
+      "rating_reason": "Cozy and dirt-hiding, but base black is Soft Autumn poor; boxy fit skips pear waist definition.",
+      "seasons": [
+        "winter"
+      ],
+      "themes": [
+        "cozy",
+        "practical"
+      ],
+      "soft_autumn_fit": "poor",
+      "image": "images/thumbs/IMG_0172.jpg",
+      "image_full": "images/source/IMG_0172.jpg",
+      "in_capsule": true,
+      "is_staple": false
+    },
+    {
+      "id": "IMG_0174",
+      "name": "White canvas slip-on sneakers",
+      "category": "shoes",
+      "subcategory": "slip-on sneakers",
+      "colors": [
+        "white"
+      ],
+      "pattern": "solid",
+      "description": "Low-profile white canvas laceless slip-ons with side elastic goring and flat white rubber soles. Visible scuffing and dirt from wear.",
+      "rating": 2,
+      "rating_reason": "Handy slip-ons for busy mom life, but stark white clashes Soft Autumn and shows homestead dirt fast. (Shoes, not clothing.)",
+      "seasons": [],
+      "themes": [
+        "practical"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/IMG_0174.jpg",
+      "image_full": "images/source/IMG_0174.jpg",
+      "in_capsule": false,
+      "is_staple": false
+    }
+  ],
+  "stats": {
+    "total": 87,
+    "by_rating": {
+      "0": 5,
+      "1": 8,
+      "2": 18,
+      "3": 21,
+      "4": 22,
+      "5": 13
+    },
+    "by_season": {
+      "spring": 28,
+      "summer": 17,
+      "fall": 16,
+      "winter": 18
+    },
+    "discard": [
+      "IMG_0114",
+      "IMG_0115",
+      "IMG_0148",
+      "IMG_0156",
+      "IMG_0164"
+    ],
+    "capsule_sizes": {
+      "spring": 36,
+      "summer": 33,
+      "fall": 36,
+      "winter": 32
+    }
+  },
+  "capsules": {
+    "spring": {
+      "size": 28,
+      "ids": [
+        "IMG_0049",
+        "IMG_0084",
+        "IMG_0087",
+        "IMG_0088",
+        "IMG_0092",
+        "IMG_0094",
+        "IMG_0095",
+        "IMG_0097",
+        "IMG_0101",
+        "IMG_0103",
+        "IMG_0116",
+        "IMG_0118",
+        "IMG_0120",
+        "IMG_0124",
+        "IMG_0131",
+        "IMG_0135",
+        "IMG_0145",
+        "IMG_0146",
+        "IMG_0147",
+        "IMG_0149",
+        "IMG_0153",
+        "IMG_0155",
+        "IMG_0161",
+        "IMG_0165",
+        "IMG_0166",
+        "IMG_0168",
+        "IMG_0169",
+        "IMG_0170"
+      ]
+    },
+    "summer": {
+      "size": 17,
+      "ids": [
+        "IMG_0049",
+        "IMG_0086",
+        "IMG_0089",
+        "IMG_0090",
+        "IMG_0109",
+        "IMG_0112",
+        "IMG_0119",
+        "IMG_0122",
+        "IMG_0128",
+        "IMG_0130",
+        "IMG_0132",
+        "IMG_0133",
+        "IMG_0144",
+        "IMG_0158",
+        "IMG_0163",
+        "IMG_0167",
+        "IMG_0170"
+      ]
+    },
+    "fall": {
+      "size": 16,
+      "ids": [
+        "IMG_0049",
+        "IMG_0085",
+        "IMG_0099",
+        "IMG_0100",
+        "IMG_0101",
+        "IMG_0110",
+        "IMG_0125",
+        "IMG_0142",
+        "IMG_0147",
+        "IMG_0150",
+        "IMG_0151",
+        "IMG_0152",
+        "IMG_0159",
+        "IMG_0161",
+        "IMG_0168",
+        "IMG_0169"
+      ]
+    },
+    "winter": {
+      "size": 18,
+      "ids": [
+        "IMG_0049",
+        "IMG_0085",
+        "IMG_0088",
+        "IMG_0096",
+        "IMG_0098",
+        "IMG_0101",
+        "IMG_0111",
+        "IMG_0125",
+        "IMG_0126",
+        "IMG_0132",
+        "IMG_0147",
+        "IMG_0157",
+        "IMG_0161",
+        "IMG_0162",
+        "IMG_0165",
+        "IMG_0168",
+        "IMG_0169",
+        "IMG_0172"
+      ]
+    }
+  },
+  "staples": {
+    "IMG_0049": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+    ],
+    "IMG_0101": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "IMG_0147": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "IMG_0161": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "IMG_0168": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "IMG_0169": [
+      "spring",
+      "fall",
+      "winter"
+    ],
+    "IMG_0170": [
+      "spring",
+      "summer"
+    ],
+    "IMG_0125": [
+      "fall",
+      "winter"
+    ],
+    "IMG_0088": [
+      "spring",
+      "winter"
+    ],
+    "IMG_0085": [
+      "fall",
+      "winter"
+    ],
+    "IMG_0132": [
+      "summer",
+      "winter"
+    ],
+    "IMG_0165": [
+      "spring",
+      "winter"
+    ]
+  }
+}
