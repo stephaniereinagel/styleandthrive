@@ -8,13 +8,15 @@ Inspired by the weekly-menu pattern of [Nourish & Flourish](https://nourishandfl
 
 ## Quick start
 
-From this `wardrobe/` folder:
+From this folder:
 
 ```bash
 python3 -m http.server 8766
 ```
 
-Then open [http://localhost:8766/app/](http://localhost:8766/app/)
+Then open [http://localhost:8766/](http://localhost:8766/)
+
+**Live:** [style-and-thrive.netlify.app](https://style-and-thrive.netlify.app/)
 
 ## What's here
 
