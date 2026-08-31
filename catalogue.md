@@ -1,6 +1,6 @@
 # Stephanie's Wardrobe Catalogue 2026
 
-**Color season:** Soft Autumn  ·  **Body type:** Pear  ·  **Lifestyle:** Homestead mom of 5, NW Arkansas
+**Color season:** Soft Autumn  ·  **Body type:** High waist · full bust · shoulders ≈ hips (photo 8/31/26)  ·  **Lifestyle:** Homestead mom of 5, NW Arkansas
 
 ## Rating guide
 | Score | Meaning |
@@ -13,7 +13,7 @@
 | 5 | Best overall / hero piece |
 
 ## Snapshot
-- **87 pieces** photographed and catalogued
+- **89 pieces** (87 photographed + thin brown belt + rust/black flannel). Add more on the Wardrobe tab in the app.
 - **Ratings:** 0★×2, 1★×8, 2★×18, 3★×22, 4★×24, 5★×13
 - **True capsules:** spring 36, summer 33, fall 36, winter 32 (30–40 target)
 - **Discard / retake:** IMG_0114, IMG_0148 (blurry photo + damaged GAP check shirt)
@@ -55,124 +55,143 @@
 - **Tomato-red Kampout 2023 tee** (`IMG_0134`) — Saturated true red is too bright for muted Soft Autumn and the boxy graphic tee does nothing for a pear waist. Keep as a memory/PJs piece, not in the capsule.
 
 ## Full catalogue
-### Bottom (7)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 5 | **Olive straight-leg pants** `IMG_0101` | spring, summer, fall, winter | excellent | practical, polished, cozy |
-| 5 | **Tan ditsy floral maxi skirt** `IMG_0132` | spring, summer, fall | excellent | feminine, practical |
-| 4 | **White DENIZEN five-pocket shorts** `IMG_0163` | summer | good | practical |
-| 0 | **White DENIZEN shorts (duplicate photo)** `IMG_0164` | — | good | duplicate of IMG_0163 |
-| 4 | **Olive shorts with tan waistband** `IMG_0158` | spring, summer | excellent | practical, cozy |
-| 3 | **Blue-grey pinstripe wide pants** `IMG_0120` | spring, summer, fall | fair | practical, polished, feminine |
-| 3 | **Tomato red jersey maxi skirt (REMOVED)** `IMG_0156` | spring, summer, fall | fair | feminine, playful, practical |
 
-### Dress (22)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 5 | **Dusty rose utility midi dress** `IMG_0087` | spring, summer, fall | excellent | feminine, practical, polished |
-| 5 | **Olive short-sleeve midi dress** `IMG_0116` | spring, summer, fall | excellent | practical, feminine, polished |
-| 5 | **Olive smocked Swiss-dot maxi dress** `IMG_0166` | spring, summer, fall | excellent | feminine, practical, cozy |
-| 5 | **Olive tiered drawstring dress** `IMG_0118` | spring, summer, fall | excellent | feminine, practical, playful |
-| 4 | **Navy faux-wrap maxi dress** `IMG_0089` | spring, summer, fall | good | feminine, practical, polished |
-| 4 | **Navy peach floral wrap maxi** `IMG_0112` | spring, summer, fall | good | feminine, practical, polished |
-| 4 | **Navy peach floral wrap maxi (duplicate photo)** `IMG_0115` | spring, summer, fall | good | feminine, practical, polished |
-| 4 | **Navy wildflower wrap dress** `IMG_0090` | spring, fall, summer | good | feminine, polished |
-| 4 | **Olive jersey t-shirt dress** `IMG_0086` | spring, summer, fall | excellent | practical, cozy |
-| 4 | **Sage off-shoulder ruffle dress** `IMG_0124` | spring, summer, fall | excellent | feminine, polished |
-| 4 | **Terracotta tiered long-sleeve dress** `IMG_0125` | fall, winter, spring | excellent | cozy, practical, feminine |
-| 3 | **Black bodice medallion maxi** `IMG_0128` | spring, summer, fall | fair | feminine, practical |
-| 3 | **Burgundy velvet wrap dress** `IMG_0126` | fall, winter | fair | feminine, polished |
-| 3 | **Charcoal button-front waist dress** `IMG_0109` | spring, summer, fall | fair | feminine, practical, polished |
-| 3 | **Charcoal puff-sleeve smocked dress** `IMG_0122` | spring, summer, fall | poor | feminine, polished |
-| 3 | **Dusty blue smocked tiered dress** `IMG_0119` | spring, summer, fall | fair | feminine, practical, playful |
-| 3 | **Navy-and-white stripe midi dress** `IMG_0085` | spring, fall, winter | fair | cozy, practical, feminine |
-| 3 | **Oatmeal charcoal stripe pocket dress** `IMG_0165` | spring, summer, fall | excellent | practical, feminine |
-| 2 | **Black tie-waist tank maxi** `IMG_0129` | spring, summer, fall | poor | practical |
-| 2 | **Navy peach floral knit dress** `IMG_0121` | spring, summer, fall | good | feminine, practical |
-| 2 | **Terracotta ditsy tank dress** `IMG_0123` | spring, summer | excellent | feminine, practical |
-| 1 | **Heather grey jersey sheath dress** `IMG_0127` | fall, winter, spring | poor | practical |
+Formula tags: **slot** (top / bottom / both / undershirt / topper / outerwear / shoes / accessory) and **character** (Neutral / Print / Color).
 
-### Jumpsuit (2)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 4 | **Medium-wash denim overalls** `IMG_0088` | spring, summer, fall, winter | good | practical, playful, cozy |
-| 1 | **Black spaghetti-strap jumpsuit** `IMG_0117` | spring, summer | poor | practical |
+### Purchased (no photo yet)
+- **Thin brown belt** (`NEW_BELT`) — Accessory · Neutral · 4★ · all seasons. Marks the waist on boxy knits and high-rise jeans.
+- **Rust and black flannel** (`NEW_FLANNEL`) — Topper · Print · 3★ · spring / fall / winter. Wear **open**, not over a knit.
 
-### Other (1)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 0 | **Unidentifiable (motion blur)** `IMG_0114` | — | poor |  |
+| Slot | Neutral | Print | Color | Total |
+|---|---:|---:|---:|---:|
+| Top | 12 | 14 | 11 | 37 |
+| Bottom | 5 | 2 | 1 | 8 |
+| Both (dress / overalls) | 10 | 8 | 6 | 24 |
+| Undershirt | 6 | 2 | 0 | 8 |
+| Topper | 1 | 0 | 0 | 1 |
+| Outerwear | 3 | 2 | 0 | 5 |
+| Shoes | 3 | 0 | 0 | 3 |
+| Other | 1 | 0 | 0 | 1 |
 
-### Outerwear (6)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 5 | **Beige utility jacket with drawstring** `IMG_0161` | spring, fall, winter | excellent | practical, polished, cozy |
-| 5 | **Camel waffle-knit cardigan** `IMG_0147` | fall, winter, spring | excellent | cozy, practical, polished |
-| 5 | **Cognac faux-leather moto jacket** `IMG_0168` | fall, winter, spring | excellent | polished, practical, feminine |
-| 4 | **Medium-wash denim trucker jacket** `IMG_0155` | spring, fall, summer | good | practical, polished, cozy |
-| 3 | **Black cream houndstooth pea coat** `IMG_0162` | fall, winter | fair | polished, feminine |
-| 3 | **Light-wash MAMA denim jacket** `IMG_0084` | spring, summer, fall | fair | practical, playful, cozy |
+### Top (37)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 5 | **Marled oatmeal V-neck sweater** `IMG_0152` | Neutral | fall | excellent | cozy, feminine, practical |
+| 5 | **Mustard crewneck sweatshirt** `IMG_0100` | Color | fall | excellent | cozy, practical |
+| 5 | **Olive ribbed V-neck sweater** `IMG_0151` | Neutral | fall | excellent | cozy, feminine, practical |
+| 5 | **Rust quilted crewneck pullover** `IMG_0110` | Color | fall | excellent | cozy, practical |
+| 4 | **Dusty rose Joy Strength floral tee** `IMG_0167` | Print | summer | excellent | playful, feminine, practical |
+| 4 | **Dusty rose muscle tank** `IMG_0149` | Color | spring | excellent | practical, cozy |
+| 4 | **Ivory textured knit sweater** `IMG_0099` | Neutral | fall | excellent | cozy, feminine, polished |
+| 4 | **Oatmeal Awaken graphic sweatshirt** `IMG_0142` | Print | fall | excellent | cozy, practical, playful |
+| 4 | **Oatmeal These Are The Days hoodie** `IMG_0150` | Print | fall | excellent | cozy, practical, playful |
+| 4 | **Olive scoop-neck tank** `IMG_0130` | Neutral | summer | excellent | practical |
+| 4 | **Olive waffle-knit colorblock top** `IMG_0097` | Neutral | spring | excellent | cozy, practical |
+| 4 | **Terracotta button-detail sweatshirt** `IMG_0153` | Color | spring | excellent | cozy, practical, feminine |
+| 3 | **Beige leopard-print tank** `IMG_0103` | Print | spring | good | playful, feminine, practical |
+| 3 | **Burgundy crew-neck sweater** `IMG_0157` | Color | winter | fair | cozy, practical |
+| 3 | **Dusty rose Mama Bear tee** `IMG_0133` | Print | summer | excellent | playful, practical, cozy |
+| 3 | **Dusty sage heather tank** `IMG_0131` | Color | spring | good | practical |
+| 3 | **Heather navy V-neck tee** `IMG_0135` | Color | spring | fair | practical |
+| 3 | **Navy V-neck short-sleeve top** `IMG_0094` | Color | spring | fair | practical, cozy |
+| 3 | **Navy bell-sleeve V-neck top** `IMG_0095` | Color | spring | fair | feminine, practical, polished |
+| 3 | **Navy ditsy floral cinched blouse** `IMG_0092` | Print | spring | good | feminine, polished |
+| 3 | **Red navy plaid cinched tunic** `IMG_0159` | Print | fall | fair | practical, cozy, feminine |
+| 2 | **Black quilted crewneck pullover** `IMG_0111` | Neutral | winter | poor | cozy, practical |
+| 2 | **Black raglan crew sweatshirt** `IMG_0154` | Neutral | — | poor | practical, cozy |
+| 2 | **Black sleeveless button blouse** `IMG_0105` | Neutral | — | poor | polished, practical |
+| 2 | **Black speckled marled sweater** `IMG_0172` | Neutral | winter | poor | cozy, practical |
+| 2 | **Grey All of Life for Jesus tee** `IMG_0138` | Print | — | fair | practical, playful |
+| 2 | **Heather gray Mama Bear sweatshirt** `IMG_0098` | Print | winter | poor | cozy, playful, practical |
+| 2 | **Heather grey MAMA raglan** `IMG_0136` | Print | — | poor | cozy, practical, playful |
+| 2 | **Navy lace-panel sleeveless top** `IMG_0107` | Color | — | fair | feminine, polished |
+| 2 | **Navy-and-white stripe long-sleeve tee** `IMG_0096` | Print | winter | poor | practical, playful |
+| 1 | **Black Arizona graphic tee** `IMG_0102` | Print | — | poor | practical, playful |
+| 1 | **Black crewneck sweatshirt** `IMG_0137` | Neutral | — | poor | cozy, practical |
+| 1 | **Black long-sleeve satin tunic** `IMG_0108` | Neutral | — | poor | polished |
+| 1 | **Black tiered high-low tank** `IMG_0139` | Neutral | — | poor | practical |
+| 1 | **Metallic silver crinkle V-top** `IMG_0091` | Color | — | poor | polished |
+| 1 | **Tomato-red Kampout 2023 tee** `IMG_0134` | Print | — | poor | playful |
+| 0 | **GAP tan cream check flannel shirt** `IMG_0148` | Print | — | excellent | cozy, practical |
 
-### Set (0)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 4 | **Mid-wash wide-leg jeans** `IMG_0049` | spring, summer, fall, winter | fair | practical, cozy, polished |
+### Bottom (8)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 5 | **Olive straight-leg pants** `IMG_0101` | Neutral | spring, fall, winter | excellent | practical, polished, cozy |
+| 5 | **Tan ditsy floral maxi skirt** `IMG_0132` | Print | summer, fall, winter | excellent | feminine, practical |
+| 4 | **Mid-wash wide-leg jeans** `IMG_0049` | Neutral | spring, summer, fall, winter | fair | practical, cozy, polished |
+| 4 | **Olive shorts with tan waistband** `IMG_0158` | Neutral | summer | excellent | practical, cozy |
+| 4 | **White DENIZEN five-pocket shorts** `IMG_0163` | Neutral | summer | good | practical |
+| 3 | **Blue-grey pinstripe wide pants** `IMG_0120` | Print | spring | fair | practical, polished, feminine |
+| 0 | **Tomato red jersey maxi skirt** `IMG_0156` | Color | — | fair | — |
+| 0 | **White DENIZEN shorts (duplicate photo)** `IMG_0164` | Neutral | — | good | — |
+
+### Both (dress / overalls) (24)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 5 | **Dusty rose utility midi dress** `IMG_0087` | Color | spring, fall | excellent | feminine, practical, polished |
+| 5 | **Olive short-sleeve midi dress** `IMG_0116` | Neutral | spring, fall | excellent | practical, feminine, polished |
+| 5 | **Olive smocked Swiss-dot maxi dress** `IMG_0166` | Neutral | spring | excellent | feminine, practical, cozy |
+| 5 | **Olive tiered drawstring dress** `IMG_0118` | Neutral | spring | excellent | feminine, practical, playful |
+| 4 | **Medium-wash denim overalls** `IMG_0088` | Neutral | spring, winter | good | practical, playful, cozy |
+| 4 | **Navy faux-wrap maxi dress** `IMG_0089` | Color | summer | good | feminine, practical, polished |
+| 4 | **Navy peach floral wrap maxi** `IMG_0112` | Print | summer | good | feminine, practical, polished |
+| 4 | **Navy wildflower wrap dress** `IMG_0090` | Print | summer | good | feminine, polished |
+| 4 | **Olive jersey t-shirt dress** `IMG_0086` | Neutral | summer | excellent | practical, cozy |
+| 4 | **Sage off-shoulder ruffle dress** `IMG_0124` | Color | spring | excellent | feminine, polished |
+| 4 | **Terracotta tiered long-sleeve dress** `IMG_0125` | Color | fall, winter | excellent | cozy, practical, feminine |
+| 3 | **Black bodice medallion maxi** `IMG_0128` | Print | summer | fair | feminine, practical |
+| 3 | **Burgundy velvet wrap dress** `IMG_0126` | Color | winter | fair | feminine, polished |
+| 3 | **Charcoal button-front waist dress** `IMG_0109` | Neutral | summer | fair | feminine, practical, polished |
+| 3 | **Charcoal puff-sleeve smocked dress** `IMG_0122` | Neutral | summer | poor | feminine, polished |
+| 3 | **Dusty blue smocked tiered dress** `IMG_0119` | Color | summer | fair | feminine, practical, playful |
+| 3 | **Navy-and-white stripe midi dress** `IMG_0085` | Print | fall, winter | fair | cozy, practical, feminine |
+| 3 | **Oatmeal charcoal stripe pocket dress** `IMG_0165` | Print | spring, winter | excellent | practical, feminine |
+| 2 | **Black tie-waist tank maxi** `IMG_0129` | Neutral | — | poor | practical |
+| 2 | **Navy peach floral knit dress** `IMG_0121` | Print | — | good | feminine, practical |
+| 2 | **Terracotta ditsy tank dress** `IMG_0123` | Print | — | excellent | feminine, practical |
+| 1 | **Black spaghetti-strap jumpsuit** `IMG_0117` | Neutral | — | poor | practical |
+| 1 | **Heather grey jersey sheath dress** `IMG_0127` | Neutral | — | poor | practical |
+| 0 | **Navy peach floral wrap maxi (duplicate photo)** `IMG_0115` | Print | — | good | — |
+
+### Undershirt (8)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 4 | **Oatmeal heather scoop tank** `IMG_0144` | Neutral | summer | excellent | practical, polished |
+| 4 | **Sandy beige scoop tank** `IMG_0145` | Neutral | spring | excellent | practical, feminine |
+| 3 | **Ivory scoop-neck tank** `IMG_0146` | Neutral | spring | good | practical, feminine |
+| 2 | **Charcoal gray striped scoop tank** `IMG_0160` | Print | — | fair | practical |
+| 2 | **Charcoal heather tank** `IMG_0141` | Neutral | — | poor | practical |
+| 2 | **Heather blue muscle tank** `IMG_0104` | Print | — | fair | practical, playful |
+| 2 | **Heather grey muscle tank** `IMG_0140` | Neutral | — | fair | practical |
+| 2 | **Light heather gray tank** `IMG_0106` | Neutral | — | fair | practical |
+
+### Topper (1)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 5 | **Camel waffle-knit cardigan** `IMG_0147` | Neutral | spring, fall, winter | excellent | cozy, practical, polished |
+
+### Outerwear (5)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 5 | **Beige utility jacket with drawstring** `IMG_0161` | Neutral | spring, fall, winter | excellent | practical, polished, cozy |
+| 5 | **Cognac faux-leather moto jacket** `IMG_0168` | Neutral | spring, fall, winter | excellent | polished, practical, feminine |
+| 4 | **Medium-wash denim trucker jacket** `IMG_0155` | Neutral | spring | good | practical, polished, cozy |
+| 3 | **Black cream houndstooth pea coat** `IMG_0162` | Print | winter | fair | polished, feminine |
+| 3 | **Light-wash MAMA denim jacket** `IMG_0084` | Print | spring | fair | practical, playful, cozy |
 
 ### Shoes (3)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 4 | **Tan strappy sport sandals** `IMG_0170` | spring, summer | excellent | practical |
-| 3 | **Cognac knee-high riding boots** `IMG_0169` | fall, winter, spring | excellent | practical, polished |
-| 2 | **White canvas slip-on sneakers** `IMG_0174` | spring, summer, fall | fair | practical |
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 4 | **Tan strappy sport sandals** `IMG_0170` | Neutral | spring, summer | excellent | practical |
+| 3 | **Cognac knee-high riding boots** `IMG_0169` | Neutral | spring, fall, winter | excellent | practical, polished |
+| 2 | **White canvas slip-on sneakers** `IMG_0174` | Neutral | — | fair | practical |
 
-### Top (45)
-| ★ | Piece | Seasons | Soft Autumn | Themes |
-|---|---|---|---|---|
-| 5 | **Marled oatmeal V-neck sweater** `IMG_0152` | fall, winter, spring | excellent | cozy, feminine, practical |
-| 5 | **Mustard crewneck sweatshirt** `IMG_0100` | fall, winter, spring | excellent | cozy, practical |
-| 5 | **Olive ribbed V-neck sweater** `IMG_0151` | fall, winter, spring | excellent | cozy, feminine, practical |
-| 5 | **Rust quilted crewneck pullover** `IMG_0110` | fall, winter, spring | excellent | cozy, practical |
-| 4 | **Dusty rose Joy Strength floral tee** `IMG_0167` | spring, summer, fall | excellent | playful, feminine, practical |
-| 4 | **Dusty rose muscle tank** `IMG_0149` | spring, summer | excellent | practical, cozy |
-| 4 | **Ivory textured knit sweater** `IMG_0099` | fall, winter, spring | excellent | cozy, feminine, polished |
-| 4 | **Oatmeal Awaken graphic sweatshirt** `IMG_0142` | fall, winter, spring | excellent | cozy, practical, playful |
-| 4 | **Oatmeal These Are The Days hoodie** `IMG_0150` | fall, winter, spring | excellent | cozy, practical, playful |
-| 4 | **Oatmeal heather scoop tank** `IMG_0144` | spring, summer, fall | excellent | practical, polished |
-| 4 | **Olive scoop-neck tank** `IMG_0130` | spring, summer, fall | excellent | practical |
-| 4 | **Olive waffle-knit colorblock top** `IMG_0097` | fall, winter, spring | excellent | cozy, practical |
-| 4 | **Sandy beige scoop tank** `IMG_0145` | spring, summer, fall | excellent | practical, feminine |
-| 4 | **Terracotta button-detail sweatshirt** `IMG_0153` | fall, winter, spring | excellent | cozy, practical, feminine |
-| 3 | **Beige leopard-print tank** `IMG_0103` | spring, summer, fall | good | playful, feminine, practical |
-| 3 | **Burgundy crew-neck sweater** `IMG_0157` | fall, winter | fair | cozy, practical |
-| 3 | **Dusty rose Mama Bear tee** `IMG_0133` | spring, summer, fall | excellent | playful, practical, cozy |
-| 3 | **Dusty sage heather tank** `IMG_0131` | spring, summer | good | practical |
-| 3 | **Heather navy V-neck tee** `IMG_0135` | spring, summer, fall | fair | practical |
-| 3 | **Ivory scoop-neck tank** `IMG_0146` | spring, summer | good | practical, feminine |
-| 3 | **Navy V-neck short-sleeve top** `IMG_0094` | spring, summer, fall | fair | practical, cozy |
-| 3 | **Navy bell-sleeve V-neck top** `IMG_0095` | spring, summer, fall | fair | feminine, practical, polished |
-| 3 | **Navy ditsy floral cinched blouse** `IMG_0092` | spring, summer | good | feminine, polished |
-| 3 | **Red navy plaid cinched tunic** `IMG_0159` | fall, winter, spring | fair | practical, cozy, feminine |
-| 2 | **Black quilted crewneck pullover** `IMG_0111` | fall, winter | poor | cozy, practical |
-| 2 | **Black raglan crew sweatshirt** `IMG_0154` | fall, winter, spring | poor | practical, cozy |
-| 2 | **Black sleeveless button blouse** `IMG_0105` | spring, summer, fall | poor | polished, practical |
-| 2 | **Black speckled marled sweater** `IMG_0172` | fall, winter | poor | cozy, practical |
-| 2 | **Charcoal gray striped scoop tank** `IMG_0160` | spring, summer | fair | practical |
-| 2 | **Charcoal heather tank** `IMG_0141` | spring, summer, fall | poor | practical |
-| 2 | **Grey All of Life for Jesus tee** `IMG_0138` | spring, summer, fall | fair | practical, playful |
-| 2 | **Heather blue muscle tank** `IMG_0104` | spring, summer | fair | practical, playful |
-| 2 | **Heather gray Mama Bear sweatshirt** `IMG_0098` | fall, winter, spring | poor | cozy, playful, practical |
-| 2 | **Heather grey MAMA raglan** `IMG_0136` | fall, winter, spring | poor | cozy, practical, playful |
-| 2 | **Heather grey muscle tank** `IMG_0140` | spring, summer | fair | practical |
-| 2 | **Light heather gray tank** `IMG_0106` | spring, summer | fair | practical |
-| 2 | **Navy lace-panel sleeveless top** `IMG_0107` | spring, summer | fair | feminine, polished |
-| 2 | **Navy-and-white stripe long-sleeve tee** `IMG_0096` | spring, fall, winter | poor | practical, playful |
-| 1 | **Black Arizona graphic tee** `IMG_0102` | spring, summer, fall | poor | practical, playful |
-| 1 | **Black crewneck sweatshirt** `IMG_0137` | fall, winter | poor | cozy, practical |
-| 1 | **Black long-sleeve satin tunic** `IMG_0108` | fall, winter | poor | polished |
-| 1 | **Black tiered high-low tank** `IMG_0139` | spring, summer | poor | practical |
-| 1 | **Metallic silver crinkle V-top** `IMG_0091` | fall, winter | poor | polished |
-| 1 | **Tomato-red Kampout 2023 tee** `IMG_0134` | summer | poor | playful |
-| 0 | **GAP tan cream check flannel shirt** `IMG_0148` | — | excellent | cozy, practical |
+### Other (1)
+| ★ | Piece | Character | Seasons | Soft Autumn | Themes |
+|---|---|---|---|---|---|
+| 0 | **Unidentifiable (motion blur)** `IMG_0114` | Neutral | — | poor | — |
+
 
 ## Gap analysis (buy minimally)
 
@@ -187,9 +206,9 @@ Your wardrobe is already rich in Soft Autumn **dresses**, **olive/terracotta/oat
 ### Glaring gaps — buy 1 of each if budget allows
 | Priority | Gap | Why | Soft Autumn / pear note | Shop tip |
 |---|---|---|---|---|
-| 1 | **Warm brown or olive straight/wide jeans** (or soft stretch) | Denim is mostly medium blue; you need a Soft Autumn bottom that isn't cool denim | Olive/brown jeans + oatmeal sweater = endless cozy menus | One pair, mid/high rise |
-| 2 | **Camel or cognac leather-look belt** | Many boxy knits need waist definition for pear | Instantly upgrades sweatshirts & t-shirt dresses | Soft leather, not black |
-| 3 | **Warm taupe or camel ballet flats or clog-style shoes** | White sneakers clash Soft Autumn & show dirt; boots are worn | Completes feminine/church looks without white | One versatile pair |
+| 1 | **Taupe / camel / cognac everyday shoe** (Chelsea/ankle boot, clog, or leather-look sneaker) | Fall and winter only have the worn cognac riding boots. White slip-ons are 2★ and clash. | Sandwich the camel cardi. Dirt-hiding. Walkable. Pear: ankle > knee-high every day. | One pair. Not black. Not white canvas. Ballet flats only if she'll actually wear them on the property. |
+| 2 | **Warm brown or olive straight/wide jeans** (or soft stretch) | Denim is mostly medium blue; you need a Soft Autumn bottom that isn't cool denim | Olive/brown jeans + oatmeal sweater = endless cozy menus | One pair, mid/high rise |
+| 3 | ~~Camel or cognac leather-look belt~~ **Purchased** (`NEW_BELT`) | Marks the waist on boxy knits | Thin brown, all seasons | Don't buy a second |
 | 4 | **Soft cocoa or mushroom long cardigan** (optional) | You have one excellent camel waffle; a longer duster would cover arms in church AC + define vertical line | Soft Autumn neutral | Only if camel waffle isn't long enough |
 | 5 | **One warm white / cream linen blouse** (optional) | Many tops are tanks/tees; a polished cream blouse fills 'feminine Sunday' without black | Avoid stark optical white | Soft ivory, not bright white |
 

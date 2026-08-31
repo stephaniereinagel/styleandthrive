@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f3e4df"/>
+  <rect x="40" y="175" width="320" height="28" rx="6" fill="#8b5a3c"/>
+  <rect x="300" y="168" width="36" height="42" rx="4" fill="#6b4228"/>
+  <circle cx="318" cy="189" r="6" fill="#c4a484"/>
+  <text x="200" y="250" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#9a5648">Thin brown belt</text>
+</svg>

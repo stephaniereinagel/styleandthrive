@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f3e4df"/>
+  <rect x="90" y="70" width="220" height="260" rx="12" fill="#7a3a28"/>
+  <path d="M90 90 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M90 130 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M90 170 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M90 210 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M90 250 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M90 290 H310" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M140 70 V330" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M200 70 V330" stroke="#2a1a14" stroke-width="8"/>
+  <path d="M260 70 V330" stroke="#2a1a14" stroke-width="8"/>
+  <text x="200" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#9a5648">Rust black flannel</text>
+</svg>

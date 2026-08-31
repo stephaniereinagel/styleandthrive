@@ -2,8 +2,8 @@
   "profile": {
     "name": "Stephanie Reinagel",
     "color_season": "Soft Autumn",
-    "body_type": "pear",
-    "lifestyle": "Homestead mom of 5, NW Arkansas \u2014 farm stand, outdoors, church, busy weekdays solo parenting",
+    "body_type": "high-waist rectangle / full bust (photo 8/31/26); belt and tuck; skip extra shoulder volume",
+    "lifestyle": "Homestead mom of 5, NW Arkansas — farm stand, outdoors, church, busy weekdays solo parenting",
     "rating_guide": {
       "0": "Get rid of it",
       "1": "Wear only if necessary",
@@ -11,7 +11,22 @@
       "3": "Solid usable",
       "4": "Strong staple",
       "5": "Best overall hero"
-    }
+    },
+    "formula_slots": [
+      "top",
+      "bottom",
+      "both",
+      "undershirt",
+      "topper",
+      "outerwear",
+      "shoes",
+      "accessory"
+    ],
+    "formula_characters": [
+      "Neutral",
+      "Print",
+      "Color"
+    ]
   },
   "items": [
     {
@@ -26,7 +41,7 @@
       "pattern": "solid",
       "description": "High-rise mid-wash wide/straight jeans. Photographed in a mirror selfie with an olive ribbed tank (tank is a separate layering piece, not this entry).",
       "rating": 4,
-      "rating_reason": "Strong pear staple \u2014 wide legs streamline hips. Cool mid-wash is only fair Soft Autumn, but fills a critical winter bottom gap alongside olive pants. Versatile homestead denim.",
+      "rating_reason": "Strong pear staple — wide legs streamline hips. Cool mid-wash is only fair Soft Autumn, but fills a critical winter bottom gap alongside olive pants. Versatile homestead denim.",
       "seasons": [
         "spring",
         "summer",
@@ -42,7 +57,9 @@
       "image": "images/thumbs/IMG_0049.jpg",
       "image_full": "images/source/IMG_0049.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "bottom",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0084",
@@ -69,7 +86,9 @@
       "image": "images/thumbs/IMG_0084.jpg",
       "image_full": "images/source/IMG_0084.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "outerwear",
+      "character": "Print"
     },
     {
       "id": "IMG_0085",
@@ -97,7 +116,9 @@
       "image": "images/thumbs/IMG_0085.jpg",
       "image_full": "images/source/IMG_0085.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0086",
@@ -123,7 +144,9 @@
       "image": "images/thumbs/IMG_0086.jpg",
       "image_full": "images/source/IMG_0086.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0087",
@@ -139,7 +162,8 @@
       "rating": 5,
       "rating_reason": "Soft Autumn dusty rose + waist + pockets = hero.",
       "seasons": [
-        "spring"
+        "spring",
+        "fall"
       ],
       "themes": [
         "feminine",
@@ -150,7 +174,9 @@
       "image": "images/thumbs/IMG_0087.jpg",
       "image_full": "images/source/IMG_0087.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0088",
@@ -166,7 +192,9 @@
       "rating_reason": "Homestead workwear hero; layer Soft Autumn knits under.",
       "seasons": [
         "spring",
-        "winter"
+        "fall",
+        "winter",
+        "summer"
       ],
       "themes": [
         "practical",
@@ -177,7 +205,9 @@
       "image": "images/thumbs/IMG_0088.jpg",
       "image_full": "images/source/IMG_0088.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0089",
@@ -203,7 +233,9 @@
       "image": "images/thumbs/IMG_0089.jpg",
       "image_full": "images/source/IMG_0089.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0090",
@@ -232,7 +264,9 @@
       "image": "images/thumbs/IMG_0090.jpg",
       "image_full": "images/source/IMG_0090.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0091",
@@ -255,7 +289,9 @@
       "image": "images/thumbs/IMG_0091.jpg",
       "image_full": "images/source/IMG_0091.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0092",
@@ -283,7 +319,9 @@
       "image": "images/thumbs/IMG_0092.jpg",
       "image_full": "images/source/IMG_0092.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0094",
@@ -308,7 +346,9 @@
       "image": "images/thumbs/IMG_0094.jpg",
       "image_full": "images/source/IMG_0094.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0095",
@@ -334,7 +374,9 @@
       "image": "images/thumbs/IMG_0095.jpg",
       "image_full": "images/source/IMG_0095.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0096",
@@ -360,7 +402,9 @@
       "image": "images/thumbs/IMG_0096.jpg",
       "image_full": "images/source/IMG_0096.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0097",
@@ -386,7 +430,9 @@
       "image": "images/thumbs/IMG_0097.jpg",
       "image_full": "images/source/IMG_0097.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0098",
@@ -413,7 +459,9 @@
       "image": "images/thumbs/IMG_0098.jpg",
       "image_full": "images/source/IMG_0098.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0099",
@@ -429,7 +477,8 @@
       "rating": 4,
       "rating_reason": "Soft cream is a Soft Autumn hero neutral with cozy texture; layer or belt/tuck for pear. Slightly precious for muddy chores but strong for cooler days.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -440,7 +489,9 @@
       "image": "images/thumbs/IMG_0099.jpg",
       "image_full": "images/source/IMG_0099.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0100",
@@ -456,7 +507,8 @@
       "rating": 5,
       "rating_reason": "Textbook Soft Autumn warm muted yellow and a washable homestead staple; pair with darker bottoms and a belt/tuck to define the pear waist.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -466,7 +518,9 @@
       "image": "images/thumbs/IMG_0100.jpg",
       "image_full": "images/source/IMG_0100.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0101",
@@ -480,11 +534,12 @@
       "pattern": "solid",
       "description": "Muted moss/olive woven pants with a button waistband and relaxed straight legs. Matte twill-like fabric suited to everyday wear.",
       "rating": 5,
-      "rating_reason": "Soft Autumn hallmark color, dirt-hiding, and straight legs streamline pear hips\u2014core capsule bottom.",
+      "rating_reason": "Soft Autumn hallmark color, dirt-hiding, and straight legs streamline pear hips—core capsule bottom.",
       "seasons": [
         "spring",
         "fall",
-        "winter"
+        "winter",
+        "summer"
       ],
       "themes": [
         "practical",
@@ -495,7 +550,9 @@
       "image": "images/thumbs/IMG_0101.jpg",
       "image_full": "images/source/IMG_0101.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "bottom",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0102",
@@ -519,7 +576,9 @@
       "image": "images/thumbs/IMG_0102.jpg",
       "image_full": "images/source/IMG_0102.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0103",
@@ -534,7 +593,7 @@
       "pattern": "animal print",
       "description": "Sleeveless scoop-neck tank with wide straps and an all-over small-scale leopard/cheetah print on a muted beige base. Lightweight, loose drape.",
       "rating": 3,
-      "rating_reason": "Warm earthy animal print can work Soft Autumn as a layering accent; straight tank won't define pear waist\u2014best under open layers.",
+      "rating_reason": "Warm earthy animal print can work Soft Autumn as a layering accent; straight tank won't define pear waist—best under open layers.",
       "seasons": [
         "spring"
       ],
@@ -547,7 +606,9 @@
       "image": "images/thumbs/IMG_0103.jpg",
       "image_full": "images/source/IMG_0103.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0104",
@@ -571,7 +632,9 @@
       "image": "images/thumbs/IMG_0104.jpg",
       "image_full": "images/source/IMG_0104.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Print"
     },
     {
       "id": "IMG_0105",
@@ -594,7 +657,9 @@
       "image": "images/thumbs/IMG_0105.jpg",
       "image_full": "images/source/IMG_0105.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0106",
@@ -616,7 +681,9 @@
       "image": "images/thumbs/IMG_0106.jpg",
       "image_full": "images/source/IMG_0106.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0107",
@@ -640,7 +707,9 @@
       "image": "images/thumbs/IMG_0107.jpg",
       "image_full": "images/source/IMG_0107.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0108",
@@ -662,7 +731,9 @@
       "image": "images/thumbs/IMG_0108.jpg",
       "image_full": "images/source/IMG_0108.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0109",
@@ -676,7 +747,7 @@
       "pattern": "solid",
       "description": "Sleeveless dark charcoal/black button-front dress with deep V-neck, textured crinkle fabric, and a defined waist seam with drawstring/elastic. Slightly flared skirt.",
       "rating": 3,
-      "rating_reason": "Strong pear silhouette (waist + A-line) and nursing-friendly buttons, but cool near-black is only fair Soft Autumn\u2014better if it reads soft charcoal in person.",
+      "rating_reason": "Strong pear silhouette (waist + A-line) and nursing-friendly buttons, but cool near-black is only fair Soft Autumn—better if it reads soft charcoal in person.",
       "seasons": [
         "summer"
       ],
@@ -689,7 +760,9 @@
       "image": "images/thumbs/IMG_0109.jpg",
       "image_full": "images/source/IMG_0109.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0110",
@@ -705,7 +778,8 @@
       "rating": 5,
       "rating_reason": "Hero Soft Autumn earthy rust, cozy and practical for NW Arkansas cool weather; belt or tuck to define pear waist.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -715,7 +789,9 @@
       "image": "images/thumbs/IMG_0110.jpg",
       "image_full": "images/source/IMG_0110.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0111",
@@ -728,7 +804,7 @@
       "pattern": "solid",
       "description": "Solid black long-sleeve quilted pullover with a fine diamond-grid texture, ribbed crew neck and cuffs, and a slightly relaxed fit.",
       "rating": 2,
-      "rating_reason": "Same cozy practical construction as the rust twin, but solid black is harsh Soft Autumn\u2014filler warmth piece only.",
+      "rating_reason": "Same cozy practical construction as the rust twin, but solid black is harsh Soft Autumn—filler warmth piece only.",
       "seasons": [
         "winter"
       ],
@@ -740,7 +816,9 @@
       "image": "images/thumbs/IMG_0111.jpg",
       "image_full": "images/source/IMG_0111.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0112",
@@ -771,7 +849,9 @@
       "image_full": "images/source/IMG_0112.jpg",
       "in_capsule": true,
       "is_staple": false,
-      "notes": "Duplicate of IMG_0115 (same garment, second photo)."
+      "notes": "Duplicate of IMG_0115 (same garment, second photo).",
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0114",
@@ -786,20 +866,22 @@
       "pattern": "unknown",
       "description": "Extremely motion-blurred accidental shot with only diagonal streaks of tan/beige/brown; no garment can be identified.",
       "rating": 0,
-      "rating_reason": "Photo is unusable for wardrobe cataloguing\u2014retake needed if this was meant to document a piece.",
+      "rating_reason": "Photo is unusable for wardrobe cataloguing—retake needed if this was meant to document a piece.",
       "themes": [],
       "soft_autumn_fit": "poor",
       "seasons": [],
       "image": "images/thumbs/IMG_0114.jpg",
       "image_full": "images/source/IMG_0114.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "other",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0115",
       "name": "Navy peach floral wrap maxi (duplicate photo)",
       "category": "dress",
-      "subcategory": "maxi dress \u2014 duplicate",
+      "subcategory": "maxi dress — duplicate",
       "colors": [
         "navy",
         "peach",
@@ -808,7 +890,7 @@
         "sage"
       ],
       "pattern": "floral",
-      "description": "Same dress as IMG_0112 \u2014 second photo only. Do not count as a separate piece.",
+      "description": "Same dress as IMG_0112 — second photo only. Do not count as a separate piece.",
       "rating": 0,
       "rating_reason": "Duplicate entry of IMG_0112 (navy peach floral wrap maxi).",
       "seasons": [],
@@ -819,7 +901,9 @@
       "in_capsule": false,
       "is_staple": false,
       "notes": "Duplicate of IMG_0112. Use IMG_0112 in capsules/menus.",
-      "duplicate_of": "IMG_0112"
+      "duplicate_of": "IMG_0112",
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0116",
@@ -833,9 +917,10 @@
       "pattern": "solid",
       "description": "Muted dark olive knit midi with short sleeves, waist seam with light gathering, and a subtle A-line skirt to mid-calf. Soft jersey, practical everyday cut.",
       "rating": 5,
-      "rating_reason": "Excellent Soft Autumn olive, waist definition + skimming A-line for pear, washable one-and-done for busy mom days\u2014capsule hero.",
+      "rating_reason": "Excellent Soft Autumn olive, waist definition + skimming A-line for pear, washable one-and-done for busy mom days—capsule hero.",
       "seasons": [
-        "spring"
+        "spring",
+        "fall"
       ],
       "themes": [
         "practical",
@@ -846,7 +931,9 @@
       "image": "images/thumbs/IMG_0116.jpg",
       "image_full": "images/source/IMG_0116.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0117",
@@ -868,7 +955,9 @@
       "image": "images/thumbs/IMG_0117.jpg",
       "image_full": "images/source/IMG_0117.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0118",
@@ -882,7 +971,7 @@
       "pattern": "solid",
       "description": "Muted olive/sage short-sleeve tiered dress with V-neck, lettuce-edge ruffles, and an adjustable drawstring waist with ties. Soft flowy knit, midi/maxi length.",
       "rating": 5,
-      "rating_reason": "Soft Autumn olive, adjustable waist for postpartum/pear, feminine tiers that skim hips\u2014practical washable hero.",
+      "rating_reason": "Soft Autumn olive, adjustable waist for postpartum/pear, feminine tiers that skim hips—practical washable hero.",
       "seasons": [
         "spring"
       ],
@@ -895,7 +984,9 @@
       "image": "images/thumbs/IMG_0118.jpg",
       "image_full": "images/source/IMG_0118.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0119",
@@ -922,7 +1013,9 @@
       "image": "images/thumbs/IMG_0119.jpg",
       "image_full": "images/source/IMG_0119.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0120",
@@ -950,7 +1043,9 @@
       "image": "images/thumbs/IMG_0120.jpg",
       "image_full": "images/source/IMG_0120.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "bottom",
+      "character": "Print"
     },
     {
       "id": "IMG_0121",
@@ -976,7 +1071,9 @@
       "image": "images/thumbs/IMG_0121.jpg",
       "image_full": "images/source/IMG_0121.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0122",
@@ -1001,7 +1098,9 @@
       "image": "images/thumbs/IMG_0122.jpg",
       "image_full": "images/source/IMG_0122.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0123",
@@ -1025,7 +1124,9 @@
       "image": "images/thumbs/IMG_0123.jpg",
       "image_full": "images/source/IMG_0123.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0124",
@@ -1050,7 +1151,9 @@
       "image": "images/thumbs/IMG_0124.jpg",
       "image_full": "images/source/IMG_0124.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0125",
@@ -1077,7 +1180,9 @@
       "image": "images/thumbs/IMG_0125.jpg",
       "image_full": "images/source/IMG_0125.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0126",
@@ -1102,7 +1207,9 @@
       "image": "images/thumbs/IMG_0126.jpg",
       "image_full": "images/source/IMG_0126.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Color"
     },
     {
       "id": "IMG_0127",
@@ -1124,7 +1231,9 @@
       "image": "images/thumbs/IMG_0127.jpg",
       "image_full": "images/source/IMG_0127.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0128",
@@ -1152,7 +1261,9 @@
       "image": "images/thumbs/IMG_0128.jpg",
       "image_full": "images/source/IMG_0128.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0129",
@@ -1174,7 +1285,9 @@
       "image": "images/thumbs/IMG_0129.jpg",
       "image_full": "images/source/IMG_0129.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0130",
@@ -1198,7 +1311,9 @@
       "image": "images/thumbs/IMG_0130.jpg",
       "image_full": "images/source/IMG_0130.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0131",
@@ -1212,7 +1327,7 @@
       "pattern": "solid",
       "description": "Light dusty sage/mint heather tank with wide straps, simple round neck, and a straight relaxed hem.",
       "rating": 3,
-      "rating_reason": "Muted green mostly works though it leans a touch cool. Basic pear layer\u2014needs a tuck or open cardigan. Keep as a summer undershirt.",
+      "rating_reason": "Muted green mostly works though it leans a touch cool. Basic pear layer—needs a tuck or open cardigan. Keep as a summer undershirt.",
       "seasons": [
         "spring"
       ],
@@ -1223,7 +1338,9 @@
       "image": "images/thumbs/IMG_0131.jpg",
       "image_full": "images/source/IMG_0131.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0132",
@@ -1242,6 +1359,7 @@
       "rating_reason": "Palette is Soft Autumn textbook, elastic waist plus flowy A-line is ideal pear, print hides stains, and it moves with kids and farm days. Hero capsule piece.",
       "seasons": [
         "summer",
+        "fall",
         "winter"
       ],
       "themes": [
@@ -1252,7 +1370,9 @@
       "image": "images/thumbs/IMG_0132.jpg",
       "image_full": "images/source/IMG_0132.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "bottom",
+      "character": "Print"
     },
     {
       "id": "IMG_0133",
@@ -1266,7 +1386,7 @@
       "pattern": "print",
       "description": "Heathered muted rose crewneck tee with a white 'Mama Bear' script, bear silhouette, and heart graphic. Soft jersey, relaxed fit.",
       "rating": 3,
-      "rating_reason": "Dusty rose is a strong Soft Autumn mom color; straight tee needs a front tuck or knot for a pear waist. Playful and washable\u2014keep one, not a pile of graphics.",
+      "rating_reason": "Dusty rose is a strong Soft Autumn mom color; straight tee needs a front tuck or knot for a pear waist. Playful and washable—keep one, not a pile of graphics.",
       "seasons": [
         "summer"
       ],
@@ -1279,7 +1399,9 @@
       "image": "images/thumbs/IMG_0133.jpg",
       "image_full": "images/source/IMG_0133.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0134",
@@ -1303,7 +1425,9 @@
       "image": "images/thumbs/IMG_0134.jpg",
       "image_full": "images/source/IMG_0134.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0135",
@@ -1327,7 +1451,9 @@
       "image": "images/thumbs/IMG_0135.jpg",
       "image_full": "images/source/IMG_0135.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0136",
@@ -1352,7 +1478,9 @@
       "image": "images/thumbs/IMG_0136.jpg",
       "image_full": "images/source/IMG_0136.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0137",
@@ -1375,7 +1503,9 @@
       "image": "images/thumbs/IMG_0137.jpg",
       "image_full": "images/source/IMG_0137.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0138",
@@ -1399,7 +1529,9 @@
       "image": "images/thumbs/IMG_0138.jpg",
       "image_full": "images/source/IMG_0138.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0139",
@@ -1412,7 +1544,7 @@
       "pattern": "solid",
       "description": "Solid black sleeveless round-neck tank with a double-layered, slightly high-low tiered hem.",
       "rating": 1,
-      "rating_reason": "Black is harsh on Soft Autumn, and a flared/tiered hem adds volume right at the hips\u2014the opposite of pear strategy. Easy pass.",
+      "rating_reason": "Black is harsh on Soft Autumn, and a flared/tiered hem adds volume right at the hips—the opposite of pear strategy. Easy pass.",
       "seasons": [],
       "themes": [
         "practical"
@@ -1421,7 +1553,9 @@
       "image": "images/thumbs/IMG_0139.jpg",
       "image_full": "images/source/IMG_0139.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0140",
@@ -1443,7 +1577,9 @@
       "image": "images/thumbs/IMG_0140.jpg",
       "image_full": "images/source/IMG_0140.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0141",
@@ -1465,7 +1601,9 @@
       "image": "images/thumbs/IMG_0141.jpg",
       "image_full": "images/source/IMG_0141.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0142",
@@ -1481,7 +1619,8 @@
       "rating": 4,
       "rating_reason": "Oatmeal is a Soft Autumn hero and a relaxed top balances hips. Black print is a bit stark but the base color and cozy homestead vibe make it a strong staple.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -1492,7 +1631,9 @@
       "image": "images/thumbs/IMG_0142.jpg",
       "image_full": "images/source/IMG_0142.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0144",
@@ -1518,7 +1659,9 @@
       "image": "images/thumbs/IMG_0144.jpg",
       "image_full": "images/source/IMG_0144.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0145",
@@ -1531,7 +1674,7 @@
       "pattern": "solid",
       "description": "Light sandy beige sleeveless tank with a deeper scoop neck and medium-thin straps. Lightweight drapey jersey; a waffle cardigan is behind, not the focus.",
       "rating": 4,
-      "rating_reason": "Earthy beige is excellent Soft Autumn and a deeper scoop lifts the eye. Same job as the oatmeal tank\u2014keep the better-condition one if they duplicate.",
+      "rating_reason": "Earthy beige is excellent Soft Autumn and a deeper scoop lifts the eye. Same job as the oatmeal tank—keep the better-condition one if they duplicate.",
       "seasons": [
         "spring"
       ],
@@ -1543,7 +1686,9 @@
       "image": "images/thumbs/IMG_0145.jpg",
       "image_full": "images/source/IMG_0145.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0146",
@@ -1569,7 +1714,9 @@
       "image": "images/thumbs/IMG_0146.jpg",
       "image_full": "images/source/IMG_0146.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0147",
@@ -1587,7 +1734,8 @@
       "seasons": [
         "spring",
         "fall",
-        "winter"
+        "winter",
+        "summer"
       ],
       "themes": [
         "cozy",
@@ -1598,7 +1746,9 @@
       "image": "images/thumbs/IMG_0147.jpg",
       "image_full": "images/source/IMG_0147.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "topper",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0148",
@@ -1613,7 +1763,7 @@
       "pattern": "check",
       "description": "Long-sleeve GAP button-down in a large muted tan-and-cream check with a chest pocket; fabric looks brushed cotton or light flannel. Heavy wear with a large front hole, collar yellowing, and staining.",
       "rating": 0,
-      "rating_reason": "Colors are Soft Autumn gold, but the hole and stains make it unsuitable for a curated capsule\u2014chore rag at best.",
+      "rating_reason": "Colors are Soft Autumn gold, but the hole and stains make it unsuitable for a curated capsule—chore rag at best.",
       "seasons": [],
       "themes": [
         "cozy",
@@ -1623,7 +1773,9 @@
       "image": "images/thumbs/IMG_0148.jpg",
       "image_full": "images/source/IMG_0148.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0149",
@@ -1639,7 +1791,8 @@
       "rating": 4,
       "rating_reason": "Muted warm pink is Soft Autumn friendly; wide shoulders help balance hips. Easy summer homestead layer when tucked.",
       "seasons": [
-        "spring"
+        "spring",
+        "summer"
       ],
       "themes": [
         "practical",
@@ -1649,7 +1802,9 @@
       "image": "images/thumbs/IMG_0149.jpg",
       "image_full": "images/source/IMG_0149.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0150",
@@ -1666,7 +1821,8 @@
       "rating": 4,
       "rating_reason": "Warm neutral Soft Autumn staple and cozy for homestead days; boxy cut needs a tuck or layer for waist definition.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -1677,7 +1833,9 @@
       "image": "images/thumbs/IMG_0150.jpg",
       "image_full": "images/source/IMG_0150.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0151",
@@ -1693,7 +1851,8 @@
       "rating": 5,
       "rating_reason": "Signature Soft Autumn green plus a V-neck that lifts the eye; cozy layering hero for pear balance.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -1704,7 +1863,9 @@
       "image": "images/thumbs/IMG_0151.jpg",
       "image_full": "images/source/IMG_0151.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0152",
@@ -1721,7 +1882,8 @@
       "rating": 5,
       "rating_reason": "Perfect Soft Autumn neutral with a flattering V; soft staple for layering over tees or under jackets.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "cozy",
@@ -1732,7 +1894,9 @@
       "image": "images/thumbs/IMG_0152.jpg",
       "image_full": "images/source/IMG_0152.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0153",
@@ -1759,7 +1923,9 @@
       "image": "images/thumbs/IMG_0153.jpg",
       "image_full": "images/source/IMG_0153.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0154",
@@ -1782,7 +1948,9 @@
       "image": "images/thumbs/IMG_0154.jpg",
       "image_full": "images/source/IMG_0154.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0155",
@@ -1798,7 +1966,8 @@
       "rating": 4,
       "rating_reason": "Muted wash works Soft Autumn; structured shoulders balance hips and denim is homestead durable.",
       "seasons": [
-        "spring"
+        "spring",
+        "summer"
       ],
       "themes": [
         "practical",
@@ -1809,7 +1978,9 @@
       "image": "images/thumbs/IMG_0155.jpg",
       "image_full": "images/source/IMG_0155.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "outerwear",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0156",
@@ -1823,7 +1994,7 @@
       "pattern": "solid",
       "description": "Solid warm red-orange knit maxi/midi skirt with a wide flat waistband and full gathered flare. Lightweight stretch jersey with soft drape.",
       "rating": 0,
-      "rating_reason": "Remove \u2014 color clashes with Soft Autumn capsule in real life; needs zipper repair. Not worth keeping in rotation.",
+      "rating_reason": "Remove — color clashes with Soft Autumn capsule in real life; needs zipper repair. Not worth keeping in rotation.",
       "seasons": [],
       "themes": [],
       "soft_autumn_fit": "fair",
@@ -1831,7 +2002,9 @@
       "image_full": "images/source/IMG_0156.jpg",
       "in_capsule": false,
       "is_staple": false,
-      "notes": "Removed Aug 2026: coloring doesn't fit wardrobe; zipper needs repair."
+      "notes": "Removed Aug 2026: coloring doesn't fit wardrobe; zipper needs repair.",
+      "slot": "bottom",
+      "character": "Color"
     },
     {
       "id": "IMG_0157",
@@ -1857,7 +2030,9 @@
       "image": "images/thumbs/IMG_0157.jpg",
       "image_full": "images/source/IMG_0157.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Color"
     },
     {
       "id": "IMG_0158",
@@ -1884,7 +2059,9 @@
       "image": "images/thumbs/IMG_0158.jpg",
       "image_full": "images/source/IMG_0158.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "bottom",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0159",
@@ -1901,7 +2078,8 @@
       "rating": 3,
       "rating_reason": "Cinched waist is excellent for pear and homestead-practical, but high-contrast bright red/navy is only fair Soft Autumn.",
       "seasons": [
-        "fall"
+        "fall",
+        "winter"
       ],
       "themes": [
         "practical",
@@ -1912,7 +2090,9 @@
       "image": "images/thumbs/IMG_0159.jpg",
       "image_full": "images/source/IMG_0159.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0160",
@@ -1935,7 +2115,9 @@
       "image": "images/thumbs/IMG_0160.jpg",
       "image_full": "images/source/IMG_0160.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "undershirt",
+      "character": "Print"
     },
     {
       "id": "IMG_0161",
@@ -1950,7 +2132,7 @@
       "pattern": "solid",
       "description": "Warm beige utility jacket with stand collar, metal snap front, large lower flap pockets, and an internal waist drawstring for cinching. Durable cotton-blend look.",
       "rating": 5,
-      "rating_reason": "Soft Autumn neutral with adjustable waist\u2014ideal pear definition plus homestead-ready outer layer.",
+      "rating_reason": "Soft Autumn neutral with adjustable waist—ideal pear definition plus homestead-ready outer layer.",
       "seasons": [
         "spring",
         "fall",
@@ -1965,7 +2147,9 @@
       "image": "images/thumbs/IMG_0161.jpg",
       "image_full": "images/source/IMG_0161.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "outerwear",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0162",
@@ -1992,7 +2176,9 @@
       "image": "images/thumbs/IMG_0162.jpg",
       "image_full": "images/source/IMG_0162.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "outerwear",
+      "character": "Print"
     },
     {
       "id": "IMG_0163",
@@ -2007,7 +2193,7 @@
       "pattern": "solid",
       "description": "DENIZEN from Levi's five-pocket cotton twill shorts in white/off-white. Same pair was photographed twice (also as IMG_0164).",
       "rating": 4,
-      "rating_reason": "Practical summer homestead short; light neutral works Soft Autumn as a soft white. One pair only \u2014 duplicate photo retired.",
+      "rating_reason": "Practical summer homestead short; light neutral works Soft Autumn as a soft white. One pair only — duplicate photo retired.",
       "seasons": [
         "summer"
       ],
@@ -2019,20 +2205,22 @@
       "image_full": "images/source/IMG_0163.jpg",
       "in_capsule": true,
       "is_staple": false,
-      "notes": "Duplicate of IMG_0164 (same garment, second photo)."
+      "notes": "Duplicate of IMG_0164 (same garment, second photo).",
+      "slot": "bottom",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0164",
       "name": "White DENIZEN shorts (duplicate photo)",
       "category": "bottom",
-      "subcategory": "shorts \u2014 duplicate",
+      "subcategory": "shorts — duplicate",
       "colors": [
         "white",
         "off-white",
         "cream"
       ],
       "pattern": "solid",
-      "description": "Same pair as IMG_0163 \u2014 second photo only. Do not count as a separate piece.",
+      "description": "Same pair as IMG_0163 — second photo only. Do not count as a separate piece.",
       "rating": 0,
       "rating_reason": "Duplicate entry of IMG_0163 (white DENIZEN five-pocket shorts).",
       "seasons": [],
@@ -2043,7 +2231,9 @@
       "in_capsule": false,
       "is_staple": false,
       "notes": "Duplicate of IMG_0163. Use IMG_0163 in capsules/menus.",
-      "duplicate_of": "IMG_0163"
+      "duplicate_of": "IMG_0163",
+      "slot": "bottom",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0165",
@@ -2071,7 +2261,9 @@
       "image": "images/thumbs/IMG_0165.jpg",
       "image_full": "images/source/IMG_0165.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "both",
+      "character": "Print"
     },
     {
       "id": "IMG_0166",
@@ -2097,7 +2289,9 @@
       "image": "images/thumbs/IMG_0166.jpg",
       "image_full": "images/source/IMG_0166.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "both",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0167",
@@ -2127,7 +2321,9 @@
       "image": "images/thumbs/IMG_0167.jpg",
       "image_full": "images/source/IMG_0167.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Print"
     },
     {
       "id": "IMG_0168",
@@ -2156,7 +2352,9 @@
       "image": "images/thumbs/IMG_0168.jpg",
       "image_full": "images/source/IMG_0168.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "outerwear",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0169",
@@ -2185,7 +2383,9 @@
       "image": "images/thumbs/IMG_0169.jpg",
       "image_full": "images/source/IMG_0169.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "shoes",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0170",
@@ -2213,7 +2413,9 @@
       "image": "images/thumbs/IMG_0170.jpg",
       "image_full": "images/source/IMG_0170.jpg",
       "in_capsule": true,
-      "is_staple": true
+      "is_staple": true,
+      "slot": "shoes",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0172",
@@ -2240,7 +2442,9 @@
       "image": "images/thumbs/IMG_0172.jpg",
       "image_full": "images/source/IMG_0172.jpg",
       "in_capsule": true,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "top",
+      "character": "Neutral"
     },
     {
       "id": "IMG_0174",
@@ -2262,24 +2466,95 @@
       "image": "images/thumbs/IMG_0174.jpg",
       "image_full": "images/source/IMG_0174.jpg",
       "in_capsule": false,
-      "is_staple": false
+      "is_staple": false,
+      "slot": "shoes",
+      "character": "Neutral"
+    },
+    {
+      "id": "NEW_BELT",
+      "name": "Thin brown belt",
+      "category": "accessory",
+      "subcategory": "belt",
+      "colors": [
+        "brown",
+        "cognac",
+        "tan"
+      ],
+      "pattern": "solid",
+      "description": "Thin brown/cognac belt purchased Aug 2026. Marks the high waist on jeans, olive pants, and boxy knits.",
+      "rating": 4,
+      "rating_reason": "The missing waist tool. Soft Autumn brown; use on high-rise bottoms and t-shirt dresses. Photo 8/31: she already tucks — this finishes it.",
+      "seasons": [
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "polished",
+        "feminine",
+        "cozy"
+      ],
+      "soft_autumn_fit": "excellent",
+      "image": "images/thumbs/NEW_BELT.svg",
+      "image_full": "images/source/NEW_BELT.svg",
+      "in_capsule": true,
+      "is_staple": true,
+      "slot": "accessory",
+      "character": "Neutral",
+      "user_added": true,
+      "source": "purchased"
+    },
+    {
+      "id": "NEW_FLANNEL",
+      "name": "Rust and black flannel",
+      "category": "top",
+      "subcategory": "flannel shirt",
+      "colors": [
+        "rust",
+        "black"
+      ],
+      "pattern": "plaid",
+      "description": "Rust/black flannel purchased Aug 2026. Wear open as a topper over a tee or tank — not buttoned into a box, not over a sweater.",
+      "rating": 3,
+      "rating_reason": "Rust is Soft Autumn; black in the plaid is a ding. Open it for a vertical line on a broader-shoulder, high-waist frame. Print slot.",
+      "seasons": [
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "themes": [
+        "practical",
+        "cozy",
+        "playful"
+      ],
+      "soft_autumn_fit": "fair",
+      "image": "images/thumbs/NEW_FLANNEL.svg",
+      "image_full": "images/source/NEW_FLANNEL.svg",
+      "in_capsule": true,
+      "is_staple": false,
+      "slot": "topper",
+      "character": "Print",
+      "user_added": true,
+      "source": "purchased"
     }
   ],
   "stats": {
-    "total": 87,
+    "total": 89,
     "by_rating": {
-      "0": 5,
+      "4": 23,
+      "3": 22,
+      "5": 13,
       "1": 8,
       "2": 18,
-      "3": 21,
-      "4": 22,
-      "5": 13
+      "0": 5
     },
     "by_season": {
-      "spring": 28,
-      "summer": 17,
-      "fall": 16,
-      "winter": 18
+      "spring": 30,
+      "summer": 23,
+      "fall": 22,
+      "winter": 28
     },
     "discard": [
       "IMG_0114",
@@ -2293,6 +2568,21 @@
       "summer": 33,
       "fall": 36,
       "winter": 32
+    },
+    "by_slot": {
+      "top": 36,
+      "bottom": 8,
+      "both": 25,
+      "undershirt": 8,
+      "topper": 1,
+      "outerwear": 5,
+      "shoes": 3,
+      "other": 1
+    },
+    "by_character": {
+      "Neutral": 41,
+      "Print": 28,
+      "Color": 18
     }
   },
   "capsules": {
@@ -2352,15 +2642,19 @@
       ]
     },
     "fall": {
-      "size": 16,
+      "size": 20,
       "ids": [
         "IMG_0049",
         "IMG_0085",
+        "IMG_0087",
+        "IMG_0088",
         "IMG_0099",
         "IMG_0100",
         "IMG_0101",
         "IMG_0110",
+        "IMG_0116",
         "IMG_0125",
+        "IMG_0132",
         "IMG_0142",
         "IMG_0147",
         "IMG_0150",

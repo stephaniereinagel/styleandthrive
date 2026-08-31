@@ -111,74 +111,82 @@
       "winter"
     ]
   },
-  "rotation_note": "All rating 3+ included (one primary season each). Few staples carry across seasons (including winter bottoms/dresses: jeans, olive pants, overalls, floral skirt, stripe midi, terracotta & oatmeal dresses). Rating 2 only to fill winter top gaps. Every day includes a bottom, skirt, overalls, or dress. Tops/bottoms/dresses/overalls/cardigans once per week; shoes & jackets may repeat.",
+  "rotation_note": "21 unique outfits per season. Base items (top / bottom / both / topper / accessory) need 3 days before reuse (Saturday → Tuesday). Outerwear and shoes may repeat. No sweater-over-dress. No cardigan-over-sweater. High waist + belt when the cut is boxy.",
   "seasons": {
     "spring": {
-      "label": "Spring capsule \u00b7 starts first Monday of March",
+      "label": "Spring capsule · starts first Monday of March",
       "menus": [
         {
           "id": "week1",
           "name": "Soft & Rooted",
           "rotation_index": 0,
-          "focus": "Olive, dusty rose, camel",
+          "focus": "Olive, dusty rose, belt the waffle",
           "days": {
             "Monday": {
-              "outfit": "Overalls + dusty rose tank + trucker",
+              "outfit": "Practical: overalls + dusty rose tank + trucker + sandals.",
               "pieces": [
                 "IMG_0088",
                 "IMG_0149",
-                "IMG_0155"
+                "IMG_0155",
+                "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Olive waffle + olive pants + camel cardigan",
+              "outfit": "Cozy: olive waffle + olive pants + thin brown belt + camel cardi + sandals. High waist marked.",
               "pieces": [
                 "IMG_0097",
                 "IMG_0101",
-                "IMG_0147"
+                "NEW_BELT",
+                "IMG_0147",
+                "IMG_0170"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Dusty rose utility midi + moto",
+              "outfit": "Feminine: dusty rose utility midi + moto + sandals. Waist already built in.",
               "pieces": [
                 "IMG_0087",
-                "IMG_0168"
+                "IMG_0168",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Navy V-neck + pinstripe pants + sandals",
+              "outfit": "Playful: leopard tank + jeans + sandals. One print. Tuck the tank.",
               "pieces": [
-                "IMG_0094",
-                "IMG_0120",
+                "IMG_0103",
+                "IMG_0049",
                 "IMG_0170"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Olive short-sleeve midi + utility",
+              "outfit": "Polished: olive midi + thin brown belt + utility + sandals.",
               "pieces": [
                 "IMG_0116",
-                "IMG_0161"
+                "NEW_BELT",
+                "IMG_0161",
+                "IMG_0170"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Jeans + sandy beige tank + MAMA jacket",
+              "outfit": "Practical: sandy tank + pinstripe pants + MAMA jacket + sandals. One print.",
               "pieces": [
-                "IMG_0049",
                 "IMG_0145",
-                "IMG_0084"
+                "IMG_0120",
+                "IMG_0084",
+                "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Swiss-dot maxi + terracotta sweatshirt",
+              "outfit": "Feminine: Swiss-dot maxi + moto + sandals. Dress only.",
               "pieces": [
                 "IMG_0166",
-                "IMG_0153"
+                "IMG_0168",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             }
@@ -188,18 +196,19 @@
           "id": "week2",
           "name": "Homestead Easy",
           "rotation_index": 1,
-          "focus": "Dresses + light layers",
+          "focus": "Dresses + open flannel",
           "days": {
             "Monday": {
-              "outfit": "Olive tiered dress + sandals",
+              "outfit": "Practical: olive tiered dress + belt + sandals. All Neutral.",
               "pieces": [
                 "IMG_0118",
+                "NEW_BELT",
                 "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Terracotta sweatshirt + jeans + boots",
+              "outfit": "Cozy: terracotta sweatshirt + jeans + boots. One color. Knit stands alone.",
               "pieces": [
                 "IMG_0153",
                 "IMG_0049",
@@ -208,44 +217,51 @@
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Sage off-shoulder + moto",
+              "outfit": "Feminine: dusty rose midi + open camel cardi + sandals.",
               "pieces": [
-                "IMG_0124",
-                "IMG_0168"
+                "IMG_0087",
+                "IMG_0147",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Overalls + dusty sage tank + trucker",
+              "outfit": "Playful: overalls + dusty sage tank + trucker + sandals.",
               "pieces": [
                 "IMG_0088",
                 "IMG_0131",
-                "IMG_0155"
+                "IMG_0155",
+                "IMG_0170"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Oatmeal stripe dress + utility",
+              "outfit": "Polished: oatmeal stripe dress + utility + sandals. One print.",
               "pieces": [
                 "IMG_0165",
-                "IMG_0161"
+                "IMG_0161",
+                "IMG_0170"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Olive pants + ivory tank + MAMA jacket",
+              "outfit": "Practical: ivory tank + olive pants + open rust flannel + sandals. Flannel open.",
               "pieces": [
-                "IMG_0101",
                 "IMG_0146",
-                "IMG_0084"
+                "IMG_0101",
+                "NEW_FLANNEL",
+                "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Dusty rose midi + camel cardigan",
+              "outfit": "Feminine: navy ditsy blouse + jeans + belt + moto + sandals. One print. V + belt.",
               "pieces": [
-                "IMG_0087",
-                "IMG_0147"
+                "IMG_0092",
+                "IMG_0049",
+                "NEW_BELT",
+                "IMG_0168",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             }
@@ -255,10 +271,10 @@
           "id": "week3",
           "name": "Feminine Everyday",
           "rotation_index": 2,
-          "focus": "Pretty spring pieces",
+          "focus": "V-necks and high-rise",
           "days": {
             "Monday": {
-              "outfit": "Olive midi + sandals",
+              "outfit": "Practical: olive midi + sandals.",
               "pieces": [
                 "IMG_0116",
                 "IMG_0170"
@@ -266,81 +282,87 @@
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Olive waffle + olive pants + cardigan",
+              "outfit": "Cozy: olive waffle + olive pants + sandals.",
               "pieces": [
                 "IMG_0097",
                 "IMG_0101",
-                "IMG_0147"
+                "IMG_0170"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Navy ditsy blouse + jeans + moto",
+              "outfit": "Feminine: Swiss-dot maxi + open camel cardi + sandals. One print.",
               "pieces": [
-                "IMG_0092",
-                "IMG_0049",
-                "IMG_0168"
+                "IMG_0166",
+                "IMG_0147",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Navy bell top + pinstripe pants + sandals",
+              "outfit": "Playful: heather navy V + overalls + sandals. V-neck, not more shoulder.",
               "pieces": [
-                "IMG_0095",
-                "IMG_0120",
+                "IMG_0135",
+                "IMG_0088",
                 "IMG_0170"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Swiss-dot maxi + utility",
+              "outfit": "Polished: oatmeal stripe dress + belt + utility + sandals.",
               "pieces": [
-                "IMG_0166",
-                "IMG_0161"
+                "IMG_0165",
+                "NEW_BELT",
+                "IMG_0161",
+                "IMG_0170"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Overalls + heather navy tee + trucker",
+              "outfit": "Practical: jeans + dusty sage tank + trucker + sandals.",
               "pieces": [
-                "IMG_0088",
-                "IMG_0135",
-                "IMG_0155"
+                "IMG_0049",
+                "IMG_0131",
+                "IMG_0155",
+                "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Sage off-shoulder dress + boots",
+              "outfit": "Feminine: olive tiered dress + moto + sandals.",
               "pieces": [
-                "IMG_0124",
-                "IMG_0169"
+                "IMG_0118",
+                "IMG_0168",
+                "IMG_0170"
               ],
               "theme": "Feminine"
             }
           }
         }
-      ]
+      ],
+      "formula_note": "21 unique outfits per season. Base items (top / bottom / both / topper / accessory) need 3 days before reuse (Saturday → Tuesday). Outerwear and shoes may repeat. No sweater-over-dress. No cardigan-over-sweater. High waist + belt when the cut is boxy."
     },
     "summer": {
-      "label": "Summer capsule \u00b7 starts first Monday of June",
+      "label": "Summer capsule · starts first Monday of June",
       "menus": [
         {
           "id": "week1",
           "name": "Soft & Rooted",
           "rotation_index": 0,
-          "focus": "Shorts, tanks, washable dresses",
+          "focus": "Shorts, tanks, belt the high waist",
           "days": {
             "Monday": {
-              "outfit": "Olive shorts + olive tank + sandals",
+              "outfit": "Practical: olive shorts + olive tank + belt + sandals.",
               "pieces": [
                 "IMG_0158",
                 "IMG_0130",
+                "NEW_BELT",
                 "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Olive tee dress + sandals",
+              "outfit": "Cozy: olive t-shirt dress + sandals.",
               "pieces": [
                 "IMG_0086",
                 "IMG_0170"
@@ -348,7 +370,7 @@
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Navy peach floral wrap maxi + sandals",
+              "outfit": "Feminine: navy peach floral wrap + sandals. One print. Wrap waist.",
               "pieces": [
                 "IMG_0112",
                 "IMG_0170"
@@ -356,16 +378,85 @@
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Joy Strength tee + floral maxi skirt + sandals",
+              "outfit": "Playful: oatmeal tank + floral maxi skirt + sandals. One print.",
               "pieces": [
-                "IMG_0167",
+                "IMG_0144",
                 "IMG_0132",
                 "IMG_0170"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Navy faux-wrap maxi + sandals",
+              "outfit": "Polished: charcoal button-waist dress + sandals. Buttons mark the high waist.",
+              "pieces": [
+                "IMG_0109",
+                "IMG_0170"
+              ],
+              "theme": "Polished"
+            },
+            "Saturday": {
+              "outfit": "Practical: white shorts + dusty rose tank + belt + sandals.",
+              "pieces": [
+                "IMG_0163",
+                "IMG_0149",
+                "NEW_BELT",
+                "IMG_0170"
+              ],
+              "theme": "Practical"
+            },
+            "Sunday": {
+              "outfit": "Feminine: dusty blue smocked dress + sandals. Smocked waist.",
+              "pieces": [
+                "IMG_0119",
+                "IMG_0170"
+              ],
+              "theme": "Feminine"
+            }
+          }
+        },
+        {
+          "id": "week2",
+          "name": "Homestead Easy",
+          "rotation_index": 1,
+          "focus": "Wraps and heat-friendly layers",
+          "days": {
+            "Monday": {
+              "outfit": "Practical: jeans + Mama Bear tee + sandals. One print. High-rise.",
+              "pieces": [
+                "IMG_0049",
+                "IMG_0133",
+                "IMG_0170"
+              ],
+              "theme": "Practical"
+            },
+            "Tuesday": {
+              "outfit": "Cozy: olive tank + olive pants + sandals.",
+              "pieces": [
+                "IMG_0130",
+                "IMG_0101",
+                "IMG_0170"
+              ],
+              "theme": "Cozy"
+            },
+            "Wednesday": {
+              "outfit": "Feminine: wildflower wrap + sandals. One print.",
+              "pieces": [
+                "IMG_0090",
+                "IMG_0170"
+              ],
+              "theme": "Feminine"
+            },
+            "Thursday": {
+              "outfit": "Playful: Joy Strength tee + white shorts + sandals. One print.",
+              "pieces": [
+                "IMG_0167",
+                "IMG_0163",
+                "IMG_0170"
+              ],
+              "theme": "Playful"
+            },
+            "Friday": {
+              "outfit": "Polished: navy faux-wrap maxi + sandals. Wrap waist.",
               "pieces": [
                 "IMG_0089",
                 "IMG_0170"
@@ -373,85 +464,20 @@
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "White DENIZEN shorts + oatmeal tank + sandals",
-              "pieces": [
-                "IMG_0163",
-                "IMG_0144",
-                "IMG_0170"
-              ],
-              "theme": "Practical"
-            },
-            "Sunday": {
-              "outfit": "Dusty blue smocked dress + sandals",
-              "pieces": [
-                "IMG_0119",
-                "IMG_0170"
-              ],
-              "theme": "Feminine"
-            }
-          }
-        },
-        {
-          "id": "week2",
-          "name": "Homestead Easy",
-          "rotation_index": 1,
-          "focus": "Easy heat-friendly looks",
-          "days": {
-            "Monday": {
-              "outfit": "White DENIZEN shorts + Mama Bear tee + sandals",
-              "pieces": [
-                "IMG_0163",
-                "IMG_0133",
-                "IMG_0170"
-              ],
-              "theme": "Practical"
-            },
-            "Tuesday": {
-              "outfit": "Jeans + olive tank",
-              "pieces": [
-                "IMG_0049",
-                "IMG_0130"
-              ],
-              "theme": "Cozy"
-            },
-            "Wednesday": {
-              "outfit": "Wildflower wrap + sandals",
-              "pieces": [
-                "IMG_0090",
-                "IMG_0170"
-              ],
-              "theme": "Feminine"
-            },
-            "Thursday": {
-              "outfit": "Floral maxi skirt + oatmeal tank + sandals",
-              "pieces": [
-                "IMG_0132",
-                "IMG_0144",
-                "IMG_0170"
-              ],
-              "theme": "Playful"
-            },
-            "Friday": {
-              "outfit": "Dusty blue smocked dress + sandals",
-              "pieces": [
-                "IMG_0119",
-                "IMG_0170"
-              ],
-              "theme": "Polished"
-            },
-            "Saturday": {
-              "outfit": "Olive shorts + Joy Strength tee + sandals",
+              "outfit": "Practical: olive shorts + oatmeal tank + trucker + sandals.",
               "pieces": [
                 "IMG_0158",
-                "IMG_0167",
+                "IMG_0144",
+                "IMG_0155",
                 "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Charcoal button waist dress + sandals",
+              "outfit": "Feminine: navy peach floral wrap + open camel cardi + sandals.",
               "pieces": [
-                "IMG_0109",
+                "IMG_0112",
+                "IMG_0147",
                 "IMG_0170"
               ],
               "theme": "Feminine"
@@ -462,136 +488,146 @@
           "id": "week3",
           "name": "Feminine Everyday",
           "rotation_index": 2,
-          "focus": "Dresses-first summer",
+          "focus": "Overalls + tee-dress with belt",
           "days": {
             "Monday": {
-              "outfit": "Medallion maxi + sandals",
+              "outfit": "Practical: overalls + dusty rose tank + sandals.",
               "pieces": [
-                "IMG_0128",
+                "IMG_0088",
+                "IMG_0149",
                 "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Olive tee dress + sandals",
+              "outfit": "Cozy: olive t-shirt dress + belt + sandals. Belt the tee-dress.",
               "pieces": [
                 "IMG_0086",
+                "NEW_BELT",
                 "IMG_0170"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Navy peach floral wrap maxi + sandals",
+              "outfit": "Feminine: medallion maxi + sandals. One print. A-line, not clingy.",
               "pieces": [
-                "IMG_0112",
+                "IMG_0128",
                 "IMG_0170"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Jeans + Mama Bear tee + sandals",
+              "outfit": "Playful: jeans + Joy Strength tee + sandals. One print.",
               "pieces": [
                 "IMG_0049",
-                "IMG_0133",
+                "IMG_0167",
                 "IMG_0170"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Charcoal puff-sleeve dress + sandals",
+              "outfit": "Polished: navy faux-wrap maxi + belt + sandals.",
               "pieces": [
-                "IMG_0122",
+                "IMG_0089",
+                "NEW_BELT",
                 "IMG_0170"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "White DENIZEN shorts + olive tank + sandals",
+              "outfit": "Practical: white shorts + oatmeal tank + sandals.",
               "pieces": [
                 "IMG_0163",
-                "IMG_0130",
+                "IMG_0144",
                 "IMG_0170"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Wildflower wrap + sandals",
+              "outfit": "Feminine: wildflower wrap + open camel cardi + sandals.",
               "pieces": [
                 "IMG_0090",
+                "IMG_0147",
                 "IMG_0170"
               ],
               "theme": "Feminine"
             }
           }
         }
-      ]
+      ],
+      "formula_note": "21 unique outfits per season. Base items (top / bottom / both / topper / accessory) need 3 days before reuse (Saturday → Tuesday). Outerwear and shoes may repeat. No sweater-over-dress. No cardigan-over-sweater. High waist + belt when the cut is boxy."
     },
     "fall": {
-      "label": "Fall capsule \u00b7 starts first Monday of September",
+      "label": "Fall capsule · starts first Monday of September",
+      "formula_note": "21 unique outfits per season. Base items (top / bottom / both / topper / accessory) need 3 days before reuse (Saturday → Tuesday). Outerwear and shoes may repeat. No sweater-over-dress. No cardigan-over-sweater. High waist + belt when the cut is boxy.",
       "menus": [
         {
           "id": "week1",
           "name": "Soft & Rooted",
           "rotation_index": 0,
-          "focus": "Mustard, rust, oatmeal",
+          "focus": "Mustard, rust, terracotta + belt",
           "days": {
             "Monday": {
-              "outfit": "Mustard sweatshirt + plaid tunic + utility",
+              "outfit": "Practical: mustard sweatshirt + olive pants + utility + boots. One color.",
               "pieces": [
                 "IMG_0100",
-                "IMG_0159",
-                "IMG_0161"
+                "IMG_0101",
+                "IMG_0161",
+                "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Rust quilted + jeans + camel cardigan",
+              "outfit": "Cozy: rust quilted + jeans + boots. Knit stands alone.",
               "pieces": [
                 "IMG_0110",
                 "IMG_0049",
-                "IMG_0147"
+                "IMG_0169"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Terracotta tiered dress + moto",
+              "outfit": "Feminine: terracotta dress + moto + boots.",
               "pieces": [
                 "IMG_0125",
-                "IMG_0168"
+                "IMG_0168",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Awaken sweatshirt + stripe midi + boots",
+              "outfit": "Playful: plaid tunic + overalls + boots. One print. Real bottoms.",
               "pieces": [
-                "IMG_0142",
-                "IMG_0085",
+                "IMG_0159",
+                "IMG_0088",
                 "IMG_0169"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Olive V sweater + utility",
+              "outfit": "Polished: dusty rose midi + open camel cardi + boots.",
               "pieces": [
-                "IMG_0151",
-                "IMG_0161"
+                "IMG_0087",
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Oatmeal hoodie + olive pants + boots",
+              "outfit": "Practical: olive midi + utility + boots.",
               "pieces": [
-                "IMG_0150",
-                "IMG_0101",
+                "IMG_0116",
+                "IMG_0161",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Ivory sweater + moto",
+              "outfit": "Feminine: stripe midi + moto + boots. One print. Dress only.",
               "pieces": [
-                "IMG_0099",
-                "IMG_0168"
+                "IMG_0085",
+                "IMG_0168",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             }
@@ -601,10 +637,57 @@
           "id": "week2",
           "name": "Homestead Easy",
           "rotation_index": 1,
-          "focus": "Knit-forward fall",
+          "focus": "Knits stand alone",
           "days": {
             "Monday": {
-              "outfit": "Plaid tunic + jeans + boots",
+              "outfit": "Practical: hoodie + olive pants + utility + boots. One print.",
+              "pieces": [
+                "IMG_0150",
+                "IMG_0101",
+                "IMG_0161",
+                "IMG_0169"
+              ],
+              "theme": "Practical"
+            },
+            "Tuesday": {
+              "outfit": "Cozy: oatmeal V + jeans + boots. V-neck, no cardi.",
+              "pieces": [
+                "IMG_0152",
+                "IMG_0049",
+                "IMG_0169"
+              ],
+              "theme": "Cozy"
+            },
+            "Wednesday": {
+              "outfit": "Feminine: olive midi + open camel cardi + boots.",
+              "pieces": [
+                "IMG_0116",
+                "IMG_0147",
+                "IMG_0169"
+              ],
+              "theme": "Feminine"
+            },
+            "Thursday": {
+              "outfit": "Playful: Awaken + overalls + boots. One print.",
+              "pieces": [
+                "IMG_0142",
+                "IMG_0088",
+                "IMG_0169"
+              ],
+              "theme": "Playful"
+            },
+            "Friday": {
+              "outfit": "Polished: terracotta dress + belt + utility + boots.",
+              "pieces": [
+                "IMG_0125",
+                "NEW_BELT",
+                "IMG_0161",
+                "IMG_0169"
+              ],
+              "theme": "Polished"
+            },
+            "Saturday": {
+              "outfit": "Practical: plaid tunic + jeans + boots. One print.",
               "pieces": [
                 "IMG_0159",
                 "IMG_0049",
@@ -612,53 +695,13 @@
               ],
               "theme": "Practical"
             },
-            "Tuesday": {
-              "outfit": "Oatmeal V + olive pants + cardigan",
-              "pieces": [
-                "IMG_0152",
-                "IMG_0101",
-                "IMG_0147"
-              ],
-              "theme": "Cozy"
-            },
-            "Wednesday": {
-              "outfit": "Olive V sweater + moto",
-              "pieces": [
-                "IMG_0151",
-                "IMG_0168"
-              ],
-              "theme": "Feminine"
-            },
-            "Thursday": {
-              "outfit": "Mustard + stripe midi + boots",
-              "pieces": [
-                "IMG_0100",
-                "IMG_0085",
-                "IMG_0169"
-              ],
-              "theme": "Playful"
-            },
-            "Friday": {
-              "outfit": "Terracotta dress + utility",
-              "pieces": [
-                "IMG_0125",
-                "IMG_0161"
-              ],
-              "theme": "Polished"
-            },
-            "Saturday": {
-              "outfit": "Rust quilted + boots",
-              "pieces": [
-                "IMG_0110",
-                "IMG_0169"
-              ],
-              "theme": "Practical"
-            },
             "Sunday": {
-              "outfit": "Ivory sweater + utility",
+              "outfit": "Feminine: ivory sweater + floral maxi + moto + boots. Sweater + skirt.",
               "pieces": [
                 "IMG_0099",
-                "IMG_0161"
+                "IMG_0132",
+                "IMG_0168",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             }
@@ -668,64 +711,67 @@
           "id": "week3",
           "name": "Feminine Everyday",
           "rotation_index": 2,
-          "focus": "Soft Autumn dresses + knits",
+          "focus": "Flannel open, no knit-on-knit",
           "days": {
             "Monday": {
-              "outfit": "Terracotta dress + boots",
+              "outfit": "Practical: rust quilted + olive pants + boots.",
               "pieces": [
-                "IMG_0125",
+                "IMG_0110",
+                "IMG_0101",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Awaken + olive pants + cardigan",
+              "outfit": "Cozy: olive V sweater + jeans + boots.",
               "pieces": [
-                "IMG_0142",
-                "IMG_0101",
-                "IMG_0147"
+                "IMG_0151",
+                "IMG_0049",
+                "IMG_0169"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Plaid tunic + moto",
+              "outfit": "Feminine: dusty rose midi + boots. Dress only.",
               "pieces": [
-                "IMG_0159",
-                "IMG_0168"
+                "IMG_0087",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Hoodie + jeans + boots",
+              "outfit": "Playful: Awaken + olive pants + boots. One print.",
               "pieces": [
-                "IMG_0150",
-                "IMG_0049",
+                "IMG_0142",
+                "IMG_0101",
                 "IMG_0169"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Oatmeal V + stripe midi + utility",
+              "outfit": "Polished: stripe midi + open camel cardi + boots.",
               "pieces": [
-                "IMG_0152",
                 "IMG_0085",
-                "IMG_0161"
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Mustard + boots",
+              "outfit": "Practical: hoodie + jeans + boots. One print.",
               "pieces": [
-                "IMG_0100",
+                "IMG_0150",
+                "IMG_0049",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Ivory sweater + utility",
+              "outfit": "Feminine: dusty rose midi + belt + boots.",
               "pieces": [
-                "IMG_0099",
-                "IMG_0161"
+                "IMG_0087",
+                "NEW_BELT",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             }
@@ -734,71 +780,75 @@
       ]
     },
     "winter": {
-      "label": "Winter capsule \u00b7 starts first Monday of December",
+      "label": "Winter capsule · starts first Monday of December",
       "menus": [
         {
           "id": "week1",
           "name": "Soft & Rooted",
           "rotation_index": 0,
-          "focus": "Complete winter looks \u2014 every day has pants, skirt, overalls, or a dress",
+          "focus": "Belt the boxy knits",
           "days": {
             "Monday": {
-              "outfit": "Burgundy sweater + jeans + utility",
+              "outfit": "Practical: mustard + jeans + belt + utility + boots.",
               "pieces": [
-                "IMG_0157",
+                "IMG_0100",
                 "IMG_0049",
-                "IMG_0161"
+                "NEW_BELT",
+                "IMG_0161",
+                "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Speckled sweater + olive pants + camel cardigan",
+              "outfit": "Cozy: oatmeal V + olive pants + boots.",
               "pieces": [
-                "IMG_0172",
+                "IMG_0152",
                 "IMG_0101",
-                "IMG_0147"
+                "IMG_0169"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Velvet wrap + moto",
+              "outfit": "Feminine: velvet wrap + moto + boots. Wrap waist.",
               "pieces": [
                 "IMG_0126",
-                "IMG_0168"
+                "IMG_0168",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Mama Bear + floral maxi skirt + boots",
+              "outfit": "Playful: Awaken + overalls + boots. One print.",
               "pieces": [
-                "IMG_0098",
-                "IMG_0132",
+                "IMG_0142",
+                "IMG_0088",
                 "IMG_0169"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Navy stripe LS + navy stripe midi + pea coat",
+              "outfit": "Polished: terracotta dress + pea coat + boots.",
               "pieces": [
-                "IMG_0096",
-                "IMG_0085",
-                "IMG_0162"
+                "IMG_0125",
+                "IMG_0162",
+                "IMG_0169"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Black quilted + overalls + boots",
+              "outfit": "Practical: hoodie + olive pants + boots.",
               "pieces": [
-                "IMG_0111",
-                "IMG_0088",
+                "IMG_0150",
+                "IMG_0101",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Terracotta dress + boots",
+              "outfit": "Feminine: oatmeal stripe dress + moto + boots. One print.",
               "pieces": [
-                "IMG_0125",
+                "IMG_0165",
+                "IMG_0168",
                 "IMG_0169"
               ],
               "theme": "Feminine"
@@ -809,65 +859,69 @@
           "id": "week2",
           "name": "Homestead Easy",
           "rotation_index": 1,
-          "focus": "Cozy winter rotation with full outfits",
+          "focus": "Velvet wrap + skirt days",
           "days": {
             "Monday": {
-              "outfit": "Black quilted + jeans + utility",
+              "outfit": "Practical: rust quilted + jeans + utility + boots.",
               "pieces": [
-                "IMG_0111",
+                "IMG_0110",
                 "IMG_0049",
-                "IMG_0161"
+                "IMG_0161",
+                "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Burgundy sweater + olive pants + cardigan",
+              "outfit": "Cozy: olive V + olive pants + boots.",
               "pieces": [
-                "IMG_0157",
+                "IMG_0151",
                 "IMG_0101",
-                "IMG_0147"
+                "IMG_0169"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Terracotta dress + moto",
+              "outfit": "Feminine: terracotta dress + open camel cardi + boots.",
               "pieces": [
                 "IMG_0125",
-                "IMG_0168"
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Mama Bear + overalls + boots",
+              "outfit": "Playful: plaid tunic + overalls + boots. One print.",
               "pieces": [
-                "IMG_0098",
+                "IMG_0159",
                 "IMG_0088",
                 "IMG_0169"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Velvet wrap + pea coat",
+              "outfit": "Polished: burgundy sweater + jeans + boots. One color.",
               "pieces": [
-                "IMG_0126",
-                "IMG_0162"
+                "IMG_0157",
+                "IMG_0049",
+                "IMG_0169"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Navy stripe LS + floral maxi skirt + boots",
+              "outfit": "Practical: ivory sweater + floral maxi + boots. One print.",
               "pieces": [
-                "IMG_0096",
+                "IMG_0099",
                 "IMG_0132",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Oatmeal stripe pocket dress + utility",
+              "outfit": "Feminine: oatmeal stripe + open camel cardi + boots.",
               "pieces": [
                 "IMG_0165",
-                "IMG_0161"
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             }
@@ -877,72 +931,76 @@
           "id": "week3",
           "name": "Feminine Everyday",
           "rotation_index": 2,
-          "focus": "Dressed winter warmth \u2014 always covered",
+          "focus": "Open flannel over overalls",
           "days": {
             "Monday": {
-              "outfit": "Terracotta dress + utility + boots",
+              "outfit": "Practical: mustard + olive pants + belt + boots.",
               "pieces": [
-                "IMG_0125",
-                "IMG_0161",
+                "IMG_0100",
+                "IMG_0101",
+                "NEW_BELT",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Tuesday": {
-              "outfit": "Speckled sweater + jeans + cardigan",
+              "outfit": "Cozy: ivory sweater + jeans + boots.",
               "pieces": [
-                "IMG_0172",
+                "IMG_0099",
                 "IMG_0049",
-                "IMG_0147"
+                "IMG_0169"
               ],
               "theme": "Cozy"
             },
             "Wednesday": {
-              "outfit": "Velvet wrap + moto",
+              "outfit": "Feminine: stripe midi + open camel cardi + boots.",
               "pieces": [
-                "IMG_0126",
-                "IMG_0168"
+                "IMG_0085",
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             },
             "Thursday": {
-              "outfit": "Mama Bear + olive pants + boots",
+              "outfit": "Playful: Awaken + olive pants + boots. One print.",
               "pieces": [
-                "IMG_0098",
+                "IMG_0142",
                 "IMG_0101",
                 "IMG_0169"
               ],
               "theme": "Playful"
             },
             "Friday": {
-              "outfit": "Burgundy sweater + stripe midi + pea coat",
+              "outfit": "Polished: oatmeal V + floral maxi + boots. One print.",
               "pieces": [
-                "IMG_0157",
-                "IMG_0085",
-                "IMG_0162"
+                "IMG_0152",
+                "IMG_0132",
+                "IMG_0169"
               ],
               "theme": "Polished"
             },
             "Saturday": {
-              "outfit": "Black quilted + overalls + boots",
+              "outfit": "Practical: overalls + open rust flannel + boots. Flannel open over the bib.",
               "pieces": [
-                "IMG_0111",
                 "IMG_0088",
+                "NEW_FLANNEL",
                 "IMG_0169"
               ],
               "theme": "Practical"
             },
             "Sunday": {
-              "outfit": "Oatmeal stripe pocket dress + moto",
+              "outfit": "Feminine: velvet wrap + open camel cardi + boots.",
               "pieces": [
-                "IMG_0165",
-                "IMG_0168"
+                "IMG_0126",
+                "IMG_0147",
+                "IMG_0169"
               ],
               "theme": "Feminine"
             }
           }
         }
-      ]
+      ],
+      "formula_note": "21 unique outfits per season. Base items (top / bottom / both / topper / accessory) need 3 days before reuse (Saturday → Tuesday). Outerwear and shoes may repeat. No sweater-over-dress. No cardigan-over-sweater. High waist + belt when the cut is boxy."
     }
   }
 }

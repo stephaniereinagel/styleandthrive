@@ -79,6 +79,9 @@ html, body {
 }
 .pill.warm { background: #f0e6d8; color: #6b4f35; }
 .pill.rust { background: #f0ddd2; color: var(--rust); }
+.pill.neutral { background: #ebe4dc; color: #6b5b4b; }
+.pill.print { background: #f0ddd2; color: var(--rust); }
+.pill.color { background: #edd6d0; color: var(--rose-deep); }
 
 .hero-today { display: grid; gap: 12px; }
 .theme-chip {
@@ -179,6 +182,15 @@ html, body {
   border-radius: 12px;
   border-bottom-color: transparent;
 }
+.day-card-sketch {
+  grid-template-columns: 1fr;
+}
+.day-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
 .day-name { font-weight: 600; color: var(--rose-deep); }
 .thumbs {
   display: flex;
@@ -192,6 +204,35 @@ html, body {
   object-fit: cover;
   border-radius: 10px;
   background: #eee;
+}
+.outfit-sketch {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-top: 10px;
+  background: #f3ebe3;
+  display: block;
+  cursor: pointer;
+}
+.hero-today .outfit-sketch { max-width: 100%; }
+.piece-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.piece-name {
+  border: none;
+  background: var(--blush);
+  color: var(--rose-deep);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .collage {
@@ -220,6 +261,7 @@ html, body {
   background: #eee;
 }
 .piece .meta { padding: 8px 10px 12px; }
+.piece .meta .pill { padding: 2px 7px; font-size: 10px; margin-left: 4px; }
 .piece .meta strong {
   display: block;
   font-size: 13px;
@@ -334,3 +376,45 @@ html, body {
 .tab.active { color: var(--rose-deep); }
 
 .empty { text-align: center; color: var(--muted); padding: 24px 8px; }
+
+.add-form { display: grid; gap: 10px; margin-top: 10px; }
+.add-form label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(--rose-deep); }
+.add-form input, .add-form select {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: white;
+}
+.add-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.season-checks {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.season-checks legend { font-size: 13px; font-weight: 600; color: var(--rose-deep); }
+.season-checks label { display: inline-flex; gap: 4px; align-items: center; margin-right: 10px; font-weight: 400; color: var(--ink); }
+.add-submit {
+  border: none;
+  background: var(--rose-deep);
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.remove-user-piece {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--rose-deep);
+  border-radius: 12px;
+  padding: 10px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}

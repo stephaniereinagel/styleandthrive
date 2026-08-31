@@ -20,3 +20,8 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sketches/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

@@ -44,3 +44,18 @@ Then open [http://localhost:8766/](http://localhost:8766/)
 - Color analysis: **Soft Autumn**
 - Body type: **Pear**
 - Lifestyle: NW Arkansas homestead, farm stand, five kids, church, weekday solo parenting
+
+## Consult Alison
+
+**Alison** is a digital twin of Alison Lumbatis for this project. Say her name in chat, or work in `wardrobe/` files.
+
+- Playbook: [`wardrobe/alison/`](alison/README.md)
+- Agent rule: `.cursor/rules/agent-style-confidence.mdc`
+
+## Everyday-style experts (Aug 2026)
+
+Asked for a fashion expert for *everyday people*: flattering, practical, minimal effort.
+
+- **Best fit: Alison Lumbatis** — style-confidence teacher (not runway). Started helping moms out of the yoga-pants rut; now known for *outfit formulas*, the 333 mix-and-match method (3 tops / 3 bottoms / 3 shoes), and a small staple closet. Book + *Outfit Formulas* app. Closest match to Style & Thrive’s “weekly menu” idea. [alisonlumbatis.com](https://alisonlumbatis.com/)
+- **Also useful: Allison Bornstein** — *Wear It Well* and the three-word method. More “personal style compass” than daily formulas; strong on postpartum/maternity when the body and life are in flux.
+- **Also useful: Anuschka Rees** — *The Curated Closet*. Builds a wardrobe around *your* life, not trends. Less focused on “flattering rules.”
