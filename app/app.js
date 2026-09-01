@@ -181,11 +181,15 @@ function thumb(id) {
   return pieceImage(item) || `/images/thumbs/${id}.jpg`;
 }
 
-/** Completed-outfit sketch for a season day. Fall only until other seasons are drawn. */
+/** Which rotation weeks have completed-outfit sketches on disk. */
+const SKETCH_ROTATIONS = { fall: [0, 1, 2], summer: [1] };
+
+/** Completed-outfit sketch for a season day, if drawn. */
 function outfitSketchPath(seasonKey, rotation, dayIndex) {
-  if (seasonKey !== "fall" || rotation < 0 || rotation > 2 || dayIndex < 0 || dayIndex > 6) return "";
+  if (!(SKETCH_ROTATIONS[seasonKey] || []).includes(rotation)) return "";
+  if (dayIndex < 0 || dayIndex > 6) return "";
   const n = String(rotation * 7 + dayIndex + 1).padStart(2, "0");
-  return `/sketches/fall/fall-${n}-w${rotation + 1}-${DAY_SLUGS[dayIndex]}.jpg`;
+  return `/sketches/${seasonKey}/${seasonKey}-${n}-w${rotation + 1}-${DAY_SLUGS[dayIndex]}.jpg`;
 }
 
 function pieceThumbs(pieces, byId) {

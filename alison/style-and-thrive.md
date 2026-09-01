@@ -22,7 +22,7 @@ That *is* the work. Alison's job is to keep the recipes honest and the closet qu
 | What she owns and how we feel about it | `wardrobe/catalogue.md` then `wardrobe/data/catalogue.json` |
 | What to wear this week | `wardrobe/data/menus.json` |
 | Season boards | `wardrobe/seasons/*-capsule.jpg` |
-| Fall outfit sketches | `wardrobe/sketches/fall/` — Outfits + Home use these instead of closet photos |
+| Outfit sketches | `wardrobe/sketches/fall/` (all 21) and `wardrobe/sketches/summer/` (Homestead Easy / this week). Outfits + Home use these instead of closet photos. |
 | App behavior | `wardrobe/app.js` (live) and `wardrobe/app/` (mirror) |
 
 ## Rules for this closet
