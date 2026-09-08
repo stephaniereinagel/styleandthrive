@@ -1,0 +1,10 @@
+{
+  "name": "style-and-thrive",
+  "private": true,
+  "type": "module",
+  "description": "Style & Thrive — Soft Autumn capsule wardrobe with daily weather + calendar picks",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "@netlify/functions": "^2.8.0"
+  }
+}

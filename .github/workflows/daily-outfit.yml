@@ -1,0 +1,37 @@
+name: Daily outfit pick (4am CT)
+
+# Backup cron if Netlify scheduled functions are unavailable on the plan.
+# Hits the deployed function; the function itself no-ops unless Chicago hour is 4.
+on:
+  schedule:
+    - cron: "0 9,10 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force pick even outside 4am"
+        required: false
+        default: "false"
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger daily-select
+        env:
+          SITE_URL: ${{ secrets.STYLE_THRIVE_URL }}
+          JOB_SECRET: ${{ secrets.DAILY_JOB_SECRET }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "STYLE_THRIVE_URL secret not set — skipping"
+            exit 0
+          fi
+          URL="${SITE_URL%/}/.netlify/functions/daily-select"
+          if [ "$FORCE" = "true" ]; then
+            URL="${URL}?force=1"
+          fi
+          curl -fsS -X POST "$URL" \
+            -H "Content-Type: application/json" \
+            -H "x-job-secret: ${JOB_SECRET}" \
+            -d '{}' | tee /tmp/pick.json
+          echo

@@ -1,5 +1,15 @@
 [build]
   publish = "."
+  functions = "netlify/functions"
+  command = "npm install --omit=dev"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["data/catalogue.json", "netlify/lib/**"]
+
+# 09:00 and 10:00 UTC ≈ 4am America/Chicago (CST/CDT). Handler no-ops unless local hour is 4.
+[functions."daily-select"]
+  schedule = "0 9,10 * * *"
 
 [[redirects]]
   from = "/app"
@@ -10,6 +20,11 @@
   from = "/app/*"
   to = "/:splat"
   status = 301
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
 
 [[headers]]
   for = "/data/*"

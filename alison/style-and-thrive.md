@@ -11,6 +11,7 @@ Style & Thrive is Outfit Formulas in homestead clothes:
 - Weekly menus that rotate: **Soft & Rooted → Homestead Easy → Feminine Everyday**
 - Day themes: Mon Practical, Tue Cozy, Wed Feminine, Thu Playful, Fri Polished, Sat Practical, Sun Feminine
 - Live app: [style-and-thrive.netlify.app](https://style-and-thrive.netlify.app/)
+- **Daily picker:** 4am CT · Open-Meteo weather · Google Calendar secret iCal · AI try-on photo · Settings tab for iCal URL, location, reference photo, PIN
 - Profile: Soft Autumn · high-waist / full bust (photo 8/31/26) · NW Arkansas · five kids · farm stand · church · weekday solo parenting
 
 That *is* the work. Alison's job is to keep the recipes honest and the closet quieter.
@@ -20,10 +21,11 @@ That *is* the work. Alison's job is to keep the recipes honest and the closet qu
 | Need | File |
 |---|---|
 | What she owns and how we feel about it | `wardrobe/catalogue.md` then `wardrobe/data/catalogue.json` |
-| What to wear this week | `wardrobe/data/menus.json` |
+| What to wear this week | `wardrobe/data/menus.json` (fallback) + live daily picks via Netlify |
 | Season boards | `wardrobe/seasons/*-capsule.jpg` |
-| Outfit sketches | `wardrobe/sketches/fall/` (all 21) and `wardrobe/sketches/summer/` (Homestead Easy / this week). Outfits + Home use these instead of closet photos. |
+| Outfit sketches | `wardrobe/sketches/fall/` (all 21) and `wardrobe/sketches/summer/` (Homestead Easy / this week). Fallback when no try-on photo. |
 | App behavior | `wardrobe/app.js` (live) and `wardrobe/app/` (mirror) |
+| Daily picker | `wardrobe/netlify/lib/pick-outfit.mjs` + `daily-select` function |
 
 ## Rules for this closet
 
@@ -34,7 +36,7 @@ That *is* the work. Alison's job is to keep the recipes honest and the closet qu
 5. **Black is not a staple here.** Soft Autumn + homestead lint. Use camel, olive, cognac, cocoa, oatmeal.
 6. **Pear + postpartum. Silhouette locked Aug 31, 2026 (photo consult):** athletic/balanced frame, shoulders ≈ hips, moderate waist, long legs. Call it pear or soft hourglass — the job is the same. **Marked waist + skim the hip + draw the eye up.** Yes: waist-length toppers, V-necks, wraps/smocks/drawstrings, straight or clean wide-leg, A-line. No: cargo/patch pockets on the thigh, hip-length boxy layers, clingy sheaths, unfinished flip-flop days. If the waist is gone that week, switch to the linen/flowy uniform — still a finished outfit, still shoes.
 7. **Carryover staples stay cross-season** (jeans, olive pants, camel cardi, utility, moto, boots, sandals, terracotta LS dress, plus the winter bottom/dress carryovers already listed in menus.json).
-8. **21 unique outfits per season.** Base items (top / bottom / both / topper / accessory) need **3 days** before reuse (Saturday → Tuesday). Outerwear and shoes may repeat.
+8. **Daily picks (live).** Each morning at **4am America/Chicago**, the app picks from the current season capsule using weather + Google Calendar. **Tops, bottoms, toppers, and dresses** need **2 clear days** before reuse (worn Monday → free Thursday) and cannot repeat on the **same weekday two weeks in a row**. Outerwear and shoes may repeat. The old 21-outfit / 3-day menu loop remains as **fallback** only when a daily pick has not run yet.
 9. **Every day needs a real bottom, skirt, overalls, or dress plus shoes.** The plaid tunic is a *top*, not a dress. No floating-top days.
 10. **1 + 1 + the rest.** Each outfit: 0–1 Print, 0–1 Color family, everything else Neutral. Print + a loud color is two fun slots — Thursday only (and we usually still pick one). Count a floral/plaid/stripe as one print, not five colors. Olive, camel, oatmeal, cognac, denim are Neutral *here*.
 11. **Her layering (locked Aug 29, 2026).** Jacket over a dress or a knit = yes. Open cardi over a tee, tank, tunic, or dress = yes. **No sweater over a dress. No cardigan over a sweater.** Two knits is bulky and skips the waist. If the top is already a sweater/sweatshirt/hoodie, stop. Shoes, or a jacket if she's leaving the house.

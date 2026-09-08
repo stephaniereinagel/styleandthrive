@@ -34,7 +34,7 @@ A formula is a **slot list**, not a shopping link.
 
 Every piece in `wardrobe/data/catalogue.json` is tagged with **`slot`** (top / bottom / both / undershirt / topper / outerwear / shoes / accessory) and **`character`** (Neutral / Print / Color). Read those fields; don't recategorize from memory.
 
-**Weekly menus (locked Aug 31, 2026):** each season has **21 unique outfits**. A unique outfit is the set of *base* IDs — top, bottom, both, topper, accessory. Shoes and outerwear may repeat. **No base item within 3 days** (Saturday → not again until Tuesday). The 21-day loop wraps: week-3 Sunday still needs 3 days before week-1 Monday. Source of truth: `wardrobe/scripts/outfits.py` then `rebuild_menus.py`.
+**Weekly menus (locked Aug 31, 2026; daily picker Sep 2026):** each season still has **21 unique outfits** in `menus.json` as a fallback. **Live daily picks** (4am America/Chicago) choose from the seasonal capsule using weather + calendar. Constrained slots — top, bottom, topper, dress (`both`) — need **2 clear days** before reuse and cannot repeat on the **same weekday two consecutive weeks**. Shoes and outerwear may repeat. Soft rules stay: no sweater-over-dress, no cardigan-over-sweater. Source of truth for the picker: `wardrobe/netlify/lib/pick-outfit.mjs`. Fallback menus: `wardrobe/scripts/outfits.py` then `rebuild_menus.py`.
 
 **Fit from her photo (Aug 31, 2026):** high-rise she already tucks, full bust, shoulders ≈ hips, long legs. Mark the waist (belt the boxy knit), skim the hip, draw the eye up (V-neck, open layer). Skip extra shoulder volume as the default (puff / off-shoulder). The wide-leg high-rise jeans in that photo are what she actually wears — don't fight them.
 

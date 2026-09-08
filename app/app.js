@@ -6,6 +6,14 @@ const state = {
   weekMonday: null,
   season: "summer",
   ratingFilter: "all",
+  /** Live daily pick payload from /.netlify/functions/today */
+  todayLive: null,
+  /** Week picks keyed by ISO date */
+  weekPicks: null,
+  settingsLive: null,
+  settingsStatus: "",
+  homePickStatus: "",
+  picking: false,
 };
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -13,6 +21,119 @@ const DAY_SLUGS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const SEASON_ORDER = ["spring", "summer", "fall", "winter"];
 const SEASON_START_MONTH = { spring: 3, summer: 6, fall: 9, winter: 12 };
 const USER_ITEMS_KEY = "snt-user-items-v1";
+const PIN_KEY = "snt-household-pin-v1";
+const API = "/.netlify/functions";
+
+function getPin() {
+  try {
+    return localStorage.getItem(PIN_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function setPin(pin) {
+  try {
+    if (pin) localStorage.setItem(PIN_KEY, pin);
+    else localStorage.removeItem(PIN_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+function pinHeaders(extra = {}) {
+  const pin = getPin();
+  const headers = { ...extra };
+  if (pin) headers["x-household-pin"] = pin;
+  return headers;
+}
+
+async function apiGet(name, params = {}) {
+  const qs = new URLSearchParams(params);
+  const pin = getPin();
+  if (pin) qs.set("pin", pin);
+  const url = `${API}/${name}${qs.toString() ? `?${qs}` : ""}`;
+  const res = await fetch(url, { headers: pinHeaders() });
+  const data = await res.json().catch(() => ({}));
+  if (res.status === 401 && data.needsPin) {
+    const entered = window.prompt("Household PIN for Style & Thrive");
+    if (entered) {
+      setPin(entered);
+      return apiGet(name, params);
+    }
+  }
+  if (!res.ok) throw new Error(data.error || `API ${name} failed`);
+  return data;
+}
+
+async function apiPost(name, body, params = {}) {
+  const qs = new URLSearchParams(params);
+  const pin = getPin();
+  if (pin) qs.set("pin", pin);
+  const url = `${API}/${name}${qs.toString() ? `?${qs}` : ""}`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: pinHeaders({ "Content-Type": "application/json" }),
+    body: JSON.stringify(body),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (res.status === 401 && data.needsPin) {
+    const entered = window.prompt("Household PIN for Style & Thrive");
+    if (entered) {
+      setPin(entered);
+      return apiPost(name, body, params);
+    }
+  }
+  if (!res.ok) throw new Error(data.error || `API ${name} failed`);
+  return data;
+}
+
+function imageUrlFor(dateISO) {
+  const pin = getPin();
+  const qs = new URLSearchParams({ date: dateISO });
+  if (pin) qs.set("pin", pin);
+  return `${API}/image?${qs}`;
+}
+
+async function refreshTodayLive() {
+  try {
+    state.todayLive = await apiGet("today");
+  } catch (err) {
+    console.warn("today API unavailable", err);
+    state.todayLive = null;
+  }
+}
+
+async function refreshWeekPicks() {
+  try {
+    const data = await apiGet("week", { monday: state.weekMonday });
+    state.weekPicks = data.picks || {};
+  } catch (err) {
+    console.warn("week API unavailable", err);
+    state.weekPicks = null;
+  }
+}
+
+async function forcePickToday({ goHome = true } = {}) {
+  state.picking = true;
+  state.homePickStatus = "Picking a new outfit…";
+  state.settingsStatus = "Picking today's outfit…";
+  render();
+  try {
+    await apiPost("daily-select", { force: true }, { force: "1" });
+    await Promise.all([refreshTodayLive(), refreshWeekPicks()]);
+    state.homePickStatus = "";
+    state.settingsStatus = "Done — check Home for today's outfit.";
+    if (goHome) state.tab = "home";
+  } catch (err) {
+    const msg = String(err.message || err);
+    state.homePickStatus = msg;
+    state.settingsStatus = msg;
+  } finally {
+    state.picking = false;
+    render();
+  }
+}
 
 function pad(n) {
   return String(n).padStart(2, "0");
@@ -124,14 +245,18 @@ async function load() {
   state.weekMonday = toISODate(mondayOf(today));
   state.season = seasonForDate(today).key;
   bindTabs();
+  await Promise.all([refreshTodayLive(), refreshWeekPicks(), refreshSettingsLive()]);
   render();
 }
 
 function bindTabs() {
   document.querySelectorAll(".tab").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       state.tab = btn.dataset.tab;
       document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("active", b === btn));
+      if (state.tab === "home") await refreshTodayLive();
+      if (state.tab === "outfits") await refreshWeekPicks();
+      if (state.tab === "settings") await refreshSettingsLive();
       render();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
@@ -234,6 +359,7 @@ function render() {
     capsules: renderCapsules,
     wardrobe: renderWardrobe,
     gaps: renderGaps,
+    settings: renderSettings,
   };
   view.innerHTML = pages[state.tab]();
   wirePage();
@@ -244,20 +370,74 @@ function renderHome() {
   const monday = mondayOf(today);
   const plan = weekPlanForMonday(monday);
   const day = dayNameFromDate(today);
-  const entry = plan.menu.days[day];
+  const menuEntry = plan.menu.days[day];
   const byId = itemsById();
   const heroes = state.catalogue.items.filter((i) => i.rating === 5).slice(0, 6);
   const stats = state.catalogue.stats;
+  const live = state.todayLive;
+  const pick = live?.pick;
+  const weather = pick?.weather || live?.weather;
+  const activity = pick?.activity || live?.activity;
+  const theme = pick?.theme || menuEntry.theme;
+  const outfitText = pick?.outfit || menuEntry.outfit;
+  const pieces = pick?.pieces || menuEntry.pieces;
+  const why = pick?.why || `${theme} · ${plan.menu.name} (menu fallback until 4am pick)`;
+  const location = live?.locationLabel || "NW Arkansas";
+
+  const weatherHtml = weather
+    ? `<a class="context-chip weather-chip" href="https://www.weather.gov/" target="_blank" rel="noopener">
+         <strong>${weather.high != null ? `${weather.high}°` : "—"}</strong>
+         <span>${weather.condition || weather.label || "Weather"} · ${location}</span>
+         <span class="muted">${weather.low != null ? `Low ${weather.low}°` : ""}${weather.wet ? " · rain likely" : ""}</span>
+       </a>`
+    : `<a class="context-chip weather-chip" href="https://www.weather.gov/" target="_blank" rel="noopener">
+         <strong>Weather</strong>
+         <span class="muted">${location} · tap to open</span>
+       </a>`;
+
+  const events = activity?.events || [];
+  const eventsHtml = `
+    <a class="context-chip cal-chip" href="https://calendar.google.com/" target="_blank" rel="noopener">
+      <strong>Today</strong>
+      ${
+        events.length
+          ? `<ul class="event-list">${events
+              .slice(0, 4)
+              .map((e) => `<li><span class="muted">${e.time || ""}</span> ${escapeHtml(e.summary)}</li>`)
+              .join("")}</ul>`
+          : `<span class="muted">${activity?.summary || "No events · tap Calendar"}</span>`
+      }
+    </a>`;
+
+  const tryOn =
+    pick?.imageUrl
+      ? `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(pick.date)}" alt="Today's try-on" data-sketch="${imageUrlFor(pick.date)}" data-sketch-title="${escapeAttr(outfitText)}" />`
+      : "";
+
+  const visual = tryOn
+    ? `${tryOn}${pieceNameChips(pieces, byId)}`
+    : outfitVisual(plan.season.key, plan.rotation, DAYS.indexOf(day), pieces, byId, outfitText);
 
   return `
+    <section class="card context-row">
+      ${weatherHtml}
+      ${eventsHtml}
+    </section>
+
     <section class="card hero-today">
       <div>
-        <span class="theme-chip">${entry.theme} · ${day}</span>
+        <span class="theme-chip">${theme} · ${day}</span>
         <h2 style="margin-top:10px">Today's outfit</h2>
-        <p class="muted">${seasonTitle(plan.season.key)} · Week of ${monday.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" })}</p>
-        <p class="muted">${plan.seasonData.label} · ${plan.menu.name}</p>
-        <p style="margin:10px 0 0; line-height:1.45">${entry.outfit}</p>
-        ${outfitVisual(plan.season.key, plan.rotation, DAYS.indexOf(day), entry.pieces, byId, entry.outfit)}
+        <p class="muted">${seasonTitle(plan.season.key)} · ${toISODate(today)}</p>
+        <p style="margin:10px 0 0; line-height:1.45">${escapeHtml(outfitText)}</p>
+        <p class="muted why-line">${escapeHtml(why)}</p>
+        ${visual}
+        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.</p>` : ""}
+        ${!pick ? `<p class="muted">Showing weekly menu until a pick runs. Tap below, or set calendar + photos in Settings first.</p>` : ""}
+        ${state.homePickStatus ? `<p class="settings-status">${escapeHtml(state.homePickStatus)}</p>` : ""}
+        <button type="button" class="pick-again-btn" id="pick-again-btn" ${state.picking ? "disabled" : ""}>
+          ${state.picking ? "Picking…" : pick ? "Pick again" : "Pick today's outfit"}
+        </button>
       </div>
     </section>
 
@@ -282,12 +462,25 @@ function renderHome() {
   `;
 }
 
+function escapeHtml(s) {
+  return String(s || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function escapeAttr(s) {
+  return escapeHtml(s).replace(/'/g, "&#39;");
+}
+
 function renderOutfits() {
   const monday = parseISODate(state.weekMonday);
   const plan = weekPlanForMonday(monday);
   const byId = itemsById();
   const todayISO = toISODate(new Date());
   const isThisWeek = toISODate(mondayOf(new Date())) === state.weekMonday;
+  const picks = state.weekPicks || {};
 
   return `
     <div class="week-nav">
@@ -303,15 +496,27 @@ function renderOutfits() {
     <section class="card">
       <div class="pill-row" style="margin-top:0;margin-bottom:8px">
         <span class="pill rust">${seasonTitle(plan.season.key)}</span>
-        <span class="pill">Week ${plan.weekIndex + 1} of season</span>
-        <span class="pill warm">${plan.menu.name}</span>
+        <span class="pill">Daily picks</span>
+        <span class="pill warm">4am · weather + calendar</span>
       </div>
+      <p class="muted" style="margin-bottom:8px">Actual wears this week. Empty future days wait for 4am. Menu fallback shows if a day has not been picked yet.</p>
       <div>
         ${DAYS.map((day, i) => {
           const date = addDays(monday, i);
-          const e = plan.menu.days[day];
           const iso = toISODate(date);
           const isToday = iso === todayISO;
+          const isFuture = iso > todayISO;
+          const pick = picks[iso];
+          const menuEntry = plan.menu.days[day];
+          const theme = pick?.theme || menuEntry.theme;
+          const outfitText = pick?.outfit || (isFuture ? "Picks at 4am" : menuEntry.outfit);
+          const pieces = pick?.pieces || (!isFuture ? menuEntry.pieces : []);
+          let visual = "";
+          if (pick?.imageUrl) {
+            visual = `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(iso)}" alt="${escapeAttr(outfitText)}" data-sketch="${imageUrlFor(iso)}" data-sketch-title="${escapeAttr(outfitText)}" />${pieceNameChips(pieces, byId)}`;
+          } else if (pieces.length) {
+            visual = outfitVisual(plan.season.key, plan.rotation, i, pieces, byId, outfitText);
+          }
           return `
             <div class="day-card day-card-sketch${isToday ? " today" : ""}">
               <div class="day-head">
@@ -319,11 +524,13 @@ function renderOutfits() {
                   <div class="day-name">${day.slice(0, 3)}</div>
                   <div class="muted" style="font-size:12px;margin-top:2px">${date.toLocaleDateString(undefined, { month: "short", day: "numeric" })}</div>
                 </div>
-                <span class="pill">${e.theme}</span>
+                <span class="pill">${theme}</span>
               </div>
               <div>
-                <div>${e.outfit}</div>
-                ${outfitVisual(plan.season.key, plan.rotation, i, e.pieces, byId, e.outfit)}
+                <div>${escapeHtml(outfitText)}</div>
+                ${pick?.why ? `<p class="muted why-line">${escapeHtml(pick.why)}</p>` : ""}
+                ${!pick && !isFuture ? `<p class="muted">Menu fallback</p>` : ""}
+                ${visual}
               </div>
             </div>
           `;
@@ -458,6 +665,69 @@ function renderWardrobe() {
   `;
 }
 
+function renderSettings() {
+  const s = state.settingsLive || {};
+  const status = state.settingsStatus
+    ? `<p class="settings-status">${escapeHtml(state.settingsStatus)}</p>`
+    : "";
+
+  return `
+    <section class="card">
+      <h2>Daily picker</h2>
+      <p class="muted">At 4am America/Chicago the app reads weather + your calendar, picks from this season's capsule, and generates a try-on photo. Tops, bottoms, toppers, and dresses wait 2 days and skip the same weekday next week.</p>
+      ${status}
+      <button type="button" class="add-submit" id="pick-now-btn" ${state.picking ? "disabled" : ""}>
+        ${state.picking ? "Picking…" : "Pick now"}
+      </button>
+      <p class="muted" style="margin-top:8px">Same action as <strong>Pick again</strong> on Home. Needs Netlify deploy + OpenAI key for the photo.</p>
+    </section>
+
+    <section class="card">
+      <h2>Google Calendar</h2>
+      <p class="muted">Google Calendar → Settings → your calendar → Integrate calendar → <strong>Secret address in iCal format</strong>. Paste that URL here (not the public one).</p>
+      <form id="settings-form" class="add-form">
+        <label>Secret iCal URL
+          <input name="icalUrl" type="url" placeholder="https://calendar.google.com/calendar/ical/…" value="${escapeAttr(s.icalUrl || "")}" />
+        </label>
+        <label>Location label
+          <input name="locationLabel" placeholder="Gravette, AR" value="${escapeAttr(s.locationLabel || "Gravette, AR")}" />
+        </label>
+        <div class="add-row">
+          <label>Latitude
+            <input name="lat" type="number" step="any" value="${s.lat ?? 36.42202}" />
+          </label>
+          <label>Longitude
+            <input name="lon" type="number" step="any" value="${s.lon ?? -94.45355}" />
+          </label>
+        </div>
+        <label>Household PIN (optional, 4+ digits)
+          <input name="pin" type="password" inputmode="numeric" placeholder="${s.hasPin ? "•••• (leave blank to keep)" : "Set a PIN"}" autocomplete="off" />
+        </label>
+        <label>Reference photos (1–2 full-body shots)
+          <input name="referencePhoto" type="file" accept="image/*" multiple />
+        </label>
+        <p class="muted">${
+          s.hasReferencePhoto
+            ? `${s.referencePhotoCount || 1} reference photo(s) on file.`
+            : "No reference photo yet — try-on needs one."
+        }
+          · ${s.hasIcal ? "Calendar connected." : "No calendar yet."}
+          · ${s.hasPin ? "PIN set." : "No PIN."}</p>
+        <button type="submit" class="add-submit">Save settings</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Links</h2>
+      <div class="pill-row">
+        <a class="pill" href="https://www.weather.gov/" target="_blank" rel="noopener">Weather</a>
+        <a class="pill" href="https://calendar.google.com/" target="_blank" rel="noopener">Google Calendar</a>
+      </div>
+      <p class="muted" style="margin-top:10px">Env on Netlify: <code>OPENAI_API_KEY</code>, <code>DAILY_JOB_SECRET</code>. Photos stay in Netlify Blobs — not in git.</p>
+    </section>
+  `;
+}
+
 function renderGaps() {
   return `
     <section class="card">
@@ -503,16 +773,18 @@ function renderGaps() {
 
 function wirePage() {
   document.querySelectorAll("[data-week-delta]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       const delta = Number(btn.dataset.weekDelta);
       const monday = addDays(parseISODate(state.weekMonday), delta);
       state.weekMonday = toISODate(monday);
+      await refreshWeekPicks();
       render();
     });
   });
   document.querySelectorAll("[data-week-today]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       state.weekMonday = toISODate(mondayOf(new Date()));
+      await refreshWeekPicks();
       render();
     });
   });
@@ -534,6 +806,73 @@ function wirePage() {
   document.querySelectorAll(".open-sketch").forEach((el) => {
     el.addEventListener("click", () => openSketch(el.dataset.sketch, el.dataset.sketchTitle));
   });
+
+  const pickAgain = document.getElementById("pick-again-btn");
+  if (pickAgain) {
+    pickAgain.addEventListener("click", () => forcePickToday({ goHome: true }));
+  }
+
+  const pickNow = document.getElementById("pick-now-btn");
+  if (pickNow) {
+    pickNow.addEventListener("click", () => forcePickToday({ goHome: true }));
+  }
+
+  const settingsForm = document.getElementById("settings-form");
+  if (settingsForm) {
+    settingsForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const fd = new FormData(settingsForm);
+      const body = {
+        icalUrl: String(fd.get("icalUrl") || "").trim(),
+        locationLabel: String(fd.get("locationLabel") || "").trim(),
+        lat: Number(fd.get("lat")),
+        lon: Number(fd.get("lon")),
+      };
+      const pin = String(fd.get("pin") || "").trim();
+      if (pin) {
+        body.pin = pin;
+        setPin(pin);
+      }
+      const files = settingsForm.referencePhoto?.files
+        ? Array.from(settingsForm.referencePhoto.files).slice(0, 2)
+        : [];
+      const send = async (referencePhotosBase64) => {
+        if (referencePhotosBase64?.length) {
+          body.referencePhotosBase64 = referencePhotosBase64;
+          body.referencePhotoBase64 = referencePhotosBase64[0];
+        }
+        state.settingsStatus = "Saving…";
+        render();
+        try {
+          await apiPost("settings", body);
+          await refreshSettingsLive();
+          state.settingsStatus = "Saved.";
+        } catch (err) {
+          state.settingsStatus = String(err.message || err);
+        }
+        render();
+      };
+      if (files.length) {
+        Promise.all(
+          files.map(
+            (file) =>
+              new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(String(reader.result));
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+              })
+          )
+        ).then(send).catch((err) => {
+          state.settingsStatus = String(err.message || err);
+          render();
+        });
+      } else {
+        send([]);
+      }
+    });
+  }
+
   const addForm = document.getElementById("add-piece-form");
   if (addForm) {
     addForm.addEventListener("submit", (e) => {
