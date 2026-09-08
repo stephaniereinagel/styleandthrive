@@ -37,8 +37,10 @@ async function main() {
   }));
 
   const garments = [];
-  for (const piece of (pack.pieces || []).slice(0, 3)) {
-    const rel = String(piece.image || `images/thumbs/${piece.id}.jpg`).replace(/^\//, "");
+  for (const piece of pack.pieces || []) {
+    const rel = String(
+      piece.image_full || piece.image || `images/source/${piece.id}.jpg`
+    ).replace(/^\//, "");
     if (/\.svg$/i.test(rel)) continue;
     try {
       const res = await fetch(`${SITE}/${rel}`);
@@ -50,9 +52,15 @@ async function main() {
         contentType: "image/jpeg",
         name: piece.name || piece.id,
       });
+      console.log("loaded garment", piece.id, rel, bytes.length);
     } catch (err) {
       console.warn("garment fetch failed", piece.id, err.message);
     }
+    if (garments.length >= 3) break;
+  }
+
+  if (!garments.length) {
+    console.warn("WARNING: no garment images — try-on will invent clothes from text only");
   }
 
   console.log(

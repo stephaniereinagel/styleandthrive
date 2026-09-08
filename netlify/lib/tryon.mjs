@@ -1,6 +1,6 @@
 /**
  * AI try-on via OpenAI Images (gpt-image-2) with Stephanie's reference photo
- * plus hanger photos of the actual outfit pieces.
+ * plus full-size closet photos of the actual outfit pieces.
  */
 
 const IMAGE_MODEL = "gpt-image-2";
@@ -47,6 +47,8 @@ const BACKGROUNDS = [
   "simple light oatmeal wall with soft window light only — no room details",
 ];
 
+const CONSTRAINED = new Set(["top", "bottom", "topper", "both"]);
+
 function daySeed(dateISO = "", extra = 0) {
   return [...String(dateISO)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0) + Number(extra || 0) * 31;
 }
@@ -63,35 +65,59 @@ export function styleSuggestions(pick) {
   };
 }
 
+function pieceDetail(item) {
+  if (!item) return "";
+  const bits = [
+    item.name,
+    item.subcategory,
+    (item.colors || []).slice(0, 2).join("/"),
+    item.description ? String(item.description).slice(0, 160) : "",
+  ].filter(Boolean);
+  return bits.join(" — ");
+}
+
+/**
+ * Build try-on prompt. When closet garment photos are attached, those win over
+ * generic silhouette coaching (which was inventing the wrong olive dress).
+ */
 export function buildTryOnPrompt(pick, catalogueById, garmentLabels = []) {
-  const names = (pick.pieces || [])
-    .map((id) => catalogueById[id])
-    .filter(Boolean)
-    .map((p) => {
-      const colors = (p.colors || []).slice(0, 2).join("/");
-      return `${p.name}${colors ? ` (${colors})` : ""} [${p.slot}]`;
-    });
+  const items = (pick.pieces || []).map((id) => catalogueById[id]).filter(Boolean);
+  const names = items.map((p) => {
+    const colors = (p.colors || []).slice(0, 2).join("/");
+    return `${p.name}${colors ? ` (${colors})` : ""} [${p.slot}]`;
+  });
+  const details = items
+    .filter((p) => CONSTRAINED.has(p.slot) || p.slot === "shoes")
+    .map((p) => pieceDetail(p));
 
   const style = styleSuggestions(pick);
-  const garmentLines = garmentLabels.length
-    ? garmentLabels.map((g, i) => `Image ${i + 2}: exact closet photo of ${g}`).join(". ")
+  const hasGarmentPhotos = garmentLabels.length > 0;
+  const garmentLines = hasGarmentPhotos
+    ? garmentLabels.map((g, i) => `Image ${i + 2} is the closet photo of: ${g}.`).join(" ")
     : "";
 
   return {
     prompt: [
-      "Photorealistic virtual try-on composite.",
-      "Image 1 is the woman (Stephanie) — preserve her exact face, facial features, skin tone, age, dark brown hair color, and body shape (high waist, full bust, long legs) so she is unmistakably the same person.",
-      garmentLines
-        ? `${garmentLines}. Dress her in those exact garments — match fabric, color, pattern, cut, and details from the closet photos. Do not invent or substitute clothes.`
+      "Photorealistic virtual try-on. Composite ONLY — do not redesign the clothes.",
+      "Image 1 is Stephanie (the woman). Keep her exact face, facial features, skin tone, age, dark brown hair color, and body shape (high waist, full bust, long legs).",
+      hasGarmentPhotos
+        ? `${garmentLines} Put her in those exact garments from the closet photos. Copy neckline, sleeve shape, fabric texture, color, length, waistline, and every visible construction detail from Image 2+ — pixel-faithful clothing match.`
         : "Wardrobe must match the listed pieces exactly — do not invent garments.",
-      `Setting: ${style.background}. Do not keep the original room.`,
+      "CRITICAL: If Image 2 shows a V-neck or wrap dress, do NOT output a crew-neck jersey tee-dress. Do not invent a side slit, ribbed crew collar, or different olive dress from elsewhere in her closet.",
+      "Ignore clutter/mirrors/hangers in closet photos — extract only the garment(s) and shoes she should wear.",
+      `Setting: ${style.background}. Do not keep the original room from Image 1.`,
       `Pose: ${style.pose}.`,
       `Hairstyle: ${style.hairstyle} (same hair color/texture, restyled).`,
-      "Silhouette: marked waist, skim the hip, draw the eye up. Homestead-mom, flattering, natural light — not glam editorial.",
+      hasGarmentPhotos
+        ? "Fit the real garments flatteringly on her body without changing their cut. Do not impose a generic 'marked waist' silhouette if the closet photo shows a different cut."
+        : "Silhouette: marked waist, skim the hip, draw the eye up.",
       `Outfit formula: ${pick.outfit}`,
       `Pieces: ${names.join("; ")}.`,
+      details.length ? `Garment details: ${details.join(" | ")}.` : "",
       "Full or three-quarter body. No text overlay, no watermark, no extra people.",
-    ].join(" "),
+    ]
+      .filter(Boolean)
+      .join(" "),
     style,
   };
 }
@@ -128,69 +154,96 @@ function toImageBlob(ref, index = 0) {
   };
 }
 
-/** Load hanger photos for outfit pieces (thumbs via live site — not bundled into the function). */
+/** Prefer full-size source photos; constrained pieces (dress/top) before shoes. */
+function garmentPathsForItem(item, id) {
+  const full = String(item.image_full || `images/source/${id}.jpg`).replace(/^\//, "");
+  const thumb = String(item.image || `images/thumbs/${id}.jpg`).replace(/^\//, "");
+  const paths = [];
+  if (full && !/\.svg$/i.test(full)) paths.push(full);
+  if (thumb && thumb !== full && !/\.svg$/i.test(thumb)) paths.push(thumb);
+  return paths;
+}
+
+function sortPieceIdsForTryOn(catalogue, pieceIds) {
+  const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
+  const rank = (id) => {
+    const slot = byId[id]?.slot || "";
+    if (slot === "both") return 0;
+    if (slot === "top" || slot === "bottom") return 1;
+    if (slot === "topper" || slot === "outerwear") return 2;
+    if (slot === "shoes") return 3;
+    return 4;
+  };
+  return [...(pieceIds || [])].sort((a, b) => rank(a) - rank(b));
+}
+
+/** Load closet photos for outfit pieces (full source preferred over thumbs). */
 export async function loadGarmentImages(catalogue, pieceIds, event) {
   const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
   const host = event?.headers?.["x-forwarded-host"] || event?.headers?.host;
   const proto = event?.headers?.["x-forwarded-proto"] || "https";
   const base = host ? `${proto}://${host}` : "";
   const out = [];
+  const ordered = sortPieceIdsForTryOn(catalogue, pieceIds);
 
-  for (const id of pieceIds || []) {
+  for (const id of ordered) {
     const item = byId[id];
     if (!item) continue;
-    const thumb = String(item.image || `images/thumbs/${id}.jpg`).replace(/^\//, "");
-    if (/\.svg$/i.test(thumb)) continue;
+    const paths = garmentPathsForItem(item, id);
+    let loaded = null;
 
-    // Prefer HTTP fetch from the published site (keeps the function bundle small)
-    if (base) {
-      try {
-        const res = await fetch(`${base}/${thumb}`);
-        if (res.ok) {
-          const bytes = Buffer.from(await res.arrayBuffer());
-          if (sniffType(bytes)) {
-            out.push({ bytes, contentType: "image/jpeg", name: item.name || id });
-            if (out.length >= 3) break;
-            continue;
+    for (const rel of paths) {
+      if (base) {
+        try {
+          const res = await fetch(`${base}/${rel}`);
+          if (res.ok) {
+            const bytes = Buffer.from(await res.arrayBuffer());
+            if (sniffType(bytes)) {
+              loaded = { bytes, contentType: "image/jpeg", name: item.name || id, path: rel };
+              break;
+            }
           }
+        } catch (err) {
+          console.warn("garment fetch failed", id, rel, err.message || err);
         }
-      } catch (err) {
-        console.warn("garment fetch failed", id, err.message || err);
+      }
+      try {
+        const { readFile } = await import("node:fs/promises");
+        const { join } = await import("node:path");
+        const bytes = await readFile(join(process.cwd(), rel));
+        if (sniffType(bytes)) {
+          loaded = { bytes, contentType: "image/jpeg", name: item.name || id, path: rel };
+          break;
+        }
+      } catch {
+        /* try next path */
       }
     }
 
-    // Local fallback (netlify dev)
-    try {
-      const { readFile } = await import("node:fs/promises");
-      const { join } = await import("node:path");
-      const bytes = await readFile(join(process.cwd(), thumb));
-      if (sniffType(bytes)) {
-        out.push({ bytes, contentType: "image/jpeg", name: item.name || id });
-      }
-    } catch {
-      /* skip */
+    if (loaded) {
+      out.push(loaded);
+      console.log("garment loaded", id, loaded.path, loaded.bytes.length);
     }
     if (out.length >= 3) break;
   }
   return out;
 }
 
-async function editWithImages({ apiKey, model, prompt, images }) {
+async function editWithImages({ apiKey, model, prompt, images, quality = "high" }) {
   const form = new FormData();
   form.append("model", model);
   form.append("prompt", prompt);
-  form.append("size", "1024x1024");
-  form.append("quality", "medium");
+  form.append("size", "1024x1536");
+  form.append("quality", quality);
   form.append("output_format", "png");
-  // gpt-image-2: omit input_fidelity (always high). Older models: low for speed.
-  if (model !== "gpt-image-2" && images.length === 1) {
-    form.append("input_fidelity", "low");
+  // gpt-image-2: omit input_fidelity (always high). Older models: high when we have garments.
+  if (model !== "gpt-image-2") {
+    form.append("input_fidelity", images.length > 1 ? "high" : "low");
   }
 
   images.forEach((ref, i) => {
     const { blob, filename, bytes } = toImageBlob(ref, i);
     if (bytes < 500) throw new Error(`Image ${i + 1} too small`);
-    // Repeat the `image` field — gpt-image-2 maps upload order to Image 1, Image 2, …
     form.append("image", blob, filename);
   });
 
@@ -251,26 +304,36 @@ export async function generateTryOn({
   }
 
   const garmentRefs = (garments || []).filter((g) => g?.bytes?.length).slice(0, 4);
+  if (!garmentRefs.length) {
+    console.warn("try-on: no garment images loaded — clothing match will be weak");
+  }
   const models = [IMAGE_MODEL, ...FALLBACK_MODELS];
   let lastErr = null;
 
-  // Prefer first person photo; if it fails, try the next stored person photo
   for (let p = 0; p < personRefs.length; p++) {
     const images = [personRefs[p], ...garmentRefs];
     for (const model of models) {
       try {
-        // Older models may reject multiple images — fall back to person-only
         try {
-          return await editWithImages({ apiKey, model, prompt, images });
+          return await editWithImages({
+            apiKey,
+            model,
+            prompt,
+            images,
+            quality: "high",
+          });
         } catch (multiErr) {
           const msg = String(multiErr?.body || multiErr?.message || "");
+          // Only fall back to person-only if the API rejects multi-image —
+          // and keep a stern reminder not to invent clothes.
           if (images.length > 1 && /multiple|only one|Duplicate parameter|image\[\]/i.test(msg)) {
-            console.warn(`${model}: multi-image rejected, retrying person-only`);
+            console.warn(`${model}: multi-image rejected, retrying person-only (weaker match)`);
             return await editWithImages({
               apiKey,
               model,
-              prompt: `${prompt} (Garment photos unavailable in this request — match the listed pieces as closely as possible.)`,
+              prompt: `${prompt} IMPORTANT: Closet photos could not be attached. Recreate the listed pieces as faithfully as possible from the text details — especially neckline and fabric. Do not substitute a different dress.`,
               images: [personRefs[p]],
+              quality: "high",
             });
           }
           throw multiErr;

@@ -915,9 +915,9 @@
         "forest green"
       ],
       "pattern": "solid",
-      "description": "Muted dark olive knit midi with short sleeves, waist seam with light gathering, and a subtle A-line skirt to mid-calf. Soft jersey, practical everyday cut.",
+      "description": "Dark olive short-sleeve midi with a wrap-style V-neck, soft flutter sleeves, defined gathered waist, and a relaxed column skirt to mid-calf. Textured woven/linen-feel fabric — not a crew-neck jersey tee-dress.",
       "rating": 5,
-      "rating_reason": "Excellent Soft Autumn olive, waist definition + skimming A-line for pear, washable one-and-done for busy mom days—capsule hero.",
+      "rating_reason": "Excellent Soft Autumn olive, waist definition + skimming midi for pear, washable one-and-done for busy mom days—capsule hero.",
       "seasons": [
         "spring",
         "fall"
@@ -933,7 +933,8 @@
       "in_capsule": true,
       "is_staple": false,
       "slot": "both",
-      "character": "Neutral"
+      "character": "Neutral",
+      "notes": "Do not confuse with IMG_0086 olive jersey crew tee-dress."
     },
     {
       "id": "IMG_0117",

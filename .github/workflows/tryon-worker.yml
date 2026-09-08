@@ -10,6 +10,10 @@ on:
         description: "Optional YYYY-MM-DD (defaults to today Chicago via API)"
         required: false
         default: ""
+      force:
+        description: "Regenerate even if a photo already exists (true/false)"
+        required: false
+        default: "false"
 
 jobs:
   tryon:
@@ -26,9 +30,17 @@ jobs:
           DAILY_JOB_SECRET: ${{ secrets.DAILY_JOB_SECRET }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DATE: ${{ github.event.inputs.date || '' }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
         run: |
           if [ -z "$SITE_URL" ] || [ -z "$DAILY_JOB_SECRET" ] || [ -z "$OPENAI_API_KEY" ]; then
             echo "Missing STYLE_THRIVE_URL, DAILY_JOB_SECRET, or OPENAI_API_KEY — skipping"
             exit 0
+          fi
+          if [ "$FORCE" = "true" ]; then
+            EXTRA="force=1"
+            if [ -n "$DATE" ]; then EXTRA="${EXTRA}&date=${DATE}"; fi
+            curl -fsS "${SITE_URL%/}/.netlify/functions/tryon-pack?${EXTRA}" \
+              -H "x-job-secret: ${DAILY_JOB_SECRET}" > /tmp/pack-force.json || true
+            echo "Forced pending for retry"
           fi
           node scripts/run-tryon.mjs
