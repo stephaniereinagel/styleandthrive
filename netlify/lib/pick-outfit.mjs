@@ -226,8 +226,10 @@ function whyLine({ theme, weather, activity, relaxed, bridged }) {
 
 /**
  * @param {object} opts
+ * @param {string[]} [opts.avoidPieces] - piece IDs to skip (e.g. previous Pick again outfit)
+ * @param {number} [opts.variety] - rotate through top candidates (0 = best)
  */
-export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
+export function pickOutfit({ catalogue, dateISO, weather, activity, history, avoidPieces = [], variety = 0 }) {
   const date = parseISODate(dateISO);
   const season = seasonForDate(date);
   const dayName = dayNameFromDate(date);
@@ -367,7 +369,27 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
     }
 
     candidates.sort((a, b) => score(b) - score(a));
-    let best = candidates[0];
+
+    // Unique by constrained pieces, then skip the previous outfit when re-picking
+    const unique = [];
+    const seen = new Set();
+    for (const c of candidates) {
+      const key = c
+        .filter((p) => CONSTRAINED.has(p.slot))
+        .map((p) => p.id)
+        .sort()
+        .join(",");
+      if (seen.has(key)) continue;
+      seen.add(key);
+      unique.push(c);
+    }
+    const avoid = new Set(avoidPieces || []);
+    const fresh = unique.filter(
+      (c) => !c.some((p) => avoid.has(p.id) && CONSTRAINED.has(p.slot))
+    );
+    const pool = fresh.length ? fresh : unique;
+    const idx = Math.abs(Number(variety) || 0) % pool.length;
+    let best = pool[idx];
 
     const needsBelt = best.some(
       (p) =>

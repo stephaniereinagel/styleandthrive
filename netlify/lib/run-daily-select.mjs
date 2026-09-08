@@ -44,7 +44,19 @@ export async function runDailySelect({ event, dateISO, force = false }) {
   ]);
 
   const activity = activityFromEvents(events);
-  const pick = pickOutfit({ catalogue, dateISO, weather, activity, history });
+  const avoidPieces =
+    force && existing ? existing.constrained || existing.pieces || [] : [];
+  const variety = force ? existing?.pickCount || 0 : 0;
+  const pick = pickOutfit({
+    catalogue,
+    dateISO,
+    weather,
+    activity,
+    history,
+    avoidPieces,
+    variety,
+  });
+  pick.pickCount = (existing?.pickCount || 0) + 1;
 
   let imageUrl = null;
   let imageFailed = false;
@@ -69,7 +81,8 @@ export async function runDailySelect({ event, dateISO, force = false }) {
       });
       if (img) {
         await saveTryOnImage(dateISO, img.bytes, img.contentType);
-        imageUrl = `/.netlify/functions/image?date=${dateISO}`;
+        // Cache-bust so Pick again shows the new photo in the browser
+        imageUrl = `/.netlify/functions/image?date=${dateISO}&v=${encodeURIComponent(pick.pickedAt || String(pick.pickCount))}`;
       } else {
         imageFailed = true;
         imageError = "Try-on returned empty";

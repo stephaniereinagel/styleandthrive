@@ -93,11 +93,17 @@ async function apiPost(name, body, params = {}) {
   return data;
 }
 
-function imageUrlFor(dateISO) {
+function imageUrlFor(dateISO, version) {
   const pin = getPin();
   const qs = new URLSearchParams({ date: dateISO });
+  if (version) qs.set("v", version);
   if (pin) qs.set("pin", pin);
   return `${API}/image?${qs}`;
+}
+
+function pickImageSrc(pick) {
+  if (!pick) return "";
+  return imageUrlFor(pick.date, pick.pickedAt || pick.pickCount || Date.now());
 }
 
 /** Re-encode uploads as JPEG so OpenAI accepts iPhone HEIC/odd formats. */
@@ -166,7 +172,7 @@ async function refreshSettingsLive() {
 
 async function forcePickToday({ goHome = true } = {}) {
   state.picking = true;
-  state.homePickStatus = "Picking a new outfit…";
+  state.homePickStatus = "Picking a new outfit… (photo can take up to a minute)";
   state.settingsStatus = "Picking today's outfit…";
   render();
   try {
@@ -472,7 +478,7 @@ function renderHome() {
 
   const tryOn =
     pick?.imageUrl
-      ? `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(pick.date)}" alt="Today's try-on" data-sketch="${imageUrlFor(pick.date)}" data-sketch-title="${escapeAttr(outfitText)}" />`
+      ? `<img class="outfit-sketch tryon-photo open-sketch" src="${pickImageSrc(pick)}" alt="Today's try-on" data-sketch="${pickImageSrc(pick)}" data-sketch-title="${escapeAttr(outfitText)}" />`
       : "";
 
   // Live picks without a try-on photo: show hanger thumbs (not the old menu sketch).
@@ -592,7 +598,7 @@ function renderOutfits() {
           const pieces = pick?.pieces || (!isFuture ? menuEntry.pieces : []);
           let visual = "";
           if (pick?.imageUrl) {
-            visual = `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(iso)}" alt="${escapeAttr(outfitText)}" data-sketch="${imageUrlFor(iso)}" data-sketch-title="${escapeAttr(outfitText)}" />${pieceNameChips(pieces, byId)}`;
+            visual = `<img class="outfit-sketch tryon-photo open-sketch" src="${pickImageSrc(pick)}" alt="${escapeAttr(outfitText)}" data-sketch="${pickImageSrc(pick)}" data-sketch-title="${escapeAttr(outfitText)}" />${pieceNameChips(pieces, byId)}`;
           } else if (pick && pieces.length) {
             visual = `${pieceThumbs(pieces, byId)}${pieceNameChips(pieces, byId)}`;
           } else if (pieces.length) {

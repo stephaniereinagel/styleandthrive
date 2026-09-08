@@ -91,6 +91,7 @@ export function publicPick(pick) {
     imageFailed: !!pick.imageFailed,
     imageError: pick.imageError || null,
     style: pick.style || null,
+    pickCount: pick.pickCount || 1,
     relaxed: pick.relaxed || [],
     pickedAt: pick.pickedAt,
   };

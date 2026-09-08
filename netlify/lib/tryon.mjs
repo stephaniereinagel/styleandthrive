@@ -44,15 +44,15 @@ const BACKGROUNDS = [
   "simple light oatmeal wall with soft window light only — no room details",
 ];
 
-function daySeed(dateISO = "") {
-  return [...String(dateISO)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+function daySeed(dateISO = "", extra = 0) {
+  return [...String(dateISO)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0) + Number(extra || 0) * 31;
 }
 
 /** Pick a stable hairstyle / pose / backdrop for the day (and theme). */
 export function styleSuggestions(pick) {
   const theme = pick?.theme || "Practical";
   const hairs = HAIR_BY_THEME[theme] || HAIR_BY_THEME.Practical;
-  const seed = daySeed(pick?.date) + theme.length * 17;
+  const seed = daySeed(pick?.date, pick?.pickCount || 0) + theme.length * 17;
   return {
     hairstyle: hairs[seed % hairs.length],
     pose: POSES[seed % POSES.length],
