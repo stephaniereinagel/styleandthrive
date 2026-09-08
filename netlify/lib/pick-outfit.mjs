@@ -387,9 +387,13 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history, avo
     const fresh = unique.filter(
       (c) => !c.some((p) => avoid.has(p.id) && CONSTRAINED.has(p.slot))
     );
-    const pool = fresh.length ? fresh : unique;
-    const idx = Math.abs(Number(variety) || 0) % pool.length;
-    let best = pool[idx];
+    const choices = fresh.length ? fresh : unique;
+    const idx = Math.abs(Number(variety) || 0) % Math.max(choices.length, 1);
+    let best = choices[idx];
+    if (!best) {
+      lastError = `no candidates under relax=${relax.label || "strict"}`;
+      continue;
+    }
 
     const needsBelt = best.some(
       (p) =>
