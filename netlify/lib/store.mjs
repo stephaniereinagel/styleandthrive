@@ -1,8 +1,17 @@
 /** Netlify Blobs store for settings, daily picks, history, images. */
 
-import { getStore } from "@netlify/blobs";
+import { connectLambda, getStore } from "@netlify/blobs";
 
 const STORE = "style-and-thrive";
+
+/**
+ * Functions v1 (export async function handler) must call connectLambda
+ * before getStore, or Blobs throws MissingBlobsEnvironmentError.
+ */
+export function initBlobs(event) {
+  if (event) connectLambda(event);
+  return getStore(STORE);
+}
 
 export function blobs() {
   return getStore(STORE);

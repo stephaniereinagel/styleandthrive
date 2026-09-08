@@ -1,4 +1,4 @@
-import { getSettings, getWeekPicks } from "../lib/store.mjs";
+import { getSettings, getWeekPicks, initBlobs } from "../lib/store.mjs";
 import { json, okOptions, pinOk, publicPick } from "../lib/http.mjs";
 import { mondayOf, parseISODate, toISODate, chicagoParts } from "../lib/season.mjs";
 
@@ -6,6 +6,7 @@ import { mondayOf, parseISODate, toISODate, chicagoParts } from "../lib/season.m
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") return okOptions();
   if (event.httpMethod !== "GET") return json(405, { error: "GET only" });
+  initBlobs(event);
 
   try {
     const settings = await getSettings();

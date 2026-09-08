@@ -114,6 +114,18 @@ async function refreshWeekPicks() {
   }
 }
 
+async function refreshSettingsLive() {
+  try {
+    state.settingsLive = await apiGet("settings");
+  } catch (err) {
+    console.warn("settings API unavailable", err);
+    state.settingsLive = null;
+    state.settingsStatus =
+      state.settingsStatus ||
+      "Settings API unavailable yet — you can still fill the form; Save needs a working deploy with Netlify Blobs.";
+  }
+}
+
 async function forcePickToday({ goHome = true } = {}) {
   state.picking = true;
   state.homePickStatus = "Picking a new outfit…";
@@ -245,20 +257,31 @@ async function load() {
   state.weekMonday = toISODate(mondayOf(today));
   state.season = seasonForDate(today).key;
   bindTabs();
-  await Promise.all([refreshTodayLive(), refreshWeekPicks(), refreshSettingsLive()]);
   render();
+  // Live APIs after first paint — don't block the whole app if Blobs/functions fail
+  Promise.all([refreshTodayLive(), refreshWeekPicks(), refreshSettingsLive()])
+    .then(() => render())
+    .catch((err) => console.warn("live refresh failed", err));
 }
 
 function bindTabs() {
   document.querySelectorAll(".tab").forEach((btn) => {
-    btn.addEventListener("click", async () => {
+    btn.addEventListener("click", () => {
       state.tab = btn.dataset.tab;
       document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("active", b === btn));
-      if (state.tab === "home") await refreshTodayLive();
-      if (state.tab === "outfits") await refreshWeekPicks();
-      if (state.tab === "settings") await refreshSettingsLive();
       render();
       window.scrollTo({ top: 0, behavior: "smooth" });
+      // Refresh APIs after paint so a slow/failed function never blanks the tab
+      (async () => {
+        try {
+          if (state.tab === "home") await refreshTodayLive();
+          if (state.tab === "outfits") await refreshWeekPicks();
+          if (state.tab === "settings") await refreshSettingsLive();
+          if (["home", "outfits", "settings"].includes(state.tab)) render();
+        } catch (err) {
+          console.warn("tab refresh failed", err);
+        }
+      })();
     });
   });
 }

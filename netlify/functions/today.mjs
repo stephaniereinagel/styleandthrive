@@ -1,5 +1,5 @@
 import { chicagoParts } from "../lib/season.mjs";
-import { getSettings, getPick } from "../lib/store.mjs";
+import { getSettings, getPick, initBlobs } from "../lib/store.mjs";
 import { json, okOptions, pinOk, publicPick } from "../lib/http.mjs";
 import { fetchWeather, DEFAULT_LOCATION } from "../lib/weather.mjs";
 import { fetchIcalEvents, activityFromEvents } from "../lib/ical.mjs";
@@ -8,6 +8,7 @@ import { fetchIcalEvents, activityFromEvents } from "../lib/ical.mjs";
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") return okOptions();
   if (event.httpMethod !== "GET") return json(405, { error: "GET only" });
+  initBlobs(event);
 
   try {
     const settings = await getSettings();

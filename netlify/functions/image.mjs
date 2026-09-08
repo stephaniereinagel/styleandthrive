@@ -1,4 +1,4 @@
-import { getSettings, getTryOnImage } from "../lib/store.mjs";
+import { getSettings, getTryOnImage, initBlobs } from "../lib/store.mjs";
 import { pinOk } from "../lib/http.mjs";
 
 /** Serve try-on image for a date. PIN-gated when a PIN is configured. */
@@ -16,6 +16,7 @@ export async function handler(event) {
   }
 
   try {
+    initBlobs(event);
     const settings = await getSettings();
     if (!pinOk(event, settings)) {
       return {

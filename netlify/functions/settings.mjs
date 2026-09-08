@@ -2,6 +2,7 @@ import {
   getSettings,
   saveSettings,
   saveReferencePhotos,
+  initBlobs,
 } from "../lib/store.mjs";
 import { hashPin, json, okOptions, pinOk } from "../lib/http.mjs";
 import { DEFAULT_LOCATION } from "../lib/weather.mjs";
@@ -19,6 +20,7 @@ function decodeDataUrl(dataUrl) {
  */
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") return okOptions();
+  initBlobs(event);
 
   try {
     const settings = await getSettings();

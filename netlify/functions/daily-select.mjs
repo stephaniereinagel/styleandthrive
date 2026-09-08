@@ -10,6 +10,7 @@ import {
   savePick,
   getReferencePhotos,
   saveTryOnImage,
+  initBlobs,
 } from "../lib/store.mjs";
 import {
   json,
@@ -31,6 +32,7 @@ export const config = {
  */
 export async function handler(event) {
   if (event.httpMethod === "OPTIONS") return okOptions();
+  initBlobs(event);
 
   const qs = event.queryStringParameters || {};
   let body = {};
