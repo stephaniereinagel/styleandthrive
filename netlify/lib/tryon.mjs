@@ -53,24 +53,22 @@ export async function generateTryOn({ apiKey, references, referenceBytes, refere
     return null;
   }
 
-  // Prefer the clearest full-body refs; first image gets highest fidelity
-  const ordered = refs.slice(0, 2);
+  // gpt-image-1 edits currently accept a single input image (not multiple).
+  // Use the first uploaded reference; extra photos stay stored as backups.
+  const primary = refs[0];
   const form = new FormData();
   form.append("model", "gpt-image-1");
   form.append(
     "prompt",
-    `${prompt} Use the attached reference photo(s) only for her face, hair, and body — replace the clothes with the outfit listed.`
+    `${prompt} Use the attached reference photo only for her face, hair, and body — replace the clothes with the outfit listed.`
   );
   form.append("size", "1024x1536");
   form.append("quality", "medium");
   form.append("input_fidelity", "high");
   form.append("output_format", "png");
 
-  ordered.forEach((ref, i) => {
-    const file = toFile(ref, i);
-    // OpenAI accepts repeated "image" fields for multiple inputs
-    form.append("image", file, `reference-${i + 1}.jpg`);
-  });
+  const file = toFile(primary, 0);
+  form.append("image", file, "reference.jpg");
 
   const res = await fetch("https://api.openai.com/v1/images/edits", {
     method: "POST",

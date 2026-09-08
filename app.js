@@ -735,6 +735,7 @@ function renderSettings() {
         <label>Reference photos (1–2 full-body shots)
           <input name="referencePhoto" type="file" accept="image/*" multiple />
         </label>
+        <p class="muted">Try-on uses the <strong>first</strong> photo only (this model allows one). Upload your clearest full-body shot first; a second is optional backup.</p>
         <p class="muted">${
           s.hasReferencePhoto
             ? `${s.referencePhotoCount || 1} reference photo(s) on file.`
