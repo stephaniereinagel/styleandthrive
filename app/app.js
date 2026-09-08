@@ -100,6 +100,39 @@ function imageUrlFor(dateISO) {
   return `${API}/image?${qs}`;
 }
 
+/** Re-encode uploads as JPEG so OpenAI accepts iPhone HEIC/odd formats. */
+function fileToJpegDataUrl(file, maxEdge = 1536) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      try {
+        let { width, height } = img;
+        const scale = Math.min(1, maxEdge / Math.max(width, height));
+        width = Math.max(1, Math.round(width * scale));
+        height = Math.max(1, Math.round(height * scale));
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, width, height);
+        URL.revokeObjectURL(url);
+        resolve(canvas.toDataURL("image/jpeg", 0.9));
+      } catch (err) {
+        URL.revokeObjectURL(url);
+        reject(err);
+      }
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Could not read that photo — try a JPEG or PNG."));
+    };
+    img.src = url;
+  });
+}
+
 async function refreshTodayLive() {
   try {
     state.todayLive = await apiGet("today");
@@ -442,9 +475,20 @@ function renderHome() {
       ? `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(pick.date)}" alt="Today's try-on" data-sketch="${imageUrlFor(pick.date)}" data-sketch-title="${escapeAttr(outfitText)}" />`
       : "";
 
+  // Live picks without a try-on photo: show hanger thumbs (not the old menu sketch).
   const visual = tryOn
     ? `${tryOn}${pieceNameChips(pieces, byId)}`
-    : outfitVisual(plan.season.key, plan.rotation, DAYS.indexOf(day), pieces, byId, outfitText);
+    : pick
+      ? `${pieceThumbs(pieces, byId)}${pieceNameChips(pieces, byId)}`
+      : outfitVisual(plan.season.key, plan.rotation, DAYS.indexOf(day), pieces, byId, outfitText);
+
+  const shortImageErr = pick?.imageError
+    ? pick.imageError.includes("Invalid image")
+      ? "Reference photo wasn’t accepted — re-upload a JPEG/PNG full-body shot in Settings (first photo only)."
+      : pick.imageError.includes("Duplicate parameter")
+        ? "Try-on photo retry needed — pull to refresh and Pick again."
+        : pick.imageError.slice(0, 160)
+    : "";
 
   return `
     <section class="card context-row">
@@ -460,7 +504,7 @@ function renderHome() {
         <p style="margin:10px 0 0; line-height:1.45">${escapeHtml(outfitText)}</p>
         <p class="muted why-line">${escapeHtml(why)}</p>
         ${visual}
-        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.${pick.imageError ? ` (${escapeHtml(pick.imageError)})` : ""}</p>` : ""}
+        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.${shortImageErr ? ` ${escapeHtml(shortImageErr)}` : ""}</p>` : ""}
         ${!pick ? `<p class="muted">Showing weekly menu until a pick runs. Tap below, or set calendar + photos in Settings first.</p>` : ""}
         ${state.homePickStatus ? `<p class="settings-status">${escapeHtml(state.homePickStatus)}</p>` : ""}
         <button type="button" class="pick-again-btn" id="pick-again-btn" ${state.picking ? "disabled" : ""}>
@@ -542,6 +586,8 @@ function renderOutfits() {
           let visual = "";
           if (pick?.imageUrl) {
             visual = `<img class="outfit-sketch tryon-photo open-sketch" src="${imageUrlFor(iso)}" alt="${escapeAttr(outfitText)}" data-sketch="${imageUrlFor(iso)}" data-sketch-title="${escapeAttr(outfitText)}" />${pieceNameChips(pieces, byId)}`;
+          } else if (pick && pieces.length) {
+            visual = `${pieceThumbs(pieces, byId)}${pieceNameChips(pieces, byId)}`;
           } else if (pieces.length) {
             visual = outfitVisual(plan.season.key, plan.rotation, i, pieces, byId, outfitText);
           }
@@ -735,7 +781,7 @@ function renderSettings() {
         <label>Reference photos (1–2 full-body shots)
           <input name="referencePhoto" type="file" accept="image/*" multiple />
         </label>
-        <p class="muted">Try-on uses the <strong>first</strong> photo only (this model allows one). Upload your clearest full-body shot first; a second is optional backup.</p>
+        <p class="muted">Try-on uses the <strong>first</strong> photo only. Re-upload as JPEG/PNG if needed — the app converts on save. Clearest full-body shot first.</p>
         <p class="muted">${
           s.hasReferencePhoto
             ? `${s.referencePhotoCount || 1} reference photo(s) on file.`
@@ -883,20 +929,12 @@ function wirePage() {
         render();
       };
       if (files.length) {
-        Promise.all(
-          files.map(
-            (file) =>
-              new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onload = () => resolve(String(reader.result));
-                reader.onerror = reject;
-                reader.readAsDataURL(file);
-              })
-          )
-        ).then(send).catch((err) => {
-          state.settingsStatus = String(err.message || err);
-          render();
-        });
+        Promise.all(files.map((file) => fileToJpegDataUrl(file)))
+          .then(send)
+          .catch((err) => {
+            state.settingsStatus = String(err.message || err);
+            render();
+          });
       } else {
         send([]);
       }

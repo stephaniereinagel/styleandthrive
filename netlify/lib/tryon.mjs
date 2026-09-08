@@ -24,14 +24,82 @@ export function buildTryOnPrompt(pick, catalogueById) {
   ].join(" ");
 }
 
-function toFile(ref, index) {
-  const type = ref.contentType || "image/jpeg";
-  const name = `reference-${index + 1}.jpg`;
-  const bytes = ref.bytes;
-  if (typeof File !== "undefined") {
-    return new File([bytes], name, { type });
+function normalizeType(contentType) {
+  const t = String(contentType || "image/jpeg").split(";")[0].trim().toLowerCase();
+  if (t === "image/jpg") return "image/jpeg";
+  if (t === "image/heic" || t === "image/heif") return "image/jpeg"; // may still fail if bytes are HEIC
+  if (t.startsWith("image/")) return t;
+  return "image/jpeg";
+}
+
+function sniffType(bytes) {
+  if (!bytes || bytes.length < 12) return null;
+  const b = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+  if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return "image/jpeg";
+  if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return "image/png";
+  if (b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46) return "image/gif";
+  if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46) return "image/webp";
+  return null;
+}
+
+function toImageBlob(ref) {
+  const raw = ref.bytes;
+  const u8 = raw instanceof Uint8Array ? raw : new Uint8Array(raw);
+  const sniffed = sniffType(u8);
+  const type = sniffed || normalizeType(ref.contentType);
+  const ext = type === "image/png" ? "png" : type === "image/webp" ? "webp" : "jpg";
+  return {
+    blob: new Blob([u8], { type }),
+    filename: `reference.${ext}`,
+    type,
+    bytes: u8.length,
+  };
+}
+
+async function editWithImage({ apiKey, prompt, ref }) {
+  const { blob, filename, type, bytes } = toImageBlob(ref);
+  if (bytes < 1000) {
+    throw new Error(`Reference photo too small (${bytes} bytes)`);
   }
-  return new Blob([bytes], { type });
+  if (!sniffType(ref.bytes instanceof Uint8Array ? ref.bytes : new Uint8Array(ref.bytes))) {
+    // HEIC/unknown often fails OpenAI validation
+    console.warn("Reference photo type not sniffed as jpeg/png/webp; contentType=", ref.contentType);
+  }
+
+  const form = new FormData();
+  form.append("model", "gpt-image-1");
+  form.append(
+    "prompt",
+    `${prompt} Use the attached reference photo only for her face, hair, and body — replace the clothes with the outfit listed.`
+  );
+  form.append("size", "1024x1536");
+  form.append("quality", "medium");
+  form.append("input_fidelity", "high");
+  form.append("output_format", "png");
+  // One image only — do not pass a third filename arg when using Blob name via File
+  form.append("image", blob, filename);
+
+  const res = await fetch("https://api.openai.com/v1/images/edits", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}` },
+    body: form,
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    console.error("OpenAI image edit failed", res.status, type, bytes, errText.slice(0, 800));
+    const err = new Error(`OpenAI ${res.status}: ${errText.slice(0, 240)}`);
+    err.status = res.status;
+    throw err;
+  }
+
+  const data = await res.json();
+  const b64 = data?.data?.[0]?.b64_json;
+  if (!b64) throw new Error("OpenAI response missing image data");
+  return {
+    bytes: Buffer.from(b64, "base64"),
+    contentType: "image/png",
+  };
 }
 
 /**
@@ -53,47 +121,15 @@ export async function generateTryOn({ apiKey, references, referenceBytes, refere
     return null;
   }
 
-  // gpt-image-1 edits currently accept a single input image (not multiple).
-  // Use the first uploaded reference; extra photos stay stored as backups.
-  const primary = refs[0];
-  const form = new FormData();
-  form.append("model", "gpt-image-1");
-  form.append(
-    "prompt",
-    `${prompt} Use the attached reference photo only for her face, hair, and body — replace the clothes with the outfit listed.`
-  );
-  form.append("size", "1024x1536");
-  form.append("quality", "medium");
-  form.append("input_fidelity", "high");
-  form.append("output_format", "png");
-
-  const file = toFile(primary, 0);
-  form.append("image", file, "reference.jpg");
-
-  const res = await fetch("https://api.openai.com/v1/images/edits", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: form,
-  });
-
-  if (!res.ok) {
-    const errText = await res.text().catch(() => "");
-    console.error("OpenAI image edit failed", res.status, errText.slice(0, 800));
-    const err = new Error(`OpenAI ${res.status}: ${errText.slice(0, 240)}`);
-    err.status = res.status;
-    throw err;
+  let lastErr = null;
+  // Try each stored reference alone (model allows only one image per request)
+  for (let i = 0; i < refs.length; i++) {
+    try {
+      return await editWithImage({ apiKey, prompt, ref: refs[i] });
+    } catch (err) {
+      lastErr = err;
+      console.error(`try-on failed with reference ${i + 1}`, err.message || err);
+    }
   }
-
-  const data = await res.json();
-  const b64 = data?.data?.[0]?.b64_json;
-  if (!b64) {
-    console.error("OpenAI image response missing b64_json", JSON.stringify(data).slice(0, 300));
-    throw new Error("OpenAI response missing image data");
-  }
-  return {
-    bytes: Buffer.from(b64, "base64"),
-    contentType: "image/png",
-  };
+  throw lastErr || new Error("Try-on failed for all reference photos");
 }
