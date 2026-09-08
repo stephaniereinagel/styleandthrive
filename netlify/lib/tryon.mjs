@@ -3,6 +3,63 @@
  * On failure, caller keeps the outfit pick and skips the image.
  */
 
+const HAIR_BY_THEME = {
+  Practical: [
+    "loose low ponytail with soft face pieces",
+    "half-up messy bun (her usual easy look)",
+    "soft claw-clip twist at the crown",
+  ],
+  Cozy: [
+    "loose soft waves down past the shoulders",
+    "side part with ends tucked behind one ear",
+    "low bun with a few wispy pieces out",
+  ],
+  Feminine: [
+    "soft waves with a gentle side part",
+    "polished half-up with light volume at the crown",
+    "neat low chignon, soft and pretty",
+  ],
+  Playful: [
+    "high messy bun with bounce",
+    "loose braid over one shoulder",
+    "half-up with playful texture",
+  ],
+  Polished: [
+    "smooth soft waves, brushed and finished",
+    "sleek low ponytail",
+    "neat half-up, clean and intentional",
+  ],
+};
+
+const POSES = [
+  "standing three-quarter view, weight on one hip, relaxed natural smile",
+  "facing camera, one hand lightly marking the waist, confident but easy",
+  "walking toward camera with a natural stride, looking at the lens",
+  "standing angled slightly, arms relaxed at her sides, soft smile",
+];
+
+const BACKGROUNDS = [
+  "clean blank warm-cream studio backdrop, soft even light, no furniture or clutter",
+  "plain soft taupe seamless backdrop, empty and calm",
+  "simple light oatmeal wall with soft window light only — no room details",
+];
+
+function daySeed(dateISO = "") {
+  return [...String(dateISO)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+}
+
+/** Pick a stable hairstyle / pose / backdrop for the day (and theme). */
+export function styleSuggestions(pick) {
+  const theme = pick?.theme || "Practical";
+  const hairs = HAIR_BY_THEME[theme] || HAIR_BY_THEME.Practical;
+  const seed = daySeed(pick?.date) + theme.length * 17;
+  return {
+    hairstyle: hairs[seed % hairs.length],
+    pose: POSES[seed % POSES.length],
+    background: BACKGROUNDS[seed % BACKGROUNDS.length],
+  };
+}
+
 export function buildTryOnPrompt(pick, catalogueById) {
   const names = (pick.pieces || [])
     .map((id) => catalogueById[id])
@@ -12,22 +69,30 @@ export function buildTryOnPrompt(pick, catalogueById) {
       return `${p.name}${colors ? ` (${colors})` : ""} [${p.slot}]`;
     });
 
-  return [
-    "Edit this photo of the same woman so she is wearing the outfit described below.",
-    "Keep her exact face, hair, body shape, and identity. Soft Autumn coloring.",
-    "Homestead mom look: natural light, flattering but realistic, full or three-quarter body.",
-    "Silhouette: marked waist, skim the hip, draw the eye up. Waist-length layers when layered.",
-    "Do not invent extra garments. Shoes must match the list.",
-    `Outfit formula: ${pick.outfit}`,
-    `Pieces: ${names.join("; ")}.`,
-    "Photorealistic. No text overlay, no watermark, no extra people.",
-  ].join(" ");
+  const style = styleSuggestions(pick);
+
+  return {
+    prompt: [
+      "Create a new photorealistic full-body (or three-quarter) photo of the SAME woman from the reference.",
+      "Keep her exact face, facial features, skin tone, age, and Soft Autumn coloring so she is clearly recognizable.",
+      "Her body proportions stay the same (high waist, full bust, long legs) — marked waist, skim the hip, draw the eye up.",
+      `CHANGE the setting: ${style.background}. Do NOT keep the original room, furniture, or clutter.`,
+      `CHANGE the pose: ${style.pose}. Do NOT copy the reference pose exactly.`,
+      `Hairstyle suggestion for today: ${style.hairstyle}. Same dark brown hair color and natural texture; restyle it as suggested.`,
+      "Homestead-mom energy: flattering, realistic, natural light — not glam editorial.",
+      "Wardrobe must match exactly — do not invent extra garments. Shoes must match the list.",
+      `Outfit formula: ${pick.outfit}`,
+      `Pieces: ${names.join("; ")}.`,
+      "No text overlay, no watermark, no extra people.",
+    ].join(" "),
+    style,
+  };
 }
 
 function normalizeType(contentType) {
   const t = String(contentType || "image/jpeg").split(";")[0].trim().toLowerCase();
   if (t === "image/jpg") return "image/jpeg";
-  if (t === "image/heic" || t === "image/heif") return "image/jpeg"; // may still fail if bytes are HEIC
+  if (t === "image/heic" || t === "image/heif") return "image/jpeg";
   if (t.startsWith("image/")) return t;
   return "image/jpeg";
 }
@@ -62,7 +127,6 @@ async function editWithImage({ apiKey, prompt, ref }) {
     throw new Error(`Reference photo too small (${bytes} bytes)`);
   }
   if (!sniffType(ref.bytes instanceof Uint8Array ? ref.bytes : new Uint8Array(ref.bytes))) {
-    // HEIC/unknown often fails OpenAI validation
     console.warn("Reference photo type not sniffed as jpeg/png/webp; contentType=", ref.contentType);
   }
 
@@ -70,13 +134,13 @@ async function editWithImage({ apiKey, prompt, ref }) {
   form.append("model", "gpt-image-1");
   form.append(
     "prompt",
-    `${prompt} Use the attached reference photo only for her face, hair, and body — replace the clothes with the outfit listed.`
+    `${prompt} The reference is for identity only (face and body). Freely change background, pose, and hairstyle as instructed.`
   );
   form.append("size", "1024x1536");
   form.append("quality", "medium");
-  form.append("input_fidelity", "high");
+  // Low fidelity so pose/background can change; face kept via prompt
+  form.append("input_fidelity", "low");
   form.append("output_format", "png");
-  // One image only — do not pass a third filename arg when using Blob name via File
   form.append("image", blob, filename);
 
   const res = await fetch("https://api.openai.com/v1/images/edits", {
@@ -122,7 +186,6 @@ export async function generateTryOn({ apiKey, references, referenceBytes, refere
   }
 
   let lastErr = null;
-  // Try each stored reference alone (model allows only one image per request)
   for (let i = 0; i < refs.length; i++) {
     try {
       return await editWithImage({ apiKey, prompt, ref: refs[i] });

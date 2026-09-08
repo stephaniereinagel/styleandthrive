@@ -60,7 +60,8 @@ export async function runDailySelect({ event, dateISO, force = false }) {
       imageError = "No reference photos uploaded";
     } else {
       const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
-      const prompt = buildTryOnPrompt(pick, byId);
+      const { prompt, style } = buildTryOnPrompt(pick, byId);
+      pick.style = style;
       const img = await generateTryOn({
         apiKey,
         references: refs,

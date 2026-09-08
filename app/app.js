@@ -503,6 +503,13 @@ function renderHome() {
         <p class="muted">${seasonTitle(plan.season.key)} · ${toISODate(today)}</p>
         <p style="margin:10px 0 0; line-height:1.45">${escapeHtml(outfitText)}</p>
         <p class="muted why-line">${escapeHtml(why)}</p>
+        ${
+          pick?.style
+            ? `<p class="muted why-line">Hair idea: ${escapeHtml(pick.style.hairstyle)}${
+                pick.style.pose ? ` · Pose: ${escapeHtml(pick.style.pose.split(",")[0])}` : ""
+              }</p>`
+            : ""
+        }
         ${visual}
         ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.${shortImageErr ? ` ${escapeHtml(shortImageErr)}` : ""}</p>` : ""}
         ${!pick ? `<p class="muted">Showing weekly menu until a pick runs. Tap below, or set calendar + photos in Settings first.</p>` : ""}
