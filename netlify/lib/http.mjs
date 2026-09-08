@@ -89,6 +89,7 @@ export function publicPick(pick) {
     activity: pick.activity,
     imageUrl: pick.imageUrl || null,
     imageFailed: !!pick.imageFailed,
+    imageError: pick.imageError || null,
     relaxed: pick.relaxed || [],
     pickedAt: pick.pickedAt,
   };

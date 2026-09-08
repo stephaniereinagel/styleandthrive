@@ -460,7 +460,7 @@ function renderHome() {
         <p style="margin:10px 0 0; line-height:1.45">${escapeHtml(outfitText)}</p>
         <p class="muted why-line">${escapeHtml(why)}</p>
         ${visual}
-        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.</p>` : ""}
+        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.${pick.imageError ? ` (${escapeHtml(pick.imageError)})` : ""}</p>` : ""}
         ${!pick ? `<p class="muted">Showing weekly menu until a pick runs. Tap below, or set calendar + photos in Settings first.</p>` : ""}
         ${state.homePickStatus ? `<p class="settings-status">${escapeHtml(state.homePickStatus)}</p>` : ""}
         <button type="button" class="pick-again-btn" id="pick-again-btn" ${state.picking ? "disabled" : ""}>

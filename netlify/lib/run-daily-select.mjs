@@ -48,10 +48,17 @@ export async function runDailySelect({ event, dateISO, force = false }) {
 
   let imageUrl = null;
   let imageFailed = false;
+  let imageError = null;
   try {
     const refs = await getReferencePhotos();
     const apiKey = process.env.OPENAI_API_KEY || "";
-    if (refs.length && apiKey) {
+    if (!apiKey) {
+      imageFailed = true;
+      imageError = "OPENAI_API_KEY not set in Netlify";
+    } else if (!refs.length) {
+      imageFailed = true;
+      imageError = "No reference photos uploaded";
+    } else {
       const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
       const prompt = buildTryOnPrompt(pick, byId);
       const img = await generateTryOn({
@@ -64,17 +71,18 @@ export async function runDailySelect({ event, dateISO, force = false }) {
         imageUrl = `/.netlify/functions/image?date=${dateISO}`;
       } else {
         imageFailed = true;
+        imageError = "Try-on returned empty";
       }
-    } else {
-      imageFailed = true;
     }
   } catch (err) {
     console.error("try-on error", err);
     imageFailed = true;
+    imageError = String(err.message || err).slice(0, 280);
   }
 
   pick.imageUrl = imageUrl;
   pick.imageFailed = imageFailed;
+  pick.imageError = imageError;
   await savePick(pick);
 
   return { ok: true, pick: publicPick(pick) };

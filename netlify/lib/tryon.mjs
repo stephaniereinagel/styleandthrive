@@ -24,25 +24,37 @@ export function buildTryOnPrompt(pick, catalogueById) {
   ].join(" ");
 }
 
+function toFile(ref, index) {
+  const type = ref.contentType || "image/jpeg";
+  const name = `reference-${index + 1}.jpg`;
+  const bytes = ref.bytes;
+  if (typeof File !== "undefined") {
+    return new File([bytes], name, { type });
+  }
+  return new Blob([bytes], { type });
+}
+
 /**
- * @param {object} opts
- * @param {string} opts.apiKey
- * @param {Array<{bytes: Buffer, contentType?: string}>} [opts.references]
- * @param {Buffer} [opts.referenceBytes] - single-photo legacy
- * @param {string} [opts.referenceType]
- * @param {string} opts.prompt
  * @returns {Promise<{bytes: Buffer, contentType: string}|null>}
  */
 export async function generateTryOn({ apiKey, references, referenceBytes, referenceType, prompt }) {
-  if (!apiKey) return null;
+  if (!apiKey) {
+    console.error("OpenAI try-on skipped: missing OPENAI_API_KEY");
+    return null;
+  }
   const refs =
     Array.isArray(references) && references.length
       ? references.filter((r) => r?.bytes?.length)
       : referenceBytes?.length
         ? [{ bytes: referenceBytes, contentType: referenceType || "image/jpeg" }]
         : [];
-  if (!refs.length) return null;
+  if (!refs.length) {
+    console.error("OpenAI try-on skipped: no reference photos");
+    return null;
+  }
 
+  // Prefer the clearest full-body refs; first image gets highest fidelity
+  const ordered = refs.slice(0, 2);
   const form = new FormData();
   form.append("model", "gpt-image-1");
   form.append(
@@ -51,10 +63,13 @@ export async function generateTryOn({ apiKey, references, referenceBytes, refere
   );
   form.append("size", "1024x1536");
   form.append("quality", "medium");
-  refs.slice(0, 3).forEach((ref, i) => {
-    const type = ref.contentType || "image/jpeg";
-    const blob = new Blob([ref.bytes], { type });
-    form.append("image[]", blob, `reference-${i + 1}.jpg`);
+  form.append("input_fidelity", "high");
+  form.append("output_format", "png");
+
+  ordered.forEach((ref, i) => {
+    const file = toFile(ref, i);
+    // OpenAI accepts repeated "image" fields for multiple inputs
+    form.append("image", file, `reference-${i + 1}.jpg`);
   });
 
   const res = await fetch("https://api.openai.com/v1/images/edits", {
@@ -67,15 +82,17 @@ export async function generateTryOn({ apiKey, references, referenceBytes, refere
 
   if (!res.ok) {
     const errText = await res.text().catch(() => "");
-    console.error("OpenAI image edit failed", res.status, errText.slice(0, 500));
-    return null;
+    console.error("OpenAI image edit failed", res.status, errText.slice(0, 800));
+    const err = new Error(`OpenAI ${res.status}: ${errText.slice(0, 240)}`);
+    err.status = res.status;
+    throw err;
   }
 
   const data = await res.json();
   const b64 = data?.data?.[0]?.b64_json;
   if (!b64) {
-    console.error("OpenAI image response missing b64_json");
-    return null;
+    console.error("OpenAI image response missing b64_json", JSON.stringify(data).slice(0, 300));
+    throw new Error("OpenAI response missing image data");
   }
   return {
     bytes: Buffer.from(b64, "base64"),

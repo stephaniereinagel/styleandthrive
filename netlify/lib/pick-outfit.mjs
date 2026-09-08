@@ -2,6 +2,7 @@
  * Daily outfit picker from the seasonal capsule.
  * Constrained slots: top, bottom, topper, dress (slot "both").
  * Outerwear + shoes may repeat. Soft Autumn / homestead formula rules.
+ * Weather wins: hot days pull summer/spring pieces before abandoning warmth.
  */
 
 import { DAY_THEMES, dayNameFromDate, daysBetween, parseISODate, seasonForDate } from "./season.mjs";
@@ -16,6 +17,7 @@ const SHORTS = /\bshorts?\b/i;
 const SANDALS = /\bsandal/i;
 const BOOTS = /\bboot/i;
 const JACKET = /\b(jacket|coat|moto|utility|trucker|pea)\b/i;
+const HEAVY = /\b(sweater|sweatshirt|hoodie|boot|pea coat|quilted|flannel|cardigan)\b/i;
 
 function textOf(item) {
   return `${item.subcategory || ""} ${item.name || ""} ${item.category || ""}`.toLowerCase();
@@ -49,26 +51,31 @@ function warmthScore(item) {
   return s;
 }
 
-function fitsBand(item, band, wet) {
+function fitsBand(item, band) {
   const t = textOf(item);
   const s = warmthScore(item);
   if (band === "hot") {
-    if (BOOTS.test(t) || /\bpea coat|hoodie|quilted crewneck\b/i.test(t)) return false;
-    if (item.slot === "outerwear" && !/\bdenim|utility|moto|trucker\b/i.test(t)) return false;
+    if (HEAVY.test(t)) return false;
+    if (item.slot === "outerwear" || item.slot === "topper") return false;
+    if (/\blong-sleeve\b/i.test(t) && !/\bdress\b/i.test(t)) return false;
     return s <= 3.5;
   }
   if (band === "warm") {
-    if (/\bpea coat\b/i.test(t)) return false;
-    if (BOOTS.test(t) && !/\bankle|chelsea|clog\b/i.test(t)) return false;
+    if (/\bpea coat|hoodie|quilted\b/i.test(t)) return false;
+    if (BOOTS.test(t)) return false;
+    if (item.slot === "outerwear") return false;
+    if (item.slot === "topper" && CARDIGAN.test(t)) return false;
     return s <= 4;
   }
-  if (band === "mild") return true;
+  if (band === "mild") {
+    if (/\bpea coat\b/i.test(t)) return false;
+    return true;
+  }
   if (band === "cool") {
     if (SHORTS.test(t) || SANDALS.test(t)) return false;
     if (/\btank\b/i.test(t) && item.slot !== "undershirt") return false;
     return s >= 2.5;
   }
-  // cold
   if (SHORTS.test(t) || SANDALS.test(t) || /\btank\b/i.test(t)) return false;
   return s >= 3;
 }
@@ -94,8 +101,6 @@ function layeringOk(pieces) {
   const hasKnit = tops.some(isKnitTop) || pieces.some((p) => p.slot === "top" && isKnitTop(p));
   const hasCardi = toppers.some(isCardigan);
   const hasDress = dresses.length > 0;
-
-  // No sweater over a dress. No cardigan over a sweater.
   if (hasDress && hasKnit) return false;
   if (hasKnit && hasCardi) return false;
   return true;
@@ -117,14 +122,12 @@ function blockedIds(history, dateISO, { skipGap = false, skipWeekday = false } =
     for (const id of entry.pieces) {
       const item = entry.pieceMeta?.[id];
       const slot = item?.slot || entry.slots?.[id];
-      // If we don't know slot, treat as constrained to be safe when listed in constrainedPieces
-      const constrained = entry.constrained?.includes(id)
-        || (slot && CONSTRAINED.has(slot));
+      const constrained =
+        entry.constrained?.includes(id) || (slot && CONSTRAINED.has(slot));
       if (!constrained && slot && !CONSTRAINED.has(slot)) continue;
 
       if (!skipGap && gap > 0 && gap <= 2) blocked.add(id);
       if (!skipWeekday && sameWeekday && weeksApart >= 0.9 && weeksApart <= 1.1) blocked.add(id);
-      // also block if looking backward: worn 7 days ago same weekday
       if (!skipWeekday && sameWeekday && gap === -7) blocked.add(id);
       if (!skipGap && gap < 0 && gap >= -2) blocked.add(id);
     }
@@ -132,10 +135,38 @@ function blockedIds(history, dateISO, { skipGap = false, skipWeekday = false } =
   return blocked;
 }
 
-function capsulePool(catalogue, seasonKey) {
-  return (catalogue.items || []).filter(
+/** Season capsule, plus weather bridge pieces when the season closet can't dress the day. */
+function capsulePool(catalogue, seasonKey, weather) {
+  const items = catalogue.items || [];
+  const inSeason = items.filter(
     (i) => i.rating >= 3 && (i.seasons || []).includes(seasonKey) && i.slot !== "other"
   );
+  const byId = new Map(inSeason.map((i) => [i.id, i]));
+
+  if (weather?.band === "hot" || weather?.band === "warm") {
+    for (const i of items) {
+      if (i.rating < 3 || i.slot === "other") continue;
+      const seasons = i.seasons || [];
+      if (!seasons.includes("summer") && !seasons.includes("spring")) continue;
+      if (byId.has(i.id)) continue;
+      // Only bridge pieces that can actually help in heat
+      if (!fitsBand(i, weather.band) && !SANDALS.test(textOf(i)) && !HOT_OK.test(textOf(i)) && !isDress(i)) {
+        continue;
+      }
+      byId.set(i.id, i);
+    }
+  }
+
+  if (weather?.band === "cold") {
+    for (const i of items) {
+      if (i.rating < 3 || i.slot === "other") continue;
+      if (!(i.seasons || []).includes("winter")) continue;
+      if (byId.has(i.id)) continue;
+      byId.set(i.id, i);
+    }
+  }
+
+  return [...byId.values()];
 }
 
 function bySlot(pool) {
@@ -154,7 +185,6 @@ function bySlot(pool) {
     if (map[s]) map[s].push(item);
     else if (s === "other" && /\bbelt\b/i.test(textOf(item))) map.accessory.push(item);
   }
-  // Belts often tagged accessory or other
   for (const item of pool) {
     if (/\bbelt\b/i.test(textOf(item)) && !map.accessory.includes(item)) {
       map.accessory.push(item);
@@ -171,7 +201,7 @@ function filterAvailable(list, blocked, weather, theme, { skipWarmth = false } =
   return sortHeroes(
     list.filter((item) => {
       if (blocked.has(item.id)) return false;
-      if (!skipWarmth && !fitsBand(item, weather.band, weather.wet)) return false;
+      if (!skipWarmth && !fitsBand(item, weather.band)) return false;
       if (theme === "Practical" && !practicalOk(item)) return false;
       return true;
     })
@@ -186,33 +216,39 @@ function formulaText(pieces, theme) {
   return `${theme}: ${short.join(" + ")}.`;
 }
 
-function whyLine({ theme, weather, activity, relaxed }) {
+function whyLine({ theme, weather, activity, relaxed, bridged }) {
   const bits = [`${theme} day`, weather.label];
   if (activity.labels?.length) bits.push(activity.summary);
+  if (bridged) bits.push("weather bridge from spring/summer");
   if (relaxed.length) bits.push(`relaxed: ${relaxed.join(", ")}`);
   return bits.join(" · ");
 }
 
 /**
  * @param {object} opts
- * @param {object} opts.catalogue
- * @param {string} opts.dateISO
- * @param {object} opts.weather
- * @param {object} opts.activity - from activityFromEvents
- * @param {array} opts.history - prior daily picks
  */
 export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
   const date = parseISODate(dateISO);
   const season = seasonForDate(date);
   const dayName = dayNameFromDate(date);
   let theme = activity?.nudgeTheme || DAY_THEMES[dayName] || "Practical";
+  // Heat overrides cozy defaults
+  if ((weather.band === "hot" || weather.band === "warm") && theme === "Cozy") {
+    theme = "Practical";
+  }
 
+  // Warmth is last resort — bridge season closet first, then gaps
   const relaxOrder = [
     { skipWarmth: false, skipGap: false, skipWeekday: false, label: null },
-    { skipWarmth: true, skipGap: false, skipWeekday: false, label: "warmth" },
-    { skipWarmth: true, skipGap: true, skipWeekday: false, label: "2-day gap" },
-    { skipWarmth: true, skipGap: true, skipWeekday: true, label: "same-weekday" },
+    { skipWarmth: false, skipGap: true, skipWeekday: false, label: "2-day gap" },
+    { skipWarmth: false, skipGap: true, skipWeekday: true, label: "same-weekday" },
+    { skipWarmth: true, skipGap: true, skipWeekday: true, label: "warmth" },
   ];
+
+  const pool = capsulePool(catalogue, season.key, weather);
+  const bridged = pool.length > (catalogue.items || []).filter(
+    (i) => i.rating >= 3 && (i.seasons || []).includes(season.key)
+  ).length;
 
   let lastError = "no legal outfit";
   for (const relax of relaxOrder) {
@@ -226,7 +262,6 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
       skipWeekday: relax.skipWeekday,
     });
 
-    const pool = capsulePool(catalogue, season.key);
     const slots = bySlot(pool);
 
     const tops = filterAvailable(slots.top, blocked, weather, theme, relax);
@@ -239,21 +274,20 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
       relax
     );
     const toppers = filterAvailable(slots.topper, blocked, weather, theme, relax);
-    // Outerwear + shoes: ignore blocked (may repeat)
     const outer = sortHeroes(
       slots.outerwear.filter((item) => {
-        if (!relax.skipWarmth && !fitsBand(item, weather.band, weather.wet)) return false;
+        if (!relax.skipWarmth && !fitsBand(item, weather.band)) return false;
         if (theme === "Practical" && !practicalOk(item)) return false;
         return true;
       })
     );
     let shoes = sortHeroes(
       slots.shoes.filter((item) => {
-        if (!relax.skipWarmth && !fitsBand(item, weather.band, weather.wet)) return false;
+        if (!relax.skipWarmth && !fitsBand(item, weather.band)) return false;
         return true;
       })
     );
-    if (activity?.sturdyShoes) {
+    if (activity?.sturdyShoes && weather.band !== "hot" && weather.band !== "warm") {
       const sturdy = shoes.filter((s) => BOOTS.test(textOf(s)) || /\bsneaker|utility\b/i.test(textOf(s)));
       if (sturdy.length) shoes = sturdy;
     }
@@ -266,42 +300,40 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
     const wantOuter =
       weather.band === "cool" ||
       weather.band === "cold" ||
-      weather.wet ||
-      weather.wind >= 15 ||
-      theme === "Polished" ||
-      theme === "Feminine";
+      (weather.wet && weather.band !== "hot") ||
+      (weather.wind >= 18 && weather.band !== "hot" && weather.band !== "warm");
 
     const candidates = [];
 
-    // Dress / overalls path
-    for (const dress of dresses.slice(0, 12)) {
-      for (const shoe of shoes.slice(0, 3)) {
-        const base = [dress, shoe];
-        // optional open cardi (not over knit dress issue — dress isn't a knit top)
-        const tryLayers = [null, ...toppers.slice(0, 2), ...outer.slice(0, 3)];
-        for (const layer of tryLayers) {
-          const pieces = layer ? [...base, layer] : [...base];
+    for (const dress of dresses.slice(0, 14)) {
+      for (const shoe of (shoes.length ? shoes : slots.shoes).slice(0, 4)) {
+        if (!relax.skipWarmth && shoes.length && !fitsBand(shoe, weather.band)) continue;
+        const layerOpts =
+          weather.band === "hot" || weather.band === "warm"
+            ? [null]
+            : [null, ...toppers.slice(0, 2), ...outer.slice(0, 3)];
+        for (const layer of layerOpts) {
+          const pieces = layer ? [dress, shoe, layer] : [dress, shoe];
           if (layer && isCardigan(layer) && isKnitTop(dress)) continue;
           if (!layeringOk(pieces)) continue;
           if (!characterOk(pieces, theme)) continue;
-          if (wantOuter && !layer && outer.length && weather.band !== "hot") {
-            // prefer a layer when cool; still allow dress-only as candidate with lower score
-          }
           candidates.push(pieces);
         }
       }
     }
 
-    // Top + bottom path
-    for (const bottom of bottoms.slice(0, 10)) {
-      for (const top of tops.slice(0, 14)) {
-        for (const shoe of shoes.slice(0, 3)) {
-          const layerOpts = [null, ...toppers.slice(0, 2), ...outer.slice(0, 3)];
+    for (const bottom of bottoms.slice(0, 12)) {
+      for (const top of tops.slice(0, 16)) {
+        for (const shoe of (shoes.length ? shoes : slots.shoes).slice(0, 4)) {
+          if (!relax.skipWarmth && shoes.length && !fitsBand(shoe, weather.band)) continue;
+          const layerOpts =
+            weather.band === "hot" || weather.band === "warm"
+              ? [null]
+              : [null, ...toppers.slice(0, 2), ...outer.slice(0, 3)];
           for (const layer of layerOpts) {
             const pieces = layer ? [top, bottom, shoe, layer] : [top, bottom, shoe];
             if (!layeringOk(pieces)) continue;
             if (!characterOk(pieces, theme)) continue;
-            // Prefer outerwear on cool days if top is not already a heavy knit
             candidates.push(pieces);
           }
         }
@@ -313,27 +345,30 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
       continue;
     }
 
-    // Score: heroes, theme match, weather layers, prefer outer when cool
     function score(pieces) {
       let s = pieces.reduce((acc, p) => acc + (p.rating || 0), 0);
       const hasOuter = pieces.some((p) => p.slot === "outerwear");
       const hasCardi = pieces.some((p) => isCardigan(p));
+      const heavyCount = pieces.filter((p) => HEAVY.test(textOf(p))).length;
       if (wantOuter && (hasOuter || hasCardi)) s += 3;
-      if (weather.band === "hot" && hasOuter) s -= 2;
+      if (weather.band === "hot" || weather.band === "warm") {
+        s -= heavyCount * 8;
+        if (hasOuter || hasCardi) s -= 6;
+        if (pieces.some((p) => SANDALS.test(textOf(p)))) s += 5;
+        if (pieces.some((p) => HOT_OK.test(textOf(p)) || isDress(p))) s += 3;
+        s -= Math.max(0, pieces.length - 3);
+      }
       if (theme === "Feminine" && pieces.some((p) => isDress(p) && !isOveralls(p))) s += 4;
       if (theme === "Practical" && pieces.some((p) => isOveralls(p) || /\bjeans|pants|utility\b/i.test(textOf(p)))) s += 3;
-      if (theme === "Cozy" && pieces.some((p) => isKnitTop(p) || isCardigan(p))) s += 3;
+      if (theme === "Cozy" && weather.band !== "hot" && pieces.some((p) => isKnitTop(p) || isCardigan(p))) s += 3;
       if (theme === "Playful" && pieces.some((p) => p.character === "Print")) s += 2;
-      if (theme === "Polished" && (hasOuter || pieces.some(isDress))) s += 2;
-      // Prefer fewer pieces when hot
-      if (weather.band === "hot") s -= Math.max(0, pieces.length - 3);
+      if (theme === "Polished" && weather.band !== "hot" && (hasOuter || pieces.some(isDress))) s += 2;
       return s;
     }
 
     candidates.sort((a, b) => score(b) - score(a));
     let best = candidates[0];
 
-    // Optional belt on boxy knits / dresses without built-in waist
     const needsBelt = best.some(
       (p) =>
         /\b(sweatshirt|hoodie|t-shirt dress|tee dress|quilted)\b/i.test(textOf(p)) ||
@@ -343,10 +378,7 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
       best = [...best, belts[0]];
     }
 
-    const constrained = best
-      .filter((p) => CONSTRAINED.has(p.slot))
-      .map((p) => p.id);
-
+    const constrained = best.filter((p) => CONSTRAINED.has(p.slot)).map((p) => p.id);
     const pieceMeta = {};
     const slotsMap = {};
     for (const p of best) {
@@ -364,7 +396,7 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history }) {
       constrained,
       pieceMeta,
       slots: slotsMap,
-      why: whyLine({ theme, weather, activity, relaxed }),
+      why: whyLine({ theme, weather, activity, relaxed, bridged }),
       weather,
       activity: {
         summary: activity?.summary || "no events",
