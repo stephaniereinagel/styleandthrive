@@ -15,7 +15,12 @@ on:
 jobs:
   pick:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
       - name: Trigger daily-select
         env:
           SITE_URL: ${{ secrets.STYLE_THRIVE_URL }}
@@ -35,10 +40,14 @@ jobs:
             -H "x-job-secret: ${JOB_SECRET}" \
             -d '{}' | tee /tmp/pick.json
           echo
-          # Photo runs as a background function (202 immediately; writes to Blobs)
-          TRYON="${SITE_URL%/}/.netlify/functions/tryon-background"
-          curl -fsS -o /dev/null -w "%{http_code}\n" -X POST "$TRYON" \
-            -H "Content-Type: application/json" \
-            -H "x-job-secret: ${JOB_SECRET}" \
-            -d '{}' || echo "tryon invoke failed (outfit still saved)"
-          echo
+      - name: Generate try-on photo (off Netlify)
+        env:
+          SITE_URL: ${{ secrets.STYLE_THRIVE_URL }}
+          DAILY_JOB_SECRET: ${{ secrets.DAILY_JOB_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$SITE_URL" ] || [ -z "$OPENAI_API_KEY" ]; then
+            echo "SITE_URL or OPENAI_API_KEY missing — outfit saved without photo"
+            exit 0
+          fi
+          node scripts/run-tryon.mjs

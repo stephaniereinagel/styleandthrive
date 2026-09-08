@@ -55,7 +55,7 @@ Local static server does **not** run Netlify functions. Deploy to Netlify (or `n
 
 GitHub Action secrets (backup cron): `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET`.
 
-Reference photos and daily try-ons live in **Netlify Blobs** — never commit them to git. Try-on uses **gpt-image-2** (with hanger photos of the day's pieces) for likeness + garment match.
+Reference photos and daily try-ons live in **Netlify Blobs** — never commit them to git. Try-on uses **gpt-image-2** (with hanger photos of the day's pieces). Because Netlify's edge times out around 30s, photo generation runs on **GitHub Actions** (`tryon-worker.yml`, every 5 minutes) via `tryon-pack` / `tryon-save`.
 
 ## Rating scale
 
