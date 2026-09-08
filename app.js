@@ -62,7 +62,10 @@ async function apiGet(name, params = {}) {
       return apiGet(name, params);
     }
   }
-  if (!res.ok) throw new Error(data.error || `API ${name} failed`);
+  if (!res.ok) {
+    const detail = data.error || (await res.text?.().catch?.(() => "")) || res.statusText || "";
+    throw new Error(detail || `API ${name} failed (${res.status})`);
+  }
   return data;
 }
 
@@ -84,7 +87,9 @@ async function apiPost(name, body, params = {}) {
       return apiPost(name, body, params);
     }
   }
-  if (!res.ok) throw new Error(data.error || `API ${name} failed`);
+  if (!res.ok) {
+    throw new Error(data.error || `API ${name} failed (${res.status})`);
+  }
   return data;
 }
 
@@ -132,7 +137,7 @@ async function forcePickToday({ goHome = true } = {}) {
   state.settingsStatus = "Picking today's outfit…";
   render();
   try {
-    await apiPost("daily-select", { force: true }, { force: "1" });
+    await apiPost("pick-now", { force: true });
     await Promise.all([refreshTodayLive(), refreshWeekPicks()]);
     state.homePickStatus = "";
     state.settingsStatus = "Done — check Home for today's outfit.";
@@ -710,8 +715,9 @@ function renderSettings() {
       <p class="muted">Google Calendar → Settings → your calendar → Integrate calendar → <strong>Secret address in iCal format</strong>. Paste that URL here (not the public one).</p>
       <form id="settings-form" class="add-form">
         <label>Secret iCal URL
-          <input name="icalUrl" type="url" placeholder="https://calendar.google.com/calendar/ical/…" value="${escapeAttr(s.icalUrl || "")}" />
+          <input name="icalUrl" type="url" placeholder="https://calendar.google.com/calendar/ical/…/private-…/basic.ics" value="${escapeAttr(s.icalUrl || "")}" />
         </label>
+        <p class="muted">Must end in <code>basic.ics</code> (secret address). A link with <code>?cid=</code> will not work.</p>
         <label>Location label
           <input name="locationLabel" placeholder="Gravette, AR" value="${escapeAttr(s.locationLabel || "Gravette, AR")}" />
         </label>
