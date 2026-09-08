@@ -562,13 +562,7 @@ function renderHome() {
         <p class="muted">${seasonTitle(plan.season.key)} · ${toISODate(today)}</p>
         <p style="margin:10px 0 0; line-height:1.45">${escapeHtml(outfitText)}</p>
         <p class="muted why-line">${escapeHtml(why)}</p>
-        ${
-          pick?.style
-            ? `<p class="muted why-line">Hair idea: ${escapeHtml(pick.style.hairstyle)}${
-                pick.style.pose ? ` · Pose: ${escapeHtml(pick.style.pose.split(",")[0])}` : ""
-              }</p>`
-            : ""
-        }
+        ${stylingBlock(pick?.style)}
         ${visual}
         ${
           pick?.imagePending && !pick?.imageUrl
@@ -603,6 +597,43 @@ function renderHome() {
         ${heroes.map((i) => `<img src="${thumb(i.id)}" alt="${i.name}" title="${i.name}" data-id="${i.id}" class="open-piece" />`).join("")}
       </div>
     </section>
+  `;
+}
+
+function stylingBlock(style) {
+  if (!style) return "";
+  const accessories = style.accessories || [];
+  const how = style.how || [];
+  const accHtml = accessories.length
+    ? `<ul class="style-acc-list">${accessories
+        .map(
+          (a) =>
+            `<li><strong>${escapeHtml(a.name)}</strong>${
+              a.inCloset ? ` <span class="pill in-closet">in closet</span>` : ""
+            }<span class="muted"> — ${escapeHtml(a.why || "")}</span></li>`
+        )
+        .join("")}</ul>`
+    : "";
+  const howHtml = how.length
+    ? `<ol class="style-how-list">${how.map((h) => `<li>${escapeHtml(h)}</li>`).join("")}</ol>`
+    : "";
+  return `
+    <div class="style-guide">
+      <h3 class="style-guide-title">Style it</h3>
+      ${style.finish ? `<p class="style-finish">${escapeHtml(style.finish)}</p>` : ""}
+      ${howHtml}
+      ${
+        accessories.length
+          ? `<p class="style-acc-label">Accessories</p>${accHtml}`
+          : ""
+      }
+      ${
+        style.hairstyle
+          ? `<p class="muted why-line">Hair: ${escapeHtml(style.hairstyle)}</p>`
+          : ""
+      }
+      ${style.note ? `<p class="muted style-note">${escapeHtml(style.note)}</p>` : ""}
+    </div>
   `;
 }
 
@@ -675,6 +706,16 @@ function renderOutfits() {
               <div>
                 <div>${escapeHtml(outfitText)}</div>
                 ${pick?.why ? `<p class="muted why-line">${escapeHtml(pick.why)}</p>` : ""}
+                ${
+                  pick?.style?.accessories?.length
+                    ? `<p class="muted why-line">Add: ${escapeHtml(
+                        pick.style.accessories
+                          .slice(0, 3)
+                          .map((a) => a.name)
+                          .join(" · ")
+                      )}</p>`
+                    : ""
+                }
                 ${!pick && !isFuture ? `<p class="muted">Menu fallback</p>` : ""}
                 ${visual}
               </div>

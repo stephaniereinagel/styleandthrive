@@ -7,7 +7,8 @@ import { chicagoParts } from "./season.mjs";
 import { fetchWeather, DEFAULT_LOCATION } from "./weather.mjs";
 import { fetchIcalEvents, activityFromEvents } from "./ical.mjs";
 import { pickOutfit } from "./pick-outfit.mjs";
-import { buildTryOnPrompt, generateTryOn, loadGarmentImages, styleSuggestions } from "./tryon.mjs";
+import { buildTryOnPrompt, generateTryOn, loadGarmentImages } from "./tryon.mjs";
+import { buildStylingGuide } from "./styling.mjs";
 import {
   getSettings,
   getHistory,
@@ -55,7 +56,9 @@ export async function runDailySelect({ event, dateISO, force = false }) {
     variety,
   });
   pick.pickCount = (existing?.pickCount || 0) + 1;
-  pick.style = styleSuggestions(pick);
+  const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
+  const pieceItems = (pick.pieces || []).map((id) => byId[id]).filter(Boolean);
+  pick.style = buildStylingGuide(pick, pieceItems);
   pick.imageUrl = null;
   pick.imageFailed = false;
   pick.imageError = null;
@@ -95,13 +98,24 @@ export async function runTryOn({ event, dateISO }) {
 
   try {
     const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
+    const pieceItems = (pick.pieces || []).map((id) => byId[id]).filter(Boolean);
+    const guide =
+      pick.style?.accessories?.length || pick.style?.how?.length
+        ? pick.style
+        : buildStylingGuide(pick, pieceItems);
     const garments = await loadGarmentImages(catalogue, pick.pieces, event);
     const { prompt, style } = buildTryOnPrompt(
       pick,
       byId,
       garments.map((g) => g.name)
     );
-    pick.style = style;
+    // Keep accessory / how-to guide; refresh hair/pose from try-on style
+    pick.style = {
+      ...guide,
+      hairstyle: style?.hairstyle || guide.hairstyle,
+      pose: style?.pose || guide.pose,
+      background: style?.background || guide.background,
+    };
     const img = await generateTryOn({
       apiKey,
       references: refs,

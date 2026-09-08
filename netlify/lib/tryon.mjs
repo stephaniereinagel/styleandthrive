@@ -114,6 +114,12 @@ export function buildTryOnPrompt(pick, catalogueById, garmentLabels = []) {
       `Outfit formula: ${pick.outfit}`,
       `Pieces: ${names.join("; ")}.`,
       details.length ? `Garment details: ${details.join(" | ")}.` : "",
+      pick?.style?.accessories?.length
+        ? `Subtle finishers only (do not invent new clothes): ${(pick.style.accessories || [])
+            .slice(0, 3)
+            .map((a) => a.name)
+            .join("; ")}.`
+        : "",
       "Full or three-quarter body. No text overlay, no watermark, no extra people.",
     ]
       .filter(Boolean)

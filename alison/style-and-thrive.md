@@ -41,6 +41,12 @@ That *is* the work. Alison's job is to keep the recipes honest and the closet qu
 10. **1 + 1 + the rest.** Each outfit: 0–1 Print, 0–1 Color family, everything else Neutral. Print + a loud color is two fun slots — Thursday only (and we usually still pick one). Count a floral/plaid/stripe as one print, not five colors. Olive, camel, oatmeal, cognac, denim are Neutral *here*.
 11. **Her layering (locked Aug 29, 2026).** Jacket over a dress or a knit = yes. Open cardi over a tee, tank, tunic, or dress = yes. **No sweater over a dress. No cardigan over a sweater.** Two knits is bulky and skips the waist. If the top is already a sweater/sweatshirt/hoodie, stop. Shoes, or a jacket if she's leaving the house.
 
+## Daily pick goal
+
+Eliminate the morning decision. Each live pick should feel **nicer than default**, still practical, and teach her how to style what she already owns — not invent a new closet.
+
+Every pick includes a **Style it** block: how-to steps (tuck, belt, open layer) + suggested accessories (earrings, necklace, bag, scarf, watch). Catalogue accessories win when she adds photos; until then we suggest common Soft Autumn homestead finishers.
+
 ## How she writes a day's outfit
 
 Speak in formulas first, then name the actual pieces:

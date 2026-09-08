@@ -1,6 +1,7 @@
 import { initBlobs, getPick, getReferencePhotos, savePick } from "../lib/store.mjs";
 import { json, okOptions, requireJobSecret, loadCatalogue, publicPick } from "../lib/http.mjs";
-import { buildTryOnPrompt, styleSuggestions } from "../lib/tryon.mjs";
+import { buildTryOnPrompt } from "../lib/tryon.mjs";
+import { buildStylingGuide } from "../lib/styling.mjs";
 import { chicagoParts } from "../lib/season.mjs";
 
 /**
@@ -77,14 +78,26 @@ export async function handler(event) {
     const garmentLabels = pieces
       .filter((p) => p.name && (p.slot === "both" || p.slot === "top" || p.slot === "bottom" || p.slot === "shoes"))
       .map((p) => p.name);
+    const pieceItems = (pick.pieces || []).map((id) => byId[id]).filter(Boolean);
+    const guide =
+      pick.style?.accessories?.length || pick.style?.how?.length
+        ? pick.style
+        : buildStylingGuide(pick, pieceItems);
+    pick.style = guide;
     const { prompt, style } = buildTryOnPrompt(pick, byId, garmentLabels);
+    const mergedStyle = {
+      ...guide,
+      hairstyle: style?.hairstyle || guide.hairstyle,
+      pose: style?.pose || guide.pose,
+      background: style?.background || guide.background,
+    };
 
     return json(200, {
       pending: true,
       date: dateISO,
-      pick: publicPick(pick),
+      pick: publicPick({ ...pick, style: mergedStyle }),
       prompt,
-      style: style || styleSuggestions(pick),
+      style: mergedStyle,
       pieces,
       references: refs.map((r) => ({
         contentType: r.contentType || "image/jpeg",
