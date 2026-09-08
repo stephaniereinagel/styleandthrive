@@ -5,13 +5,17 @@
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["data/catalogue.json", "netlify/lib/**", "images/source/**", "images/thumbs/**"]
+  included_files = ["data/catalogue.json", "netlify/lib/**"]
 
 [functions."pick-now"]
-  timeout = 90
+  timeout = 26
+
+[functions."tryon-background"]
+  # Background functions can run up to 15 minutes
+  timeout = 900
 
 [functions."daily-select"]
-  timeout = 90
+  timeout = 26
   schedule = "0 9,10 * * *"
 
 # 09:00 and 10:00 UTC ≈ 4am America/Chicago (CST/CDT). Handler no-ops unless local hour is 4.

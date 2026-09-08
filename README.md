@@ -50,7 +50,7 @@ Local static server does **not** run Netlify functions. Deploy to Netlify (or `n
 
 | Variable | Purpose |
 |---|---|
-| `OPENAI_API_KEY` | `gpt-image-1` try-on photos |
+| `OPENAI_API_KEY` | `gpt-image-2` try-on photos (falls back to 1.5 / 1) |
 | `DAILY_JOB_SECRET` | Shared secret for scheduled `daily-select` + GitHub Action |
 
 GitHub Action secrets (backup cron): `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET`.

@@ -128,34 +128,49 @@ function toImageBlob(ref, index = 0) {
   };
 }
 
-/** Load hanger photos for outfit pieces from the published site files. */
-export async function loadGarmentImages(catalogue, pieceIds) {
-  const { readFile } = await import("node:fs/promises");
-  const { join } = await import("node:path");
+/** Load hanger photos for outfit pieces (thumbs via live site — not bundled into the function). */
+export async function loadGarmentImages(catalogue, pieceIds, event) {
   const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
+  const host = event?.headers?.["x-forwarded-host"] || event?.headers?.host;
+  const proto = event?.headers?.["x-forwarded-proto"] || "https";
+  const base = host ? `${proto}://${host}` : "";
   const out = [];
 
   for (const id of pieceIds || []) {
     const item = byId[id];
     if (!item) continue;
-    const rel = String(item.image_full || item.image || `images/source/${id}.jpg`).replace(/^\//, "");
-    if (/\.svg$/i.test(rel)) continue; // OpenAI needs raster
-    const candidates = [join(process.cwd(), rel), join(process.cwd(), "images", "source", `${id}.jpg`)];
-    for (const path of candidates) {
+    const thumb = String(item.image || `images/thumbs/${id}.jpg`).replace(/^\//, "");
+    if (/\.svg$/i.test(thumb)) continue;
+
+    // Prefer HTTP fetch from the published site (keeps the function bundle small)
+    if (base) {
       try {
-        const bytes = await readFile(path);
-        if (!sniffType(bytes)) continue;
-        out.push({
-          bytes,
-          contentType: path.endsWith(".png") ? "image/png" : "image/jpeg",
-          name: item.name || id,
-        });
-        break;
-      } catch {
-        /* try next path */
+        const res = await fetch(`${base}/${thumb}`);
+        if (res.ok) {
+          const bytes = Buffer.from(await res.arrayBuffer());
+          if (sniffType(bytes)) {
+            out.push({ bytes, contentType: "image/jpeg", name: item.name || id });
+            if (out.length >= 3) break;
+            continue;
+          }
+        }
+      } catch (err) {
+        console.warn("garment fetch failed", id, err.message || err);
       }
     }
-    if (out.length >= 4) break; // person + 4 garments is plenty
+
+    // Local fallback (netlify dev)
+    try {
+      const { readFile } = await import("node:fs/promises");
+      const { join } = await import("node:path");
+      const bytes = await readFile(join(process.cwd(), thumb));
+      if (sniffType(bytes)) {
+        out.push({ bytes, contentType: "image/jpeg", name: item.name || id });
+      }
+    } catch {
+      /* skip */
+    }
+    if (out.length >= 3) break;
   }
   return out;
 }

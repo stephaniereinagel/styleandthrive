@@ -79,6 +79,8 @@ async function apiPost(name, body, params = {}) {
     headers: pinHeaders({ "Content-Type": "application/json" }),
     body: JSON.stringify(body),
   });
+  // Background functions return empty 202
+  if (res.status === 202) return { accepted: true };
   const data = await res.json().catch(() => ({}));
   if (res.status === 401 && data.needsPin) {
     const entered = window.prompt("Household PIN for Style & Thrive");
@@ -91,6 +93,28 @@ async function apiPost(name, body, params = {}) {
     throw new Error(data.error || `API ${name} failed (${res.status})`);
   }
   return data;
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+/** Poll today until try-on finishes or we give up. */
+async function waitForTryOn({ maxMs = 120000 } = {}) {
+  const start = Date.now();
+  while (Date.now() - start < maxMs) {
+    await sleep(4000);
+    await refreshTodayLive();
+    const pick = state.todayLive?.pick;
+    if (!pick) continue;
+    if (pick.imageUrl && !pick.imagePending) return pick;
+    if (pick.imageFailed && !pick.imagePending) return pick;
+    if (!pick.imagePending && !pick.imageUrl) return pick;
+    state.homePickStatus = "Still generating try-on photo…";
+    state.settingsStatus = state.homePickStatus;
+    render();
+  }
+  return state.todayLive?.pick || null;
 }
 
 function imageUrlFor(dateISO, version) {
@@ -172,15 +196,44 @@ async function refreshSettingsLive() {
 
 async function forcePickToday({ goHome = true } = {}) {
   state.picking = true;
-  state.homePickStatus = "Picking a new outfit… (photo can take up to a minute)";
+  state.homePickStatus = "Picking a new outfit…";
   state.settingsStatus = "Picking today's outfit…";
   render();
   try {
-    await apiPost("pick-now", { force: true });
+    const result = await apiPost("pick-now", { force: true });
     await Promise.all([refreshTodayLive(), refreshWeekPicks()]);
-    state.homePickStatus = "";
-    state.settingsStatus = "Done — check Home for today's outfit.";
     if (goHome) state.tab = "home";
+    state.picking = false;
+    state.homePickStatus = "Outfit ready — generating try-on photo…";
+    state.settingsStatus = "Outfit ready — generating try-on photo…";
+    render();
+
+    // Background job: 202 immediately; photo lands in Blobs when ready
+    if (result?.needsTryOn !== false) {
+      try {
+        await apiPost("tryon-background", { date: result?.pick?.date });
+        const pick = await waitForTryOn();
+        await refreshWeekPicks();
+        if (pick?.imageUrl) {
+          state.homePickStatus = "";
+          state.settingsStatus = "Done — check Home for today's outfit.";
+        } else if (pick?.imageFailed) {
+          state.homePickStatus = `Outfit saved. Photo: ${pick.imageError || "failed"}`;
+          state.settingsStatus = state.homePickStatus;
+        } else {
+          state.homePickStatus =
+            "Outfit saved. Photo is still generating — refresh Home in a minute.";
+          state.settingsStatus = state.homePickStatus;
+        }
+      } catch (imgErr) {
+        state.homePickStatus = `Outfit saved. Photo: ${String(imgErr.message || imgErr)}`;
+        state.settingsStatus = state.homePickStatus;
+        await refreshTodayLive();
+      }
+    } else {
+      state.homePickStatus = "";
+      state.settingsStatus = "Done — check Home for today's outfit.";
+    }
   } catch (err) {
     const msg = String(err.message || err);
     state.homePickStatus = msg;
@@ -517,7 +570,13 @@ function renderHome() {
             : ""
         }
         ${visual}
-        ${pick?.imageFailed ? `<p class="muted">Try-on photo pending — hanger view for now.${shortImageErr ? ` ${escapeHtml(shortImageErr)}` : ""}</p>` : ""}
+        ${
+          pick?.imagePending && !pick?.imageUrl
+            ? `<p class="muted">Generating try-on photo…</p>`
+            : pick?.imageFailed
+              ? `<p class="muted">Try-on photo pending — hanger view for now.${shortImageErr ? ` ${escapeHtml(shortImageErr)}` : ""}</p>`
+              : ""
+        }
         ${!pick ? `<p class="muted">Showing weekly menu until a pick runs. Tap below, or set calendar + photos in Settings first.</p>` : ""}
         ${state.homePickStatus ? `<p class="settings-status">${escapeHtml(state.homePickStatus)}</p>` : ""}
         <button type="button" class="pick-again-btn" id="pick-again-btn" ${state.picking ? "disabled" : ""}>

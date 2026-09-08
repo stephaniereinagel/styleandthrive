@@ -35,3 +35,10 @@ jobs:
             -H "x-job-secret: ${JOB_SECRET}" \
             -d '{}' | tee /tmp/pick.json
           echo
+          # Photo runs as a background function (202 immediately; writes to Blobs)
+          TRYON="${SITE_URL%/}/.netlify/functions/tryon-background"
+          curl -fsS -o /dev/null -w "%{http_code}\n" -X POST "$TRYON" \
+            -H "Content-Type: application/json" \
+            -H "x-job-secret: ${JOB_SECRET}" \
+            -d '{}' || echo "tryon invoke failed (outfit still saved)"
+          echo

@@ -1,12 +1,13 @@
 /**
- * Shared daily outfit selection used by scheduled daily-select and HTTP pick-now.
+ * Shared daily outfit selection + separate try-on step.
+ * Pick returns fast; try-on is its own function so Netlify doesn't 504.
  */
 
 import { chicagoParts } from "./season.mjs";
 import { fetchWeather, DEFAULT_LOCATION } from "./weather.mjs";
 import { fetchIcalEvents, activityFromEvents } from "./ical.mjs";
 import { pickOutfit } from "./pick-outfit.mjs";
-import { buildTryOnPrompt, generateTryOn, loadGarmentImages } from "./tryon.mjs";
+import { buildTryOnPrompt, generateTryOn, loadGarmentImages, styleSuggestions } from "./tryon.mjs";
 import {
   getSettings,
   getHistory,
@@ -18,10 +19,7 @@ import {
 import { loadCatalogue, publicPick } from "./http.mjs";
 
 /**
- * @param {object} opts
- * @param {object} opts.event - Lambda/Netlify event (for catalogue fetch host)
- * @param {string} opts.dateISO
- * @param {boolean} opts.force
+ * Select (and save) today's outfit. Does not generate the try-on photo.
  */
 export async function runDailySelect({ event, dateISO, force = false }) {
   const existing = await getPick(dateISO);
@@ -57,55 +55,82 @@ export async function runDailySelect({ event, dateISO, force = false }) {
     variety,
   });
   pick.pickCount = (existing?.pickCount || 0) + 1;
-
-  let imageUrl = null;
-  let imageFailed = false;
-  let imageError = null;
-  try {
-    const refs = await getReferencePhotos();
-    const apiKey = process.env.OPENAI_API_KEY || "";
-    if (!apiKey) {
-      imageFailed = true;
-      imageError = "OPENAI_API_KEY not set in Netlify";
-    } else if (!refs.length) {
-      imageFailed = true;
-      imageError = "No reference photos uploaded";
-    } else {
-      const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
-      const garments = await loadGarmentImages(catalogue, pick.pieces);
-      const { prompt, style } = buildTryOnPrompt(
-        pick,
-        byId,
-        garments.map((g) => g.name)
-      );
-      pick.style = style;
-      const img = await generateTryOn({
-        apiKey,
-        references: refs,
-        garments,
-        prompt,
-      });
-      if (img) {
-        await saveTryOnImage(dateISO, img.bytes, img.contentType);
-        pick.imageModel = img.model || "gpt-image-2";
-        imageUrl = `/.netlify/functions/image?date=${dateISO}&v=${encodeURIComponent(pick.pickedAt || String(pick.pickCount))}`;
-      } else {
-        imageFailed = true;
-        imageError = "Try-on returned empty";
-      }
-    }
-  } catch (err) {
-    console.error("try-on error", err);
-    imageFailed = true;
-    imageError = String(err.message || err).slice(0, 280);
-  }
-
-  pick.imageUrl = imageUrl;
-  pick.imageFailed = imageFailed;
-  pick.imageError = imageError;
+  pick.style = styleSuggestions(pick);
+  pick.imageUrl = null;
+  pick.imageFailed = false;
+  pick.imageError = null;
+  pick.imagePending = true;
   await savePick(pick);
 
-  return { ok: true, pick: publicPick(pick) };
+  return { ok: true, pick: publicPick(pick), needsTryOn: true };
+}
+
+/**
+ * Generate try-on for an existing daily pick and update Blobs.
+ */
+export async function runTryOn({ event, dateISO }) {
+  const pick = await getPick(dateISO);
+  if (!pick?.pieces?.length) {
+    throw new Error("No outfit pick for this date — run Pick again first");
+  }
+
+  const catalogue = await loadCatalogue(event);
+  const refs = await getReferencePhotos();
+  const apiKey = process.env.OPENAI_API_KEY || "";
+
+  if (!apiKey) {
+    pick.imagePending = false;
+    pick.imageFailed = true;
+    pick.imageError = "OPENAI_API_KEY not set in Netlify";
+    await savePick(pick);
+    return { ok: false, pick: publicPick(pick) };
+  }
+  if (!refs.length) {
+    pick.imagePending = false;
+    pick.imageFailed = true;
+    pick.imageError = "No reference photos uploaded";
+    await savePick(pick);
+    return { ok: false, pick: publicPick(pick) };
+  }
+
+  try {
+    const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
+    const garments = await loadGarmentImages(catalogue, pick.pieces, event);
+    const { prompt, style } = buildTryOnPrompt(
+      pick,
+      byId,
+      garments.map((g) => g.name)
+    );
+    pick.style = style;
+    const img = await generateTryOn({
+      apiKey,
+      references: refs,
+      garments,
+      prompt,
+    });
+    if (!img) {
+      pick.imagePending = false;
+      pick.imageFailed = true;
+      pick.imageError = "Try-on returned empty";
+      await savePick(pick);
+      return { ok: false, pick: publicPick(pick) };
+    }
+    await saveTryOnImage(dateISO, img.bytes, img.contentType);
+    pick.imageModel = img.model || "gpt-image-2";
+    pick.imageUrl = `/.netlify/functions/image?date=${dateISO}&v=${encodeURIComponent(pick.pickedAt || String(Date.now()))}`;
+    pick.imagePending = false;
+    pick.imageFailed = false;
+    pick.imageError = null;
+    await savePick(pick);
+    return { ok: true, pick: publicPick(pick) };
+  } catch (err) {
+    console.error("try-on error", err);
+    pick.imagePending = false;
+    pick.imageFailed = true;
+    pick.imageError = String(err.message || err).slice(0, 280);
+    await savePick(pick);
+    return { ok: false, pick: publicPick(pick) };
+  }
 }
 
 export function resolveDateISO(event, body = {}) {

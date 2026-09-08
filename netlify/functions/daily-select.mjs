@@ -40,7 +40,10 @@ export async function handler(event) {
   try {
     const dateISO = resolveDateISO(event, body);
     const result = await runDailySelect({ event, dateISO, force: isForce });
-    return json(200, result);
+    // Try-on is a separate HTTP call from the client; for cron, fire-and-forget
+    // via a second function invoke would need another hop. Skip image here —
+    // GitHub Action / client can call tryon after pick.
+    return json(200, { ...result, tip: "Call /.netlify/functions/tryon-background for the photo" });
   } catch (err) {
     console.error(err);
     return json(500, { error: String(err.message || err) });
