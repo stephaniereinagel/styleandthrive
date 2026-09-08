@@ -179,12 +179,12 @@ async function editWithImages({ apiKey, model, prompt, images }) {
   const form = new FormData();
   form.append("model", model);
   form.append("prompt", prompt);
-  form.append("size", "1024x1536");
-  form.append("quality", "high");
+  form.append("size", "1024x1024");
+  form.append("quality", "medium");
   form.append("output_format", "png");
-  // gpt-image-2: omit input_fidelity (always high). Older models: set high when alone.
+  // gpt-image-2: omit input_fidelity (always high). Older models: low for speed.
   if (model !== "gpt-image-2" && images.length === 1) {
-    form.append("input_fidelity", "high");
+    form.append("input_fidelity", "low");
   }
 
   images.forEach((ref, i) => {

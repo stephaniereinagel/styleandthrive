@@ -208,11 +208,31 @@ async function forcePickToday({ goHome = true } = {}) {
     state.settingsStatus = "Outfit ready — generating try-on photo…";
     render();
 
-    // Background job: 202 immediately; photo lands in Blobs when ready
+    // Try sync photo first (medium quality ~faster). If edge times out, kick
+    // background + poll / 5-min sweeper will finish it.
     if (result?.needsTryOn !== false) {
+      const date = result?.pick?.date;
       try {
-        await apiPost("tryon-background", { date: result?.pick?.date });
-        const pick = await waitForTryOn();
+        await apiPost("tryon", { date });
+        await Promise.all([refreshTodayLive(), refreshWeekPicks()]);
+        const pick = state.todayLive?.pick;
+        if (pick?.imageUrl) {
+          state.homePickStatus = "";
+          state.settingsStatus = "Done — check Home for today's outfit.";
+        } else if (pick?.imageFailed) {
+          state.homePickStatus = `Outfit saved. Photo: ${pick.imageError || "failed"}`;
+          state.settingsStatus = state.homePickStatus;
+        } else {
+          state.homePickStatus = "";
+          state.settingsStatus = "Done — check Home for today's outfit.";
+        }
+      } catch (imgErr) {
+        try {
+          await apiPost("tryon-background", { date });
+        } catch {
+          /* sweeper will retry */
+        }
+        const pick = await waitForTryOn({ maxMs: 90000 });
         await refreshWeekPicks();
         if (pick?.imageUrl) {
           state.homePickStatus = "";
@@ -222,13 +242,9 @@ async function forcePickToday({ goHome = true } = {}) {
           state.settingsStatus = state.homePickStatus;
         } else {
           state.homePickStatus =
-            "Outfit saved. Photo is still generating — refresh Home in a minute.";
+            "Outfit saved. Photo is still generating — refresh Home in a few minutes.";
           state.settingsStatus = state.homePickStatus;
         }
-      } catch (imgErr) {
-        state.homePickStatus = `Outfit saved. Photo: ${String(imgErr.message || imgErr)}`;
-        state.settingsStatus = state.homePickStatus;
-        await refreshTodayLive();
       }
     } else {
       state.homePickStatus = "";

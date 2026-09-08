@@ -10,9 +10,15 @@
 [functions."pick-now"]
   timeout = 26
 
+[functions."tryon"]
+  timeout = 26
+
 [functions."tryon-background"]
-  # Background functions can run up to 15 minutes
   timeout = 900
+
+[functions."pending-tryon-background"]
+  timeout = 900
+  schedule = "*/5 * * * *"
 
 [functions."daily-select"]
   timeout = 26
