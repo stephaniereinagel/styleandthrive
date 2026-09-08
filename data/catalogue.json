@@ -181,13 +181,13 @@
     {
       "id": "IMG_0088",
       "name": "Medium-wash denim overalls",
-      "category": "jumpsuit",
+      "category": "bottom",
       "subcategory": "overalls",
       "colors": [
         "medium blue"
       ],
       "pattern": "solid",
-      "description": "Classic bib overalls in medium blue denim with adjustable straps and straight legs.",
+      "description": "Classic bib overalls in medium blue denim with adjustable straps and straight legs. Treat as bottoms — always pair with a shirt underneath.",
       "rating": 4,
       "rating_reason": "Homestead workwear hero; layer Soft Autumn knits under.",
       "seasons": [
@@ -206,8 +206,9 @@
       "image_full": "images/source/IMG_0088.jpg",
       "in_capsule": true,
       "is_staple": true,
-      "slot": "both",
-      "character": "Neutral"
+      "slot": "bottom",
+      "character": "Neutral",
+      "notes": "Bottoms, not a one-and-done. Always requires a shirt underneath."
     },
     {
       "id": "IMG_0089",

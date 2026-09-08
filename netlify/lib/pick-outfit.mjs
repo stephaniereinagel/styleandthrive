@@ -1,6 +1,7 @@
 /**
  * Daily outfit picker from the seasonal capsule.
  * Constrained slots: top, bottom, topper, dress (slot "both").
+ * Overalls are bottoms (never a solo "both") and always need a shirt underneath.
  * Outerwear + shoes may repeat. Soft Autumn / homestead formula rules.
  * Hot days stay in-season first (fall dresses, etc.); only bridge summer/spring
  * when the season closet can't dress the weather — shoes bridge freely.
@@ -33,12 +34,14 @@ function isCardigan(item) {
   return CARDIGAN.test(textOf(item)) || item.slot === "topper";
 }
 
-function isDress(item) {
-  return item.slot === "both" && /\bdress|jumpsuit|overalls\b/i.test(textOf(item));
-}
-
 function isOveralls(item) {
   return /\boveralls\b/i.test(textOf(item));
+}
+
+/** One-and-done dresses/jumpsuits only — overalls are bottoms, not dresses. */
+function isDress(item) {
+  if (isOveralls(item)) return false;
+  return item.slot === "both" && /\bdress|jumpsuit\b/i.test(textOf(item));
 }
 
 function inSeason(item, seasonKey) {
@@ -107,10 +110,13 @@ function characterOk(pieces, theme) {
 function layeringOk(pieces) {
   const tops = pieces.filter((p) => p.slot === "top" || p.slot === "undershirt");
   const toppers = pieces.filter((p) => p.slot === "topper" || isCardigan(p));
-  const dresses = pieces.filter((p) => isDress(p) && !isOveralls(p));
+  const dresses = pieces.filter((p) => isDress(p));
   const hasKnit = tops.some(isKnitTop) || pieces.some((p) => p.slot === "top" && isKnitTop(p));
   const hasCardi = toppers.some(isCardigan);
   const hasDress = dresses.length > 0;
+  const hasOveralls = pieces.some(isOveralls);
+  // Overalls always need a real shirt underneath (not just a jacket/cardigan)
+  if (hasOveralls && !tops.length) return false;
   if (hasDress && hasKnit) return false;
   if (hasKnit && hasCardi) return false;
   return true;
@@ -203,7 +209,8 @@ function bySlot(pool) {
     accessory: [],
   };
   for (const item of pool) {
-    const s = item.slot || "other";
+    // Overalls are bottoms even if an old catalogue entry still says "both"
+    const s = isOveralls(item) ? "bottom" : item.slot || "other";
     if (map[s]) map[s].push(item);
     else if (s === "other" && /\bbelt\b/i.test(textOf(item))) map.accessory.push(item);
   }
@@ -299,7 +306,7 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history, avo
       const tops = filterAvailable(slots.top, blocked, weather, theme, relax);
       const bottoms = filterAvailable(slots.bottom, blocked, weather, theme, relax);
       const dresses = filterAvailable(
-        slots.both.filter((i) => isDress(i) || isOveralls(i)),
+        slots.both.filter((i) => isDress(i)),
         blocked,
         weather,
         theme,
@@ -394,11 +401,11 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history, avo
           if (hasOuter || hasCardi) s -= 6;
           if (pieces.some((p) => SANDALS.test(textOf(p)))) s += 5;
           // Fall heat: dresses are the season's real answer — prefer them over tunic+pants
-          if (pieces.some((p) => isDress(p) && !isOveralls(p))) s += 10;
+          if (pieces.some((p) => isDress(p))) s += 10;
           else if (pieces.some((p) => HOT_OK.test(textOf(p)))) s += 2;
           s -= Math.max(0, pieces.length - 3);
         }
-        if (theme === "Feminine" && pieces.some((p) => isDress(p) && !isOveralls(p))) s += 4;
+        if (theme === "Feminine" && pieces.some((p) => isDress(p))) s += 4;
         if (theme === "Practical") {
           if (weather.band === "hot" || weather.band === "warm") {
             if (pieces.some((p) => isOveralls(p) || (isDress(p) && /\butility\b/i.test(textOf(p))))) s += 3;
@@ -406,6 +413,8 @@ export function pickOutfit({ catalogue, dateISO, weather, activity, history, avo
             s += 3;
           }
         }
+        // Reward properly layered overalls (shirt + bib)
+        if (pieces.some(isOveralls) && pieces.some((p) => p.slot === "top" || p.slot === "undershirt")) s += 4;
         if (theme === "Cozy" && weather.band !== "hot" && pieces.some((p) => isKnitTop(p) || isCardigan(p))) s += 3;
         if (theme === "Playful" && pieces.some((p) => p.character === "Print")) s += 2;
         if (theme === "Polished" && weather.band !== "hot" && (hasOuter || pieces.some(isDress))) s += 2;

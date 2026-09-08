@@ -751,8 +751,8 @@ function renderWardrobe() {
           <label>Slot
             <select name="slot" required>
               <option value="top">Top</option>
-              <option value="bottom">Bottom</option>
-              <option value="both">Both (dress / overalls)</option>
+              <option value="bottom">Bottom (pants / skirt / overalls)</option>
+              <option value="both">Both (dress / jumpsuit)</option>
               <option value="undershirt">Undershirt</option>
               <option value="topper">Topper</option>
               <option value="outerwear">Outerwear</option>
