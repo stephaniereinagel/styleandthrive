@@ -6,7 +6,7 @@ import { chicagoParts } from "./season.mjs";
 import { fetchWeather, DEFAULT_LOCATION } from "./weather.mjs";
 import { fetchIcalEvents, activityFromEvents } from "./ical.mjs";
 import { pickOutfit } from "./pick-outfit.mjs";
-import { buildTryOnPrompt, generateTryOn } from "./tryon.mjs";
+import { buildTryOnPrompt, generateTryOn, loadGarmentImages } from "./tryon.mjs";
 import {
   getSettings,
   getHistory,
@@ -72,16 +72,22 @@ export async function runDailySelect({ event, dateISO, force = false }) {
       imageError = "No reference photos uploaded";
     } else {
       const byId = Object.fromEntries((catalogue.items || []).map((i) => [i.id, i]));
-      const { prompt, style } = buildTryOnPrompt(pick, byId);
+      const garments = await loadGarmentImages(catalogue, pick.pieces);
+      const { prompt, style } = buildTryOnPrompt(
+        pick,
+        byId,
+        garments.map((g) => g.name)
+      );
       pick.style = style;
       const img = await generateTryOn({
         apiKey,
         references: refs,
+        garments,
         prompt,
       });
       if (img) {
         await saveTryOnImage(dateISO, img.bytes, img.contentType);
-        // Cache-bust so Pick again shows the new photo in the browser
+        pick.imageModel = img.model || "gpt-image-2";
         imageUrl = `/.netlify/functions/image?date=${dateISO}&v=${encodeURIComponent(pick.pickedAt || String(pick.pickCount))}`;
       } else {
         imageFailed = true;
