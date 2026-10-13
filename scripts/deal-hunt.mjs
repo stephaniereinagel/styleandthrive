@@ -573,7 +573,7 @@ function slackBlocks(person, deals) {
       d.why,
       d.pairsWith?.length ? `_Pairs with:_ ${d.pairsWith.join(", ")}` : "",
       d.finalSale ? "_Final sale, no returns: check the size chart first._" : "",
-      d.shipsFromEU ? "_Ships from Europe: check shipping cost and US import duties at checkout._" : "",
+      d.shipsFromEU ? "_Ships from overseas: check shipping cost and US import duties at checkout._" : "",
       d.verified ? "" : "_Price came from Alison's search; the store blocked a double-check._",
     ].filter(Boolean);
     const section = { type: "section", text: { type: "mrkdwn", text: lines.join("\n").slice(0, 2900) } };

@@ -58,7 +58,7 @@
     { "name": "Outerknown", "domain": "outerknown.com", "note": "Organic cotton, hemp; mostly men's" },
     { "name": "Doen", "domain": "shopdoen.com", "note": "Cotton and silk feminine dresses" },
     { "name": "Pyne & Smith", "domain": "pyneandsmith.com", "allNatural": true, "note": "Linen dresses" },
-    { "name": "Son de Flor", "domain": "sondeflor.com", "allNatural": true, "note": "Linen dresses" },
+    { "name": "Son de Flor", "domain": "sondeflor.com", "allNatural": true, "note": "Linen dresses; ships from Lithuania, covers US tariffs and duties" },
     { "name": "Lems", "domain": "lemsshoes.com", "note": "Zero-drop, wide toe box boots and sneakers; check uppers for synthetics" },
     { "name": "Feelgrounds", "domain": "feelgrounds.com", "shipsFromEU": true, "note": "Barefoot leather sneakers and boots, EU sizes; ships to US (4-6 days)" },
     { "name": "Xero Shoes", "domain": "xeroshoes.com", "note": "Zero-drop wide toe box; many uppers synthetic" },
@@ -68,9 +68,9 @@
     { "name": "Nisolo", "domain": "nisolo.com", "note": "Leather boots and shoes (usually has a heel)" },
     { "name": "Thursday Boots", "domain": "thursdayboots.com", "note": "Leather and suede Chelsea boots (heeled)" },
     { "name": "ABLE", "domain": "ableclothing.com", "note": "Leather boots, denim" },
-    { "name": "Magic Linen", "domain": "magiclinen.com", "allNatural": true, "note": "Linen clothing" },
+    { "name": "Magic Linen", "domain": "magiclinen.com", "allNatural": true, "note": "Linen clothing; ships from Lithuania, covers US tariffs and duties" },
     { "name": "Jenni Kayne", "domain": "jennikayne.com", "note": "Cashmere, cotton, wool" },
-    { "name": "Hope Macaulay", "domain": "hopemacaulay.com", "note": "Cotton corduroy and linen" }
+    { "name": "Hope Macaulay", "domain": "hopemacaulay.com", "shipsFromEU": true, "note": "Cotton corduroy and linen; UK-based, US checkout in USD, duties not stated" }
   ],
   "webSearch": {
     "enabled": true,
