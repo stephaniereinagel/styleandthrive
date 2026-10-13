@@ -212,6 +212,7 @@ export function shopifyCandidate(p, store, rules, person) {
     naturalPct: fiber?.pct ?? null,
     description: text.slice(0, 500),
     finalSale: /final[\s_-]?sale/i.test(`${tagText} ${p.title} ${text}`),
+    shipsFromEU: !!store.shipsFromEU,
     verified: true,
     domain: store.domain,
     handle: p.handle,
@@ -351,7 +352,7 @@ WHERE TO LOOK: brand and retailer sale, clearance, final-sale, outlet, and archi
 
 RULES:
 - Return only direct product pages you actually opened and saw today, with a current sale price at least ${cfg.rules.minDiscountPct}% below the original price shown on the page (shoes: at least ${minDiscount(cfg.rules, "shoes")}%).
-- Her size must be in stock.
+- Her size must be in stock, and the store must ship to the United States (she lives in Arkansas). Skip: ${(cfg.doesNotShipToUS || []).join(", ") || "none"}.
 - Natural fiber composition must be stated on the page. Skip polyester, acrylic, nylon, viscose/rayon-dominant pieces.
 - Skip anything that fights her colors or her fit rules, and anything cheap or fast-fashion quality.
 - Never invent or guess a URL, price, or image. If unsure, leave it out.
@@ -469,7 +470,7 @@ async function judge(candidates, brief, person, withImages = true) {
 
 ${brief}
 
-SCORING (0-10): 8+ only if ALL are true: (1) the color is clearly in her palette (look at the photo, not just the color name); (2) the cut follows her fit rules for her body today; (3) it is good quality and natural fiber; (4) it does a real job: fills a wishlist gap or is a clearly better version of a weak piece; (5) it is not a near-duplicate of something she already owns and loves; (6) it survives homestead life, and tops/dresses work for nursing; (7) shoes follow her SHOES rules (a heeled or narrow-toe shoe is a skip no matter the price). Anything else is "skip".
+SCORING (0-10): 8+ only if ALL are true: (1) the color is clearly in her palette (look at the photo, not just the color name); (2) the cut follows her fit rules for her body today; (3) it is good quality and natural fiber; (4) it does a real job: fills a wishlist gap or is a clearly better version of a weak piece; (5) it is not a near-duplicate of something she already owns and loves; (6) it survives homestead life, and tops/dresses work for nursing; (7) the store ships to the US (she lives in Arkansas); (8) shoes follow her SHOES rules (a heeled or narrow-toe shoe is a skip no matter the price). Anything else is "skip".
 
 For each item return: job = which wishlist gap it fills or which weak piece (by name) it replaces; size_to_buy = the size from the available sizes that fits her, with any caveat; why = one or two warm, specific sentences in Alison's voice about why it works on her; pairs_with = 2-3 pieces she already owns (names from the loves list).`;
 
@@ -572,6 +573,7 @@ function slackBlocks(person, deals) {
       d.why,
       d.pairsWith?.length ? `_Pairs with:_ ${d.pairsWith.join(", ")}` : "",
       d.finalSale ? "_Final sale, no returns: check the size chart first._" : "",
+      d.shipsFromEU ? "_Ships from Europe: check shipping cost and US import duties at checkout._" : "",
       d.verified ? "" : "_Price came from Alison's search; the store blocked a double-check._",
     ].filter(Boolean);
     const section = { type: "section", text: { type: "mrkdwn", text: lines.join("\n").slice(0, 2900) } };

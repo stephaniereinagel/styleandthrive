@@ -87,7 +87,7 @@ Never a haul. Never "you need a whole new season." Prefer thrift / Target / one 
 
 Alison scouts clearance daily and posts (as her own Slack bot, "Alison") to Team Reinagel Chat only when something is truly *right*: 70%+ off, at least 90% natural fiber, built to last, in her size, in Soft Autumn colors, cut for her body today, and doing a real job (fills a wishlist gap above or replaces a ≤2★ piece). Max 3 per post; silence is the default. Settings and the wishlist the hunter reads live in `wardrobe/data/deal-hunter.json`. **When a gap above gets filled or a new one appears, update that wishlist too.**
 
-**Shoes (10/13/26):** women's US 9 (about EU 40). Wide toe box is a must; zero drop strongly preferred (4mm max). No heels, no pointed or narrow toes. This applies to every shoe recommendation, not just deals. Barefoot brands in the hunt: Lems, Feelgrounds, Groundies, Xero, Wildling, Ahinsa, Origo. Shoe deals need only **50% off** (her call; barefoot brands rarely go deeper). Clothes stay at 70%.
+**Shoes (10/13/26):** women's US 9 (about EU 40). Wide toe box is a must; zero drop strongly preferred (4mm max). No heels, no pointed or narrow toes. This applies to every shoe recommendation, not just deals. Barefoot brands in the hunt: Lems, Feelgrounds, Xero, Wildling, Ahinsa, Origo. Groundies was dropped because it doesn't ship to the US. EU-based stores get a duties note. Shoe deals need only **50% off** (her call; barefoot brands rarely go deeper). Clothes stay at 70%.
 
 ## Dream shopping list (9/27/26, no budget limits, body-today)
 

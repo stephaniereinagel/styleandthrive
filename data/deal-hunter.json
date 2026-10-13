@@ -48,6 +48,7 @@
       ]
     }
   ],
+  "doesNotShipToUS": ["Groundies (groundies.com)"],
   "shopifyStores": [
     { "name": "Tradlands", "domain": "tradlands.com", "note": "Natural-fiber women's basics, earthy colors" },
     { "name": "Jungmaven", "domain": "jungmaven.com", "allNatural": true, "note": "Hemp and organic cotton" },
@@ -59,11 +60,10 @@
     { "name": "Pyne & Smith", "domain": "pyneandsmith.com", "allNatural": true, "note": "Linen dresses" },
     { "name": "Son de Flor", "domain": "sondeflor.com", "allNatural": true, "note": "Linen dresses" },
     { "name": "Lems", "domain": "lemsshoes.com", "note": "Zero-drop, wide toe box boots and sneakers; check uppers for synthetics" },
-    { "name": "Feelgrounds", "domain": "feelgrounds.com", "note": "Barefoot leather sneakers and boots, EU sizes" },
-    { "name": "Groundies", "domain": "groundies.com", "note": "Barefoot leather and wool shoes, EU sizes" },
+    { "name": "Feelgrounds", "domain": "feelgrounds.com", "shipsFromEU": true, "note": "Barefoot leather sneakers and boots, EU sizes; ships to US (4-6 days)" },
     { "name": "Xero Shoes", "domain": "xeroshoes.com", "note": "Zero-drop wide toe box; many uppers synthetic" },
-    { "name": "Wildling", "domain": "wildling.shoes", "note": "Minimal shoes in wool, hemp, linen" },
-    { "name": "Ahinsa", "domain": "ahinsashoes.com", "note": "Barefoot leather shoes" },
+    { "name": "Wildling", "domain": "wildling.shoes", "shipsFromEU": true, "note": "Minimal shoes in wool, hemp, linen; ships Rest of World" },
+    { "name": "Ahinsa", "domain": "ahinsashoes.com", "shipsFromEU": true, "note": "Barefoot leather shoes; ships worldwide" },
     { "name": "Origo", "domain": "origoshoes.com", "note": "Barefoot leather shoes" },
     { "name": "Nisolo", "domain": "nisolo.com", "note": "Leather boots and shoes (usually has a heel)" },
     { "name": "Thursday Boots", "domain": "thursdayboots.com", "note": "Leather and suede Chelsea boots (heeled)" },
