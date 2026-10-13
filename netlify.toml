@@ -27,6 +27,12 @@
 # 09:00 and 10:00 UTC ≈ 4am America/Chicago (CST/CDT). Handler no-ops unless local hour is 4.
 
 [[redirects]]
+  from = "/data/deal-hunter.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/app"
   to = "/"
   status = 301

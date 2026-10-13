@@ -1,0 +1,17 @@
+display_information:
+  name: Alison
+  description: Style & Thrive coach. Posts the rare clearance finds that are truly right for your capsule.
+  background_color: "#a0522d"
+  long_description: Alison is the Style & Thrive style coach for the Reinagel family. Once a day she scouts clearance for 70%+ off, natural-fiber, built-to-last pieces in your size, colors, and fit that fill a real gap in your capsule or replace a weak piece. She posts only the few worth buying, and stays quiet on days when nothing qualifies.
+features:
+  bot_user:
+    display_name: Alison
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

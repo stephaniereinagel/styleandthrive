@@ -15,6 +15,7 @@
       "id": "stephanie",
       "name": "Stephanie",
       "slackUserId": "",
+      "slackChannel": "C0C8VFQ0ADC",
       "usesCatalogue": true,
       "colorSeason": "Soft Autumn",
       "palette": {
@@ -27,17 +28,18 @@
         "top": ["L", "XL", "L/XL", "LARGE", "X-LARGE", "12", "14", "16"],
         "dress": ["L", "XL", "L/XL", "LARGE", "X-LARGE", "14", "16"],
         "bottom": ["XL", "1X", "XXL", "X-LARGE", "XL/1X", "16", "18", "33", "34"],
-        "shoes": []
+        "shoes": ["9", "W9", "9W", "US 9", "EU 40", "40"]
       },
-      "sizeNotes": "Tops and dresses: size to the bust, about L/XL or 14-16. Bottoms: size to the hips, about XL/1X or 16-18, tall or long inseam (long legs). Shoe size: not set yet.",
+      "sizeNotes": "Tops and dresses: size to the bust, about L/XL or 14-16. Bottoms: size to the hips, about XL/1X or 16-18, tall or long inseam (long legs). Shoes: women's US 9 (about EU 40; check the brand's size chart).",
+      "shoes": "Wide toe box is a must (foot-shaped, toes can spread). Zero drop strongly preferred; low drop (4mm or less) is the most to accept. No pointed toes, no heels, no narrow fashion boots.",
       "wishlist": [
-        "Everyday fall/winter shoe in taupe, camel, or cognac leather or suede: Chelsea or ankle boot, clog, or leather sneaker (top priority)",
+        "Everyday fall/winter shoe in taupe, camel, or cognac leather or suede, wide toe box and zero drop: Chelsea or ankle boot, or leather sneaker (top priority)",
         "Warm brown or olive high-rise jeans or pants, straight or wide-leg, tall inseam",
         "Long cocoa, mushroom, or oatmeal cardigan or duster (knee-length, worn open)",
         "Warm ivory or cream linen or cotton button-down or blouse",
         "Dark high-rise wide-leg jeans with a comfortable waist, tall inseam",
         "True wrap midi dress in a muted, moody floral, matte non-cling fabric, hem below the knee",
-        "Cognac knee boots",
+        "Cognac knee boots (wide toe box, flat)",
         "Olive waxed-cotton barn jacket",
         "Rust or cocoa henley",
         "Chocolate high-rise straight jeans",
@@ -55,8 +57,15 @@
     { "name": "Doen", "domain": "shopdoen.com", "note": "Cotton and silk feminine dresses" },
     { "name": "Pyne & Smith", "domain": "pyneandsmith.com", "allNatural": true, "note": "Linen dresses" },
     { "name": "Son de Flor", "domain": "sondeflor.com", "allNatural": true, "note": "Linen dresses" },
-    { "name": "Nisolo", "domain": "nisolo.com", "note": "Leather boots and shoes" },
-    { "name": "Thursday Boots", "domain": "thursdayboots.com", "note": "Leather and suede Chelsea boots" },
+    { "name": "Lems", "domain": "lemsshoes.com", "note": "Zero-drop, wide toe box boots and sneakers; check uppers for synthetics" },
+    { "name": "Feelgrounds", "domain": "feelgrounds.com", "note": "Barefoot leather sneakers and boots, EU sizes" },
+    { "name": "Groundies", "domain": "groundies.com", "note": "Barefoot leather and wool shoes, EU sizes" },
+    { "name": "Xero Shoes", "domain": "xeroshoes.com", "note": "Zero-drop wide toe box; many uppers synthetic" },
+    { "name": "Wildling", "domain": "wildling.shoes", "note": "Minimal shoes in wool, hemp, linen" },
+    { "name": "Ahinsa", "domain": "ahinsashoes.com", "note": "Barefoot leather shoes" },
+    { "name": "Origo", "domain": "origoshoes.com", "note": "Barefoot leather shoes" },
+    { "name": "Nisolo", "domain": "nisolo.com", "note": "Leather boots and shoes (usually has a heel)" },
+    { "name": "Thursday Boots", "domain": "thursdayboots.com", "note": "Leather and suede Chelsea boots (heeled)" },
     { "name": "ABLE", "domain": "ableclothing.com", "note": "Leather boots, denim" },
     { "name": "Magic Linen", "domain": "magiclinen.com", "allNatural": true, "note": "Linen clothing" },
     { "name": "Jenni Kayne", "domain": "jennikayne.com", "note": "Cashmere, cotton, wool" },
@@ -65,6 +74,6 @@
   "webSearch": {
     "enabled": true,
     "maxResults": 12,
-    "retailers": ["J.Crew", "Madewell", "Boden", "Garnet Hill", "Toast", "Eileen Fisher", "Universal Standard", "L.L.Bean", "Duluth Trading", "Anthropologie", "Free People", "Nordstrom Rack", "Saks Off 5th", "Sierra", "Sundance", "Everlane", "Rag & Bone", "Frye", "Dansko", "Blundstone", "Poshmark (new with tags)", "eBay (new with tags)", "ThredUp (new with tags)"]
+    "retailers": ["J.Crew", "Madewell", "Boden", "Garnet Hill", "Toast", "Eileen Fisher", "Universal Standard", "L.L.Bean", "Duluth Trading", "Anthropologie", "Free People", "Nordstrom Rack", "Saks Off 5th", "Sierra", "Sundance", "Everlane", "Rag & Bone", "Vivobarefoot", "Be Lenka", "Softstar", "Lems", "Xero Shoes", "Blundstone", "Poshmark (new with tags)", "eBay (new with tags)", "ThredUp (new with tags)"]
   }
 }

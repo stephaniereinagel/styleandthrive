@@ -74,7 +74,9 @@ Change sizes, the wishlist, brands, or thresholds in `data/deal-hunter.json`. To
 
 Test without posting: `node scripts/deal-hunt.mjs --dry-run` (add `--no-web` or `--only=Faherty`). Without `OPENAI_API_KEY` it lists the rule-passing finds and skips Alison's judging. On GitHub: **Actions → Alison's deal hunt → Run workflow** with `dry_run: true`.
 
-GitHub Action secrets: `OPENAI_API_KEY`, `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET` (same as try-on), plus `SLACK_BOT_TOKEN` (Lydia's `xoxb-` token) and `SLACK_DEALS_CHANNEL` (the Team Reinagel Chat channel ID, starts with `C`). Sent deals are remembered in Netlify Blobs via `/.netlify/functions/deals-log`. For the posts to say "Alison · Style & Thrive" instead of "Lydia," the Lydia app needs the `chat:write.customize` scope (already in `family-concierge/slack-manifest.yml`, reinstall the app once).
+**Alison is her own Slack app** (not Lydia). One-time setup: at [api.slack.com/apps](https://api.slack.com/apps), choose **Create New App → From an app manifest**, paste `slack-manifest.yml` from this folder, then **Install to Workspace**. Copy the **Bot User OAuth Token** (`xoxb-…`), and in Slack run `/invite @Alison` in Team Reinagel Chat. Optionally upload a profile photo under **Basic Information → Display Information**.
+
+GitHub Action secrets: `OPENAI_API_KEY`, `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET` (same as try-on), plus `ALISON_SLACK_BOT_TOKEN` (Alison's `xoxb-` token). The channel (Team Reinagel Chat, `C0C8VFQ0ADC`) lives in each person's `slackChannel` in `data/deal-hunter.json`. That file is blocked from the public site in `netlify.toml` because it holds measurements. Sent deals are remembered in Netlify Blobs via `/.netlify/functions/deals-log`.
 
 ## Rating scale
 

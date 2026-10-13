@@ -4,8 +4,8 @@
  * Finds 70%+ off natural-fiber pieces that fill a capsule gap or replace a weak piece,
  * then Alison posts only the few worth buying to Slack. Silent when nothing qualifies.
  *
- * Env: OPENAI_API_KEY, SLACK_BOT_TOKEN, SLACK_DEALS_CHANNEL, SITE_URL, DAILY_JOB_SECRET
- * Optional: DEALS_MODEL (default gpt-5), DRY_RUN=1 or --dry-run (print instead of post),
+ * Env: OPENAI_API_KEY, SLACK_BOT_TOKEN (Alison's own Slack app), SITE_URL, DAILY_JOB_SECRET
+ * Optional: SLACK_DEALS_CHANNEL (overrides each person's slackChannel), DEALS_MODEL (default gpt-5), DRY_RUN=1 or --dry-run (print instead of post),
  *           --no-shopify, --no-web, --only=<store name>
  * Shopify rate-limits per IP after ~30 fast requests; keep the sleeps.
  */
@@ -154,8 +154,8 @@ export function shopifyCandidate(p, store, rules, person) {
   const kind = classify(`${p.title} ${p.product_type || ""}`);
   if (!kind) return null;
   const options = (p.options || []).map((o) => String(o.name || o).toLowerCase());
-  const sizeIdx = options.findIndex((o) => o.includes("size"));
-  const colorIdx = options.findIndex((o) => o.includes("color") || o.includes("colour"));
+  const sizeIdx = options.findIndex((o) => /size|größe|grösse|taille|talla/.test(o));
+  const colorIdx = options.findIndex((o) => /colou?r|farbe|couleur/.test(o));
   const wanted = person.sizes[kind] || person.sizes.top;
   const avoid = rules.avoidWordsInColor;
 
@@ -284,6 +284,7 @@ function closetBrief(person, catalogue, rules) {
     `BODY AND FIT: ${person.body}`,
     `LIFE: ${person.life}`,
     `SIZES: ${person.sizeNotes}`,
+    person.shoes ? `SHOES: ${person.shoes}` : "",
     `SEASON: it is ${now} now; ${next} is next. Prefer pieces she can wear now or next season.`,
     `WISHLIST (real gaps, in priority order):\n- ${person.wishlist.join("\n- ")}`,
     weak.length ? `WEAK PIECES SHE WOULD LOVE TO REPLACE (a better version of the same job counts):\n- ${weak.join("\n- ")}` : "",
@@ -452,7 +453,7 @@ async function judge(candidates, brief, person, withImages = true) {
 
 ${brief}
 
-SCORING (0-10): 8+ only if ALL are true: (1) the color is clearly in her palette (look at the photo, not just the color name); (2) the cut follows her fit rules for her body today; (3) it is good quality and natural fiber; (4) it does a real job: fills a wishlist gap or is a clearly better version of a weak piece; (5) it is not a near-duplicate of something she already owns and loves; (6) it survives homestead life, and tops/dresses work for nursing. Anything else is "skip".
+SCORING (0-10): 8+ only if ALL are true: (1) the color is clearly in her palette (look at the photo, not just the color name); (2) the cut follows her fit rules for her body today; (3) it is good quality and natural fiber; (4) it does a real job: fills a wishlist gap or is a clearly better version of a weak piece; (5) it is not a near-duplicate of something she already owns and loves; (6) it survives homestead life, and tops/dresses work for nursing; (7) shoes follow her SHOES rules (a heeled or narrow-toe shoe is a skip no matter the price). Anything else is "skip".
 
 For each item return: job = which wishlist gap it fills or which weak piece (by name) it replaces; size_to_buy = the size from the available sizes that fits her, with any caveat; why = one or two warm, specific sentences in Alison's voice about why it works on her; pairs_with = 2-3 pieces she already owns (names from the loves list).`;
 
@@ -515,7 +516,7 @@ function slackBlocks(person, deals) {
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `${hello}*Alison's deal find${deals.length > 1 ? "s" : ""}* · ${deals.length} piece${deals.length > 1 ? "s" : ""} worth your money. ${Math.min(...deals.map((d) => d.pct))}%+ off, natural fiber, your colors, your fit.`,
+        text: `${hello}*Deal find${deals.length > 1 ? "s" : ""}* · ${deals.length} piece${deals.length > 1 ? "s" : ""} worth your money. ${Math.min(...deals.map((d) => d.pct))}%+ off, natural fiber, your colors, your fit.`,
       },
     },
     { type: "divider" },
@@ -546,11 +547,9 @@ function slackBlocks(person, deals) {
 async function postToSlack(person, deals) {
   const text = `Alison found ${deals.length} deal${deals.length > 1 ? "s" : ""}: ${deals.map((d) => `${d.title} ${d.pct}% off`).join("; ")}`;
   const payload = {
-    channel: SLACK_CHANNEL,
+    channel: SLACK_CHANNEL || person.slackChannel,
     text,
     blocks: slackBlocks(person, deals),
-    username: "Alison · Style & Thrive",
-    icon_emoji: ":dress:",
     unfurl_links: false,
     unfurl_media: false,
   };
@@ -636,7 +635,7 @@ async function huntFor(person, cfg, catalogue, seen) {
 async function main() {
   const cfg = JSON.parse(await readFile(new URL("data/deal-hunter.json", ROOT), "utf8"));
   const catalogue = JSON.parse(await readFile(new URL("data/catalogue.json", ROOT), "utf8"));
-  if (!DRY && (!SLACK_TOKEN || !SLACK_CHANNEL)) throw new Error("Need SLACK_BOT_TOKEN and SLACK_DEALS_CHANNEL (or use --dry-run)");
+  if (!DRY && !SLACK_TOKEN) throw new Error("Need SLACK_BOT_TOKEN (Alison's bot token) or use --dry-run");
   const seen = await loadSeen().catch((err) => {
     log(`Memory unavailable (${err.message}); continuing without dedupe`);
     return {};
@@ -651,6 +650,10 @@ async function main() {
     }
     for (const d of deals) log(`  ✓ ${d.score}/10 ${d.pct}% ${d.brand}: ${d.title} — ${d.job}`);
     if (DRY) continue;
+    if (!SLACK_CHANNEL && !person.slackChannel) {
+      log(`  no slackChannel for ${person.name}; not posting`);
+      continue;
+    }
     await postToSlack(person, deals);
     await recordPosted(deals);
     log(`  posted ${deals.length} to Slack`);
