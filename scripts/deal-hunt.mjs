@@ -250,15 +250,26 @@ async function enrichFiber(c, rules) {
 
 // ---------- OpenAI (Responses API) ----------
 
+/** Background mode + polling: web searches can outlast Node fetch's 5-minute header timeout. */
 async function openai(body) {
+  const headers = { Authorization: `Bearer ${API_KEY}`, "Content-Type": "application/json" };
   const res = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
-    headers: { Authorization: `Bearer ${API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-    signal: AbortSignal.timeout(600000),
+    headers,
+    body: JSON.stringify({ ...body, background: true }),
+    signal: AbortSignal.timeout(60000),
   });
-  const data = await res.json().catch(() => ({}));
+  let data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(`OpenAI ${res.status}: ${JSON.stringify(data.error || data).slice(0, 400)}`);
+  const deadline = Date.now() + 15 * 60000;
+  while (data.status === "queued" || data.status === "in_progress") {
+    if (Date.now() > deadline) throw new Error("OpenAI response timed out after 15 minutes");
+    await sleep(5000);
+    const poll = await fetch(`https://api.openai.com/v1/responses/${data.id}`, { headers, signal: AbortSignal.timeout(60000) });
+    if (!poll.ok) continue;
+    data = await poll.json();
+  }
+  if (data.status !== "completed") throw new Error(`OpenAI ${data.status}: ${JSON.stringify(data.error || data.incomplete_details || "").slice(0, 300)}`);
   for (const item of data.output || []) {
     if (item.type !== "message") continue;
     for (const part of item.content || []) if (part.type === "output_text") return part.text;
@@ -660,6 +671,10 @@ async function huntFor(person, cfg, catalogue, seen) {
   }
 
   const picks = await judge(candidates, brief, person);
+  for (const p of picks) {
+    const c = candidates[p.id];
+    if (c && !(p.verdict === "buy" && p.score >= rules.minJudgeScore)) log(`   skip ${p.score}/10 ${c.pct}% ${c.brand}: ${c.title} — ${p.why}`);
+  }
   return picks
     .filter((p) => p.verdict === "buy" && p.score >= rules.minJudgeScore && candidates[p.id])
     .sort((a, b) => b.score - a.score || candidates[b.id].pct - candidates[a.id].pct)
