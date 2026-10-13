@@ -26,7 +26,7 @@ const UA =
 const SYNTHETIC = [
   "polyester", "nylon", "polyamide", "acrylic", "spandex", "elastane", "lycra", "viscose", "rayon",
   "modal", "lyocell", "tencel", "acetate", "polyurethane", "faux leather", "vegan leather", "faux suede",
-  "faux fur", "sherpa fleece", "polar fleece",
+  "faux fur", "sherpa fleece", "polar fleece", "synthetik", "kunstleder", "mikrofaser",
 ];
 
 const KINDS = [
@@ -95,19 +95,20 @@ function money(n) {
 export function fiberInfo(text, rules, { allNatural = false, percentOnly = false } = {}) {
   const t = ` ${String(text).toLowerCase()} `;
   const isNatural = (phrase) =>
-    rules.naturalFibers.some((f) => phrase.includes(f)) && !/faux|vegan|imitation/.test(phrase);
+    rules.naturalFibers.some((f) => phrase.includes(f)) && !/faux|vegan|imitation|kunst/.test(phrase);
+  const fiberWords = [...rules.naturalFibers, ...SYNTHETIC];
   const parts = [];
   let sum = 0;
-  for (const m of t.matchAll(/(\d{1,3}(?:\.\d+)?)\s*%\s*([a-z][a-z \-]{2,30})/g)) {
+  for (const m of t.matchAll(/(\d{1,3}(?:\.\d+)?)\s*%\s*([a-zäöü][a-zäöü \-]{2,30})/g)) {
     const pct = Number(m[1]);
-    if (!pct || pct > 100 || /^off\b/.test(m[2])) continue;
-    parts.push({ pct, phrase: m[2].trim().split(/\s{2,}|,|;/)[0] });
+    const phrase = m[2].trim().split(/\s{2,}|,|;/)[0];
+    if (!pct || pct > 100 || !fiberWords.some((f) => phrase.includes(f))) continue;
+    parts.push({ pct, phrase });
     sum += pct;
     if (sum >= 99) break;
   }
   if (sum >= 95 && sum <= 101) {
     const nat = parts.filter((p) => isNatural(p.phrase)).reduce((a, p) => a + p.pct, 0);
-    const fiberWords = [...rules.naturalFibers, ...SYNTHETIC];
     const tidy = (phrase) => {
       const words = phrase.split(" ");
       const last = words.findIndex((w, i) => fiberWords.some((f) => words.slice(0, i + 1).join(" ").endsWith(f)));
@@ -123,6 +124,10 @@ export function fiberInfo(text, rules, { allNatural = false, percentOnly = false
   if (naturals.length) return { pct: 100, label: `${naturals.slice(0, 2).join(" + ")} (per description)` };
   if (allNatural) return { pct: 100, label: "natural fiber (brand is all-natural)" };
   return null;
+}
+
+function minDiscount(rules, kind) {
+  return rules.minDiscountPctByKind?.[kind] ?? rules.minDiscountPct;
 }
 
 function classify(text) {
@@ -165,7 +170,7 @@ export function shopifyCandidate(p, store, rules, person) {
     const was = Number(v.compare_at_price);
     if (!price || !was || was <= price || v.available === false) continue;
     const pct = Math.round((1 - price / was) * 100);
-    if (pct < rules.minDiscountPct || was < rules.minOriginalPrice) continue;
+    if (pct < minDiscount(rules, kind) || was < rules.minOriginalPrice) continue;
     const size = sizeIdx >= 0 ? v[`option${sizeIdx + 1}`] : "One size";
     if (sizeIdx >= 0 && !sizeMatches(size, wanted)) continue;
     const color = colorIdx >= 0 ? v[`option${colorIdx + 1}`] : "";
@@ -289,7 +294,7 @@ function closetBrief(person, catalogue, rules) {
     `WISHLIST (real gaps, in priority order):\n- ${person.wishlist.join("\n- ")}`,
     weak.length ? `WEAK PIECES SHE WOULD LOVE TO REPLACE (a better version of the same job counts):\n- ${weak.join("\n- ")}` : "",
     strong.length ? `ALREADY OWNS AND LOVES (do not suggest near-duplicates; good pairing partners):\n- ${strong.join("\n- ")}` : "",
-    `NON-NEGOTIABLES: at least ${rules.minDiscountPct}% off the original price; at least ${rules.minNaturalPct}% natural fiber (${rules.naturalFibers.slice(0, 12).join(", ")}…); good-quality construction that lasts years; original price at least ${money(rules.minOriginalPrice)}.`,
+    `NON-NEGOTIABLES: at least ${rules.minDiscountPct}% off the original price (shoes: at least ${minDiscount(rules, "shoes")}%); at least ${rules.minNaturalPct}% natural fiber (${rules.naturalFibers.slice(0, 12).join(", ")}…); good-quality construction that lasts years; original price at least ${money(rules.minOriginalPrice)}.`,
   ]
     .filter(Boolean)
     .join("\n\n");
@@ -334,7 +339,7 @@ ${brief}
 WHERE TO LOOK: brand and retailer sale, clearance, final-sale, outlet, and archive sections (for example ${ws.retailers.join(", ")}). New-with-tags resale counts if the discount is measured against the brand's original retail price.
 
 RULES:
-- Return only direct product pages you actually opened and saw today, with a current sale price at least ${cfg.rules.minDiscountPct}% below the original price shown on the page.
+- Return only direct product pages you actually opened and saw today, with a current sale price at least ${cfg.rules.minDiscountPct}% below the original price shown on the page (shoes: at least ${minDiscount(cfg.rules, "shoes")}%).
 - Her size must be in stock.
 - Natural fiber composition must be stated on the page. Skip polyester, acrylic, nylon, viscose/rayon-dominant pieces.
 - Skip anything that fights her colors or her fit rules, and anything cheap or fast-fashion quality.
@@ -373,7 +378,7 @@ async function verifyWebDeal(d, cfg, person) {
   }
 
   const pct = Math.round((1 - d.price / d.original_price) * 100);
-  if (!(pct >= rules.minDiscountPct) || d.original_price < rules.minOriginalPrice) return null;
+  if (!(pct >= minDiscount(rules, d.kind)) || d.original_price < rules.minOriginalPrice) return null;
   const fiber = fiberInfo(d.fiber, rules);
   const base = {
     source: "web",
@@ -479,6 +484,31 @@ For each item return: job = which wishlist gap it fills or which weak piece (by 
     log(`  judge with photos failed (${err.message.slice(0, 120)}); retrying without photos`);
     return judge(candidates, brief, person, false);
   }
+}
+
+const FIBER_SCHEMA = {
+  type: "object",
+  additionalProperties: false,
+  required: ["found", "label", "natural_pct"],
+  properties: {
+    found: { type: "boolean" },
+    label: { type: "string" },
+    natural_pct: { type: "integer", minimum: 0, maximum: 100 },
+  },
+};
+
+/** Last resort for listings whose feed and page text don't state the material plainly. */
+async function lookupFiber(c, rules) {
+  const text = await openai({
+    model: MODEL,
+    reasoning: { effort: "low" },
+    tools: [{ type: "web_search" }],
+    input: `Open ${c.url} ("${c.brand} ${c.title}", color ${c.color || "any"}) and find its material composition as stated by the brand. For shoes, judge the upper (outer material); ignore sole and lining. Natural means: ${rules.naturalFibers.join(", ")}. Report found=false if the page doesn't say. natural_pct = percent of the main fabric (or upper) that is natural. label = short English composition, e.g. "smooth cowhide leather upper" or "55% linen, 45% cotton".`,
+    text: { format: { type: "json_schema", name: "fiber", schema: FIBER_SCHEMA, strict: true } },
+  });
+  const f = JSON.parse(text);
+  if (f.found) Object.assign(c, { fiber: `${f.label} (looked up)`, naturalPct: f.natural_pct });
+  return c;
 }
 
 // ---------- memory + Slack ----------
@@ -606,6 +636,11 @@ async function huntFor(person, cfg, catalogue, seen) {
     } catch (err) {
       log(`  web search failed: ${err.message}`);
     }
+  }
+
+  if (API_KEY) {
+    const unknown = pool.filter((c) => c.naturalPct == null && !wasSeen(c, seen, rules)).slice(0, 8);
+    for (const c of unknown) await lookupFiber(c, rules).catch((err) => log(`  fiber lookup failed: ${err.message.slice(0, 120)}`));
   }
 
   const byKey = new Map();

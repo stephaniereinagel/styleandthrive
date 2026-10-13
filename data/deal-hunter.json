@@ -1,12 +1,13 @@
 {
   "rules": {
     "minDiscountPct": 70,
+    "minDiscountPctByKind": { "shoes": 50 },
     "minOriginalPrice": 60,
     "minNaturalPct": 90,
     "minJudgeScore": 8,
     "maxDealsPerPost": 3,
     "repostAfterDays": 45,
-    "naturalFibers": ["cotton", "linen", "flax", "hemp", "ramie", "wool", "merino", "alpaca", "cashmere", "mohair", "camel hair", "yak", "silk", "leather", "suede", "shearling", "sheepskin", "jute"],
+    "naturalFibers": ["cotton", "linen", "flax", "hemp", "ramie", "wool", "merino", "alpaca", "cashmere", "mohair", "camel hair", "yak", "silk", "leather", "suede", "shearling", "sheepskin", "jute", "baumwolle", "leinen", "wolle", "leder", "hanf", "seide", "kaschmir"],
     "avoidWordsInColor": ["black", "jet", "onyx", "charcoal", "grey", "gray", "silver", "optic white", "bright white", "neon", "fuchsia", "cobalt", "royal blue", "hot pink", "lilac", "lavender", "icy"],
     "skipWordsInTitle": ["kids", "baby", "toddler", "boys", "girls", "gift card", "mask", "bundle", "swim", "underwear", "bralette", "sock", "candle", "towel", "sheet", "pillow", "duvet", "napkin", "apron"]
   },
