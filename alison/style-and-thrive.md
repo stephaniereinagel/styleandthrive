@@ -37,6 +37,12 @@ That *is* the work. Alison's job is to keep the recipes honest and the closet qu
 6. **Pear + postpartum. Silhouette locked Aug 31, 2026 (photo consult):** athletic/balanced frame, shoulders ≈ hips, moderate waist, long legs. Call it pear or soft hourglass — the job is the same. **Marked waist + skim the hip + draw the eye up.** Yes: waist-length toppers, V-necks, wraps/smocks/drawstrings, straight or clean wide-leg, A-line. No: cargo/patch pockets on the thigh, hip-length boxy layers, clingy sheaths, unfinished flip-flop days. If the waist is gone that week, switch to the linen/flowy uniform — still a finished outfit, still shoes.
 7. **Carryover staples stay cross-season** (jeans, olive pants, camel cardi, utility, moto, boots, sandals, terracotta LS dress, plus the winter bottom/dress carryovers already listed in menus.json).
 8. **Daily picks (live).** Each morning at **4am America/Chicago**, the app picks from the current season capsule using weather + Google Calendar. **Tops, bottoms, toppers, and dresses** need **2 clear days** before reuse (worn Monday → free Thursday) and cannot repeat on the **same weekday two weeks in a row**. Outerwear and shoes may repeat. The old 21-outfit / 3-day menu loop remains as **fallback** only when a daily pick has not run yet.
+8a. **Body today (photo consult 9/27/26, 6 mo PP, ~200 lb):** She carries most of it in the midsection, especially the lower belly below the navel, with some fullness at the outer hip and upper thigh. Knees, calves, and ankles are lean, legs are long, and shoulders balance the hips. Waist update: mark the *high* waist (just under the bust or the narrowest point above the navel). Never put a tight band across the belly. Pants rise above the navel or sit flat below it with no squeeze. Show the lower leg (knee-to-midi hems, cropped wide-leg, straight leg). Long open toppers make a vertical column.
+8a-ii. **Try-on lesson (9/27/26):** On her, an empire seam plus clingy jersey or a gathered drawstring reads as pregnant. Tie the rose utility midi loosely at the natural waist or leave it untied under the open moto jacket. Choose woven or structured fabrics that fall past the belly. Long open cardigans and three-quarter stances work. Best look: oatmeal V half-tuck + high-rise olive straight pants + open camel cardi + cognac boots.
+8a-iii. **Cropped tops (9/27/26):** Yes, but only a *waistband-length* crop over a rise that sits above the navel. The hem meets or just overlaps the waistband, with no skin showing. Boxy is fine; truly oversized over a full bust is not. The fit test is lifting both arms and bending to pick up a kid: if skin shows, add a tonal tank underneath or pick a longer hem. Never pair cropped tops with a mid-rise. A cropped cardigan or sweater that ends at the waistband also works over a high-waisted midi.
+   - *Checker crop sweater test (9/27/26):* The length and colors were right. Big color blocks, a crew neck, and drop-shoulder cap sleeves made one wide box across the bust. Only wear that style under a long open layer. Better to buy: a V-neck or small-scale knit, set-in or long sleeves.
+8a-iv. **Measurements (9/27/26):** bust 42.5", high waist under the bust 35", navel 41", hips 47". Hips run 4.5" larger than the bust, so the base shape is **pear**, with a fuller tummy on top of it. The narrowest point is the rib cage, 12" smaller than her hips. **Define there.** A seam under the bust is fine if the fabric below it is woven or structured and has room to clear a 41" belly. Clingy or gathered fabric below the seam is what reads as pregnant. Tops and dresses: size to the bust (~L/XL, 14–16). Bottoms: size to the hips and to where the waistband lands (~XL/1X, 16–18). Tailor the waist in; never size down for it. Rough bra estimate: 34–36 band, DD–F cup. Get fitted.
+8b. **Foundations (9/27/26).** Swap low-rise bikini underwear for high-rise briefs that cover the navel. Get properly fitted for a nursing bra first; lifting the bust makes the waist show. Wear anti-chafe smoothing shorts under dresses and skirts. Use a high-waist, medium-control smoothing short only for fitted church dresses. No waist trainers or cinchers (core/pelvic floor). Smooth, don't squeeze: if it rolls or she can't take a full breath, size up. Buy the size that fits today.
 9. **Every day needs a real bottom, skirt, overalls, or dress plus shoes.** The plaid tunic is a *top*, not a dress. No floating-top days.
 10. **1 + 1 + the rest.** Each outfit: 0–1 Print, 0–1 Color family, everything else Neutral. Print + a loud color is two fun slots — Thursday only (and we usually still pick one). Count a floral/plaid/stripe as one print, not five colors. Olive, camel, oatmeal, cognac, denim are Neutral *here*.
 11. **Her layering (locked Aug 29, 2026).** Jacket over a dress or a knit = yes. Open cardi over a tee, tank, tunic, or dress = yes. **No sweater over a dress. No cardigan over a sweater.** Two knits is bulky and skips the waist. If the top is already a sweater/sweatshirt/hoodie, stop. Shoes, or a jacket if she's leaving the house.
@@ -76,6 +82,22 @@ Only after closet-shopping. One item. Must have a job. Current known gaps from t
 - Thin brown belt — **purchased** (`NEW_BELT`). Rust/black flannel — **purchased** (`NEW_FLANNEL`). Don't buy another.
 
 Never a haul. Never "you need a whole new season." Prefer thrift / Target / one better piece — her range, Stephanie's budget.
+
+## Deal hunt (added 10/13/26)
+
+Alison scouts clearance daily and posts to Team Reinagel Chat in Slack only when something is truly *right*: 70%+ off, at least 90% natural fiber, built to last, in her size, in Soft Autumn colors, cut for her body today, and doing a real job (fills a wishlist gap above or replaces a ≤2★ piece). Max 3 per post; silence is the default. Settings and the wishlist the hunter reads live in `wardrobe/data/deal-hunter.json`. **When a gap above gets filled or a new one appears, update that wishlist too.** Shoe size isn't set yet, so shoe finds aren't size-filtered.
+
+## Dream shopping list (9/27/26, no budget limits, body-today)
+
+Asked for "any store, no restrictions." These five outfits flatter a midsection-first shape. Try-ons are saved as `shop-*.png` in the Cursor project assets.
+
+1. **Everyday:** dark high-rise wide-leg tummy-control jeans (Ava Lane *Auburn*, 36" tall inseam) + ivory button-down, front half-tuck + long camel duster, open + cognac loafers.
+2. **Church:** true wrap midi in a moody floral, matte non-cling fabric, tied loosely at the side at the natural waist, hem below the knee + cognac knee boots.
+3. **Date / polished:** chocolate skirt suit (single-button blazer to the high hip, buttoned at the waist + high-waist A-line midi) + cream V knit + suede knee boots.
+4. **Homestead:** olive waxed barn jacket + rust henley, front half-tuck + chocolate high-rise straight jeans + Chelsea boots.
+5. **Cozy:** cocoa tonal column (ribbed nursing tank + wide-leg ponte pull-on) + knee-length oatmeal cardi, open + cream sneakers.
+
+Buy order: fitted nursing bra → jeans → knee boots → wrap dress → duster → the rest.
 
 ## 333 starter (if she asks for a fried-week kit)
 

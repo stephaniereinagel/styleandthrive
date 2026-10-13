@@ -1,0 +1,37 @@
+name: Alison's deal hunt (daily, midday CT)
+
+# Searches for 70%+ off natural-fiber pieces that fit the capsule and posts the
+# few worth buying to Slack. Silent on days nothing qualifies.
+on:
+  schedule:
+    - cron: "30 17 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print results instead of posting to Slack (true/false)"
+        required: false
+        default: "false"
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Hunt
+        env:
+          SITE_URL: ${{ secrets.STYLE_THRIVE_URL }}
+          DAILY_JOB_SECRET: ${{ secrets.DAILY_JOB_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_DEALS_CHANNEL: ${{ secrets.SLACK_DEALS_CHANNEL }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
+        run: |
+          if [ -z "$OPENAI_API_KEY" ] || [ -z "$SLACK_BOT_TOKEN" ] || [ -z "$SLACK_DEALS_CHANNEL" ]; then
+            echo "Missing OPENAI_API_KEY, SLACK_BOT_TOKEN, or SLACK_DEALS_CHANNEL secret — skipping"
+            exit 0
+          fi
+          node scripts/deal-hunt.mjs

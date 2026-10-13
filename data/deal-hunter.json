@@ -1,0 +1,70 @@
+{
+  "rules": {
+    "minDiscountPct": 70,
+    "minOriginalPrice": 60,
+    "minNaturalPct": 90,
+    "minJudgeScore": 8,
+    "maxDealsPerPost": 3,
+    "repostAfterDays": 45,
+    "naturalFibers": ["cotton", "linen", "flax", "hemp", "ramie", "wool", "merino", "alpaca", "cashmere", "mohair", "camel hair", "yak", "silk", "leather", "suede", "shearling", "sheepskin", "jute"],
+    "avoidWordsInColor": ["black", "jet", "onyx", "charcoal", "grey", "gray", "silver", "optic white", "bright white", "neon", "fuchsia", "cobalt", "royal blue", "hot pink", "lilac", "lavender", "icy"],
+    "skipWordsInTitle": ["kids", "baby", "toddler", "boys", "girls", "gift card", "mask", "bundle", "swim", "underwear", "bralette", "sock", "candle", "towel", "sheet", "pillow", "duvet", "napkin", "apron"]
+  },
+  "people": [
+    {
+      "id": "stephanie",
+      "name": "Stephanie",
+      "slackUserId": "",
+      "usesCatalogue": true,
+      "colorSeason": "Soft Autumn",
+      "palette": {
+        "love": ["camel", "cognac", "olive", "oatmeal", "cream", "ivory", "cocoa", "chocolate", "mushroom", "taupe", "khaki", "sage", "moss", "dusty rose", "terracotta", "rust", "mustard", "ochre", "brick", "tobacco", "warm navy", "soft denim", "muted floral"],
+        "avoid": ["true black", "cool grey", "optic white", "tomato red", "silver metallic", "high-contrast navy/white", "neon or icy brights"]
+      },
+      "body": "Pear with a fuller lower tummy, postpartum (baby #5 born spring 2026) and nursing. Bust 42.5\", high waist under bust 35\", navel 41\", hips 47\". Long legs, lean calves, shoulders balance hips. Mark the high waist, skim the hip, draw the eye up. YES: V and wrap necklines, waist-length or long open toppers, high-rise straight or wide-leg that sits above the navel, A-line and knee-to-midi hems, woven or structured fabric that falls past the belly, ankle boots. NO: tight bands across the belly, clingy jersey sheaths, gathered or clingy fabric under an empire seam (reads pregnant), cargo or patch pockets on the thigh, hip-length boxy layers, big shoulder volume, low-rise, cropped tops that show skin.",
+      "life": "6-acre NW Arkansas homestead, five kids under 6, chickens, garden, farm stand, church on Sundays. Clothes must wash easily, survive kids and dirt, and be nursing-friendly when they are tops or dresses.",
+      "sizes": {
+        "top": ["L", "XL", "L/XL", "LARGE", "X-LARGE", "12", "14", "16"],
+        "dress": ["L", "XL", "L/XL", "LARGE", "X-LARGE", "14", "16"],
+        "bottom": ["XL", "1X", "XXL", "X-LARGE", "XL/1X", "16", "18", "33", "34"],
+        "shoes": []
+      },
+      "sizeNotes": "Tops and dresses: size to the bust, about L/XL or 14-16. Bottoms: size to the hips, about XL/1X or 16-18, tall or long inseam (long legs). Shoe size: not set yet.",
+      "wishlist": [
+        "Everyday fall/winter shoe in taupe, camel, or cognac leather or suede: Chelsea or ankle boot, clog, or leather sneaker (top priority)",
+        "Warm brown or olive high-rise jeans or pants, straight or wide-leg, tall inseam",
+        "Long cocoa, mushroom, or oatmeal cardigan or duster (knee-length, worn open)",
+        "Warm ivory or cream linen or cotton button-down or blouse",
+        "Dark high-rise wide-leg jeans with a comfortable waist, tall inseam",
+        "True wrap midi dress in a muted, moody floral, matte non-cling fabric, hem below the knee",
+        "Cognac knee boots",
+        "Olive waxed-cotton barn jacket",
+        "Rust or cocoa henley",
+        "Chocolate high-rise straight jeans",
+        "Fitted nursing bra (only if she has been measured)"
+      ]
+    }
+  ],
+  "shopifyStores": [
+    { "name": "Tradlands", "domain": "tradlands.com", "note": "Natural-fiber women's basics, earthy colors" },
+    { "name": "Jungmaven", "domain": "jungmaven.com", "allNatural": true, "note": "Hemp and organic cotton" },
+    { "name": "Faherty", "domain": "fahertybrand.com", "note": "Cotton, linen, cashmere; men's too, so filter" },
+    { "name": "Christy Dawn", "domain": "christydawn.com", "allNatural": true, "note": "Deadstock cotton and linen prairie dresses" },
+    { "name": "Mate the Label", "domain": "matethelabel.com", "note": "Organic cotton, linen, earth tones" },
+    { "name": "Outerknown", "domain": "outerknown.com", "note": "Organic cotton, hemp; mostly men's" },
+    { "name": "Doen", "domain": "shopdoen.com", "note": "Cotton and silk feminine dresses" },
+    { "name": "Pyne & Smith", "domain": "pyneandsmith.com", "allNatural": true, "note": "Linen dresses" },
+    { "name": "Son de Flor", "domain": "sondeflor.com", "allNatural": true, "note": "Linen dresses" },
+    { "name": "Nisolo", "domain": "nisolo.com", "note": "Leather boots and shoes" },
+    { "name": "Thursday Boots", "domain": "thursdayboots.com", "note": "Leather and suede Chelsea boots" },
+    { "name": "ABLE", "domain": "ableclothing.com", "note": "Leather boots, denim" },
+    { "name": "Magic Linen", "domain": "magiclinen.com", "allNatural": true, "note": "Linen clothing" },
+    { "name": "Jenni Kayne", "domain": "jennikayne.com", "note": "Cashmere, cotton, wool" },
+    { "name": "Hope Macaulay", "domain": "hopemacaulay.com", "note": "Cotton corduroy and linen" }
+  ],
+  "webSearch": {
+    "enabled": true,
+    "maxResults": 12,
+    "retailers": ["J.Crew", "Madewell", "Boden", "Garnet Hill", "Toast", "Eileen Fisher", "Universal Standard", "L.L.Bean", "Duluth Trading", "Anthropologie", "Free People", "Nordstrom Rack", "Saks Off 5th", "Sierra", "Sundance", "Everlane", "Rag & Bone", "Frye", "Dansko", "Blundstone", "Poshmark (new with tags)", "eBay (new with tags)", "ThredUp (new with tags)"]
+  }
+}

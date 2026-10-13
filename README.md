@@ -34,7 +34,9 @@ Local static server does **not** run Netlify functions. Deploy to Netlify (or `n
 | `images/source/` | Full-size JPEGs converted from HEIC |
 | `images/thumbs/` | Thumbnails for the app |
 | `app/` | Mirror of the mobile-style web app |
-| `netlify/functions/` | `daily-select`, `today`, `week`, `settings`, `image` |
+| `netlify/functions/` | `daily-select`, `today`, `week`, `settings`, `image`, `deals-log` |
+| `data/deal-hunter.json` | Deal hunt settings: sizes, palette, wishlist, brands, thresholds |
+| `scripts/deal-hunt.mjs` | Daily deal hunt (GitHub Actions → Slack) |
 | `netlify/lib/` | Picker, weather, iCal, try-on, Blobs store |
 | `.github/workflows/daily-outfit.yml` | Backup 4am cron via GitHub Actions |
 
@@ -56,6 +58,23 @@ Local static server does **not** run Netlify functions. Deploy to Netlify (or `n
 GitHub Action secrets (backup cron): `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET`.
 
 Reference photos and daily try-ons live in **Netlify Blobs** — never commit them to git. Try-on uses **gpt-image-2** (with hanger photos of the day's pieces). Because Netlify's edge times out around 30s, photo generation runs on **GitHub Actions** (`tryon-worker.yml`, every 5 minutes) via `tryon-pack` / `tryon-save`.
+
+## Alison's deal hunt (Slack)
+
+Once a day around midday CT, a GitHub Action (`.github/workflows/deal-hunt.yml` → `scripts/deal-hunt.mjs`) looks for **70%+ off, natural-fiber, good-quality** pieces in Stephanie's size and colors that fill a capsule gap or replace a weak (≤2★) piece. Alison posts at most 3 to the family Slack channel. On days when nothing qualifies, it posts nothing.
+
+How it decides:
+
+1. **Brand sale feeds.** It reads the public product feed of each Shopify brand in `data/deal-hunter.json` (Tradlands, Faherty, Nisolo, Christy Dawn…). Prices, discounts, and in-stock sizes are exact.
+2. **Web search.** An OpenAI web search covers bigger retailers (J.Crew, Madewell, Boden, Eileen Fisher, Nordstrom Rack, new-with-tags resale…). Each link is re-opened to confirm it's live and the price is on the page.
+3. **Hard rules in code.** At least 70% off, original price at least $60, at least 90% natural fiber, her size in stock, no black/grey/silver colorways, women's only, and not already sent in the last 45 days unless the price dropped 15% or more.
+4. **Alison judges.** She looks at the photos against the closet brief (palette, body-today fit rules, wishlist, weak pieces, loved pieces) and only scores 8/10 or higher get posted, each with its job, the size to buy, and what it pairs with.
+
+Change sizes, the wishlist, brands, or thresholds in `data/deal-hunter.json`. To add a family member later, add another entry to `people` (with `usesCatalogue: false` until they have a catalogue) and a `slackUserId` so the post tags them.
+
+Test without posting: `node scripts/deal-hunt.mjs --dry-run` (add `--no-web` or `--only=Faherty`). Without `OPENAI_API_KEY` it lists the rule-passing finds and skips Alison's judging. On GitHub: **Actions → Alison's deal hunt → Run workflow** with `dry_run: true`.
+
+GitHub Action secrets: `OPENAI_API_KEY`, `STYLE_THRIVE_URL`, `DAILY_JOB_SECRET` (same as try-on), plus `SLACK_BOT_TOKEN` (Lydia's `xoxb-` token) and `SLACK_DEALS_CHANNEL` (the Team Reinagel Chat channel ID, starts with `C`). Sent deals are remembered in Netlify Blobs via `/.netlify/functions/deals-log`. For the posts to say "Alison · Style & Thrive" instead of "Lydia," the Lydia app needs the `chat:write.customize` scope (already in `family-concierge/slack-manifest.yml`, reinstall the app once).
 
 ## Rating scale
 
